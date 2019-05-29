@@ -1,6 +1,6 @@
 module.exports = function (router) {
 
-    var version = "1-0";
+    var version = "2-0";
 
     router.post('/' + version + '/registration/gov-funding', function (req, res) {
         // Get the answer from session data
@@ -69,16 +69,14 @@ module.exports = function (router) {
         // Get the answer from session data
         // The name between the quotes is the same as the 'name' attribute on the input elements
         // However in JavaScript we can't use hyphens in variable names
-
-        // && ggpassword ==='abcd123'
       
         let ggid = req.session.data['gatewayLogin']
         let ggpassword = req.session.data['gatewayPassword']
       
-        if (ggid ==='abcd123') {
+        if (ggid === 'abcd123' && ggpassword ==='abcd123') {
           res.redirect('/' + version + '/registration/multiOrgs')
         } else {
-          res.redirect('/' + version + '/registration/check-your-details')
+          res.redirect('/' + version + '/registration/searchOrgResults')
         }
       })
       

@@ -201,3 +201,22 @@ $govuk-global-styles: true;
 .warning-summary .warning-dismiss {
   color: #f47738;
 }
+
+
+.clear-button {
+  background: transparent;
+  color: #005ea5 !important;
+  border: none;
+  box-shadow: none;
+  padding-top: 11px;
+  text-decoration: underline !important;
+}
+
+.clear-button:hover {
+  background: transparent;
+  color: #005ea5 !important;
+  border: none;
+  box-shadow: none;
+  padding-top: 11px;
+  text-decoration: underline !important;
+}

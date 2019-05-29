@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% set serviceName = "Manage apprenticeships" %}
-{% set backLinkHref = "ways-to-add-paye" %}
+{% set backLinkHref = "confirmation" %}
 
 {% block content %}
 
@@ -42,10 +42,14 @@
             </span>
               <input class="govuk-input govuk-!-width-three-quarters" id="providerRegisterFirstName" name="employerRegisterPAYE" type="text" aria-describedby="PAYE number" value=" {{ data['employerRegisterPAYE'] }}">
           </div>
+
+
+
+
         </div>
 
-        <a href="check-your-details-aorn" class="govuk-button">Continue</a>
-        <a href="homepage-addPAYE" class="govuk-button clear-button" >Skip this step for now</a>
+        <a href="check-your-details" class="govuk-button">Continue</a>
+           <a class="govuk-button clear-button" onclick="whereNow()" >Skip this step for now</a>
 
       </form>
 

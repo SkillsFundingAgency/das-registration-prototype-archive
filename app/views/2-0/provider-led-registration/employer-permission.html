@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage apprenticeships
+{% endblock %}
+
+{% set serviceName = "Manage apprenticeships" %}
+{% set backLinkHref = "new-employer-user" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Get employer permission
+              </h1>
+            </legend>
+            <span id="how-contacted-conditional-hint" class="govuk-hint">
+              You must have permission from your employer to set up an account <br>on their behalf.
+            </span>
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <br>
+                <h2 class="govuk-heading-m">Do you have their permission to do this?</h2>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                  Yes, the employer has given their permission
+                </label> </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                    No, the employer has not given their permission
+                </label> 
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+        <a href="review-details" class="govuk-button">Continue</a>
+    </div>
+</div>
+
+{% endblock %}
