@@ -16,7 +16,7 @@
     
     <p>You can add other organisations to your account later.</p>
 
-<form action="multiOrgsChoice" method="get" class="form">
+  <form method="post" class="form">
 
  <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
@@ -25,29 +25,27 @@
     </legend>
 
           <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="orgChoose-1" name="orgChoose" type="radio" value="Assurance Aerospace Ltd">
+        <input class="govuk-radios__input" id="orgChoose-1" name="orgNotListed" type="radio" value="Assurance Aerospace Ltd">
         <label class="govuk-label govuk-radios__label" for="orgChoose-1">
           Assurance Aerospace Ltd
         </label>
 
       </div>
             <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="orgChoose-2" name="orgChoose" type="radio" value="Assurance Aerospace (Wings) Ltd ">
+        <input class="govuk-radios__input" id="orgChoose-2" name="orgNotListed" type="radio" value="Assurance Aerospace (Wings) Ltd ">
         <label class="govuk-label govuk-radios__label" for="orgChoose-2">
         Assurance Aerospace (Wings) Ltd  
         </label>
 
       </div>
             <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="orgChoose-3" name="orgChoose" type="radio" value="Assurance Aerospace (Avionics) Ltd">
+        <input class="govuk-radios__input" id="orgChoose-3" name="orgNotListed" type="radio" value="Assurance Aerospace (Avionics) Ltd">
         <label class="govuk-label govuk-radios__label" for="orgChoose-3"> Assurance Aerospace (Avionics) Ltd</label>
-
-        
 
       </div>
     <div class="govuk-radios">
             <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="orgChoose-4" name="orgChoose" type="radio" value="Assurance Aerospace (Wheels) Ltd ">
+        <input class="govuk-radios__input" id="orgChoose-4" name="orgNotListed" type="radio" value="Assurance Aerospace (Wheels) Ltd ">
         <label class="govuk-label govuk-radios__label" for="orgChoose-4">
        Assurance Aerospace (Wheels) Ltd 
         </label>
@@ -56,17 +54,17 @@
          <p style="margin-bottom:10px; margin-left:8px">or</p>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="orgChoose-5" name="orgChoose" type="radio" value="FiverOrg">
+        <input class="govuk-radios__input" id="orgChoose-5" name="orgNotListed" type="radio" value="OrgNot">
         <label class="govuk-label govuk-radios__label" for="orgChoose-5">
-       My organisation is not listed - Go direct to TPR to update - Helen
+       My organisation is not listed
         </label>
       </div>
     </div>
   </fieldset>
 </div>
 <div>
-     <!-- <button class="govuk-button">Continue</button>-->
-    <a href="check-your-gg-details-from-multiorg" class="govuk-button">Continue</a> 
+      <button class="govuk-button" type="submit">Continue</button>
+    <!-- <a href="check-your-gg-details-from-multiorg" class="govuk-button">Continue</a>  -->
 </form>
 </div>
 </div>

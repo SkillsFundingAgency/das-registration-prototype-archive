@@ -46,25 +46,8 @@ module.exports = function (router) {
           res.redirect('/' + version + '/registration/homepage-signAgreement')
         }
       })
- 
 
-
-/* 
-      router.post('/' + version + '/registration/searchOrg', function (req, res) {
-        // Get the answer from session data
-        // The name between the quotes is the same as the 'name' attribute on the input elements
-        // However in JavaScript we can't use hyphens in variable names
       
-        let search = req.session.data['orgChoose']
-      
-        if (search != '') {
-          res.redirect('/' + version + '/registration/multiOrgs')
-        } else {
-          res.redirect('/' + version + '/registration/searchOrgResults')
-        }
-      }) */
-
-
       router.post('/' + version + '/registration/gov-gateway', function (req, res) {
         // Get the answer from session data
         // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -76,11 +59,60 @@ module.exports = function (router) {
         let ggpassword = req.session.data['gatewayPassword']
       
         if (ggid ==='abcd123') {
-          res.redirect('/' + version + '/registration/multiOrgs')
+          res.redirect('/' + version + '/registration/multiOrgsGG')
         } else {
           res.redirect('/' + version + '/registration/check-your-details')
         }
       })
       
+
+      router.post('/' + version + '/registration/multiOrgsGG', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
+      
+        let answer = req.session.data['orgNotListed']
+      
+        if (answer === 'OrgNot') {
+          res.redirect('/' + version + '/registration/searchOrg')
+        } else {
+          res.redirect('/' + version + '/registration/check-your-gg-details-from-multiorg')
+        }
+      })
+
+
+      router.post('/' + version + '/registration/pensionsReg', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
+
+        // && ggpassword ==='abcd123'
+      
+        let aornnumber = req.session.data['employerRegisterAORN']
+      
+        if (aornnumber ==='123PA12345678') {
+          res.redirect('/' + version + '/registration/multiOrgsAORN')
+        } else {
+          res.redirect('/' + version + '/registration/check-your-details')
+        }
+      })
+
+
+      router.post('/' + version + '/registration/multiOrgsAORN', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
+
+        // && ggpassword ==='abcd123'
+      
+        let answer = req.session.data['orgNotListed']
+      
+        if (answer ==='OrgNot') {
+          res.redirect('https://www.gov.uk/tell-hmrc-change-address')
+        } else {
+          res.redirect('/' + version + '/registration/check-your-aorn-details-from-multiorg')
+        }
+      })
+
  };
 
