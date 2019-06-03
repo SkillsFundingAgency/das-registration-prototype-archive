@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% set serviceName = "Manage apprenticeships" %}
-{% set backLinkHref = "index" %}
+{% set backLinkHref = "employer-permission" %}
 
 {% block content %}
 
@@ -15,14 +15,7 @@
             Enter the employer details
         </h1>
         <p>Enter the details of the employer that you're setting up an account for. The employer will be able to add other users to this account once you've set it up.</p>
-
-        {% from "warning-text/macro.njk" import govukWarningText %}
-
-        {{ govukWarningText({
-          text: "You must have permission from your employer to add this information.",
-          iconFallbackText: "Warning"
-        }) }}
-
+          <br>
         <div class="govuk-form-group">
           <div class="govuk-form-group">
               <label class="govuk-label" for="providerRegisterFirstName">
@@ -46,7 +39,7 @@
               <input class="govuk-input" id="providerRegisterEmail" name="providerRegisterEmail" type="providerRegisterEmail">
           </div>
         </div>
-        <a href="employer-permission" class="govuk-button">Continue</a>
+        <a href="review-details" class="govuk-button">Submit</a>
     </div>
 </div>
 
