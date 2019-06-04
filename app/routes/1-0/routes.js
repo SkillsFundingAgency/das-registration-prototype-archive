@@ -93,7 +93,7 @@ module.exports = function (router) {
         if (aornnumber ==='123PA12345678') {
           res.redirect('/' + version + '/registration/multiOrgsAORN')
         } else {
-          res.redirect('/' + version + '/registration/check-your-details')
+          res.redirect('/' + version + '/registration/check-your-details-aorn')
         }
       })
 
