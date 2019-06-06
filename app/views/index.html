@@ -15,72 +15,132 @@
   html: 'This is a new service – your feedback will help us to improve it.'
 }) }}
 
-
+<style>
+.app-task-list__task-name {
+  width: 70%
+}
+</style>
 
 <div class="govuk-width-container">
-  
-    <main class="govuk-main-wrapper">
-  
-      <div class="govuk-grid-row">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-width-container">
+        
+          <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+            
+        
+        <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-xl">
-                Registration team
-                <span class="govuk-caption-xl">Prototype kit {{releaseVersion}}</span>
-              </h1>{{releaseVersion | log }}
+        <h1 class="govuk-heading-xl">
+          Registration and homepage
+        </h1>
+        
+        <ol class="app-task-list">
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">1. </span> Full registration journey
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="/1-0/registration/" aria-describedby="read-declaration-completed">
+                  Employer started registration
+                </a>
+                <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">In progress</strong>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">2. </span> Provider-led registration
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="/2-0/provider-led-registration/" aria-describedby="company-information-completed">
+                  Provider invites employer
+                </a>
+                <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">In progress</strong>
+              </li>
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="/2-0/provider-led-registration/registration/provider-invitation-email" aria-describedby="contact-details-completed">
+                  Employer continues set up
+                </a>
+                <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">In progress</strong>
+              </li>
+
+            </ul>
+          </li>
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">3. </span> Homepage states
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="3-0/homepage-with-other-task" aria-describedby="company-information-completed">
+                  Homepage with other task tab
+                </a>
+                <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">research</strong>
+              </li>
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="1-0/registration/interim-homepage" aria-describedby="contact-details-completed">
+                  Interim homepage
+                </a>
+                <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">final</strong>
+              </li>
+
+            </ul>
+          </li>
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">4. </span> End to end journey - for demo purposes only
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
+                  Employer-led
+                </a>
+                <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">In progress</strong>
+              </li>
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="#" aria-describedby="contact-details-completed">
+                  Provider
+                </a>
+                <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">In progress</strong>
+              </li>
+              <li class="app-task-list__item">
+                <a class="app-task-list__task-name" href="#" aria-describedby="contact-details-completed">
+                  Provider-led
+                </a>
+                <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">In progress</strong>
+              </li>
+
+            </ul>
+          </li>
+        </ol>
+        
+        </div>
+        </div>
+        
+          </main>
         </div>
       </div>
-  
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Two-thirds column</h2>
-          <p class="govuk-body-l">This is a lead paragraph inside a two-thirds wide column</p>
-          <p class="govuk-body">This is a paragraph inside a two-thirds wide column</p>
-        </div>
-  
-        <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-m">One-third column</h3>
-          <p class="govuk-body">This is a paragraph inside a one-third wide column</p>
-  
-        </div>
-      </div>
-  
-    </main>
-  </div>
 
-<!--   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      
-      <h1 class="govuk-heading-xl">
-        Registration team
-        <span class="govuk-caption-xl">Prototype kit {{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
-
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-        <li>
-          <a href="https://design-system.service.gov.uk">
-            GOV.UK Design System
-          </a>
-        </li>
-      </ul>
+      <!-- <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">One-third column</h2>
+        <p class="govuk-body">This is a paragraph inside a one-third wide column</p>
+      </div> -->
     </div>
-</div> -->
+
+  </main>
+</div>
+
+
+
+
+
 
 
 
