@@ -19,7 +19,7 @@ router.get('/directProvider', function (req, res) {
 
  // Employer finish
 router.get('/employerFinish', function (req, res) {
-    res.redirect(`/2-0/provider-led-registration/`)
+    res.redirect(`/2-0/provider-led-registration/registration/provider-invitation-email`)
     })
 
 
