@@ -10,4 +10,12 @@ router.get('/directEmployer', function (req, res) {
     res.redirect(`/1-0/registration/`)
     })
 
+
+// Interim homepage
+    router.get('/interimHomepage', function (req, res) {
+        res.redirect(`/1-0/registration/interim-homepage`)
+        })
+    
+
+
 module.exports = router
