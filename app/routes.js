@@ -11,10 +11,22 @@ router.get('/directEmployer', function (req, res) {
     })
 
 
+ // Provider started
+router.get('/directProvider', function (req, res) {
+    res.redirect(`/2-0/provider-led-registration/`)
+    })
+
+
+ // Employer finish
+router.get('/employerFinish', function (req, res) {
+    res.redirect(`/2-0/provider-led-registration/`)
+    })
+
+
 // Interim homepage
     router.get('/interimHomepage', function (req, res) {
         res.redirect(`/1-0/registration/interim-homepage`)
-        })
+    })
     
 
 
