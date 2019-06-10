@@ -49,6 +49,7 @@
                   Employer started registration
                 </a>
                 <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">In progress</strong>
+              
               </li>
             </ul>
           </li>
@@ -128,10 +129,69 @@
         </div>
       </div>
 
-      <!-- <div class="govuk-grid-column-one-third">
-        <h2 class="govuk-heading-m">One-third column</h2>
-        <p class="govuk-body">This is a paragraph inside a one-third wide column</p>
-      </div> -->
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Change logs</h2>
+
+        {% from "accordion/macro.njk" import govukAccordion %}
+
+        {{ govukAccordion({
+          id: "accordion-with-summary-sections",
+          items: [
+            {
+              heading: {
+                text: "Employer registration"
+              },
+              summary: {
+                text: "Key changes made to the registration journey."
+              },
+              content: {
+                html: 
+                '<ul class="govuk-list">
+                    <li>
+                      <a class="govuk-link" href="1-0/change-log/change-log">Change log</a>
+                    </li>
+
+                </ul>'
+              }
+            },
+                {
+              heading: {
+                text: "Provider-led registration"
+              },
+              summary: {
+                text: "Key changes made to the provider-led registration journey."
+              },
+              content: {
+                html:
+                '<ul class="govuk-list">
+                    <li>
+                      <a class="govuk-link" href="2-0/change-log/change-log">Change log</a>
+                    </li>
+
+                </ul>'
+              }
+            },
+                    {
+              heading: {
+                text: "New homepage"
+              },
+              summary: {
+                text: "Key changes to the new homepage."
+              },
+              content: {
+                html:
+                '<ul class="govuk-list">
+                    <li>
+                      <a class="govuk-link" href="3-0/change-log/change-log">Change log</a>
+                    </li>
+                </ul>'
+              }
+            }
+
+          ]
+        }) }}
+
+      </div>
     </div>
 
   </main>
