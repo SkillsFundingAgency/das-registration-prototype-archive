@@ -41,7 +41,7 @@ module.exports = function (router) {
       let answer = req.session.data['agreementSign']
     
       if (answer === 'yesSign') {
-        res.redirect('/' + version + '/provider-led-registration/registration/changePermissions')
+        res.redirect('/1-0/registration/interim-homepage')
       } else {
         res.redirect('/' + version + '/provider-led-registration/registration/homepage-signAgreement')
       }
