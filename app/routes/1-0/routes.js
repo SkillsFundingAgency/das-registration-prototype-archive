@@ -31,7 +31,11 @@ module.exports = function (router) {
         }
       })
       
-    
+      router.get('/' + version + '/registration/agreement', function (req, res) {
+        res.render(version + '/registration/agreement', {
+          _referrer:req.query.referrer
+        });
+      })
     
       router.post('/' + version + '/registration/agreement', function (req, res) {
         // Get the answer from session data

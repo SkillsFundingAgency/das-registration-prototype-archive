@@ -5,119 +5,91 @@
 {% endblock %}
 
 {% set serviceName = "Manage apprenticeships" %}
-{% set backLinkHref = "check-your-details" %}
 
+{% if _referrer == "home" %}
+  {% set backLinkHref = "homepage-signAgreement" %}
+{% else %}
+  {% set backLinkHref = "check-your-details" %}
+{% endif %}
+
+{% set _orgName = data['orgName'] or "ASSURANCE AEROSPACE LTD" %}
 
 {% block content %}
-
-
-<style>
-    .agreement ol a {
-        color: #005ea5;
-        text-decoration: underline
-    }
-
-    .agreement header {
-        color: #000;
-    }
-
-    .agreement .agreement-contents h2 .number {
-        padding-left: 0;
-        font-size: 36px;
-        left: -8%;
-        font-weight: 700;
-        background-color: #fff;
-        width: 8%;
-        z-index: 9999;
-    }
-
-</style>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <!-- Title -->
-        <h1 class="govuk-heading-xl">Employer agreement between {{data['orgName'] or "Assurance Aerospace Ltd" }} and the Education and Skills Funding Agency (ESFA)</h1>
+      <h1 class="govuk-heading-xl">Agreement between {{_orgName}} and the Education and Skills Funding Agency (ESFA)</h1>
         
-        <!-- Explanation/intro -->
-        <p class="govuk-body">Every employer taking on apprentices must sign the <a href="agreement-full">employer agreement</a>.</p> 
-        
-        <!-- Notification about version -->
-        <div class="govuk-inset-text">
-            <p class="govuk-body">We updated the agreement on 11 March 2018.</p>
-        </div>
+      <p class="govuk-body">We updated the agreement on 1 May 2018.</p>
+    
+      <h2 class="govuk-heading-m">Key features of the agreement</h2>
+      <p class="govuk-body">{{_orgName}} must:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>only use the funding in their apprenticeship service account to train and assess apprentices</li>
+          <li>have a ‘contract for services’ with their training providers</li>
+          <li>follow the apprenticeship funding rules</li>
+      </ul>
+      <p class="govuk-body">The ESFA can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>suspend payments, recover funds or close {{_orgName}}’s account if {{_orgName}} breaks the agreement</li>
+          <li>change the terms of the agreement and any part of the apprenticeship service</li>
+      </ul>
 
-        <p class="govuk-body">The agreement includes the terms and conditions of:</p>
+      <h2 class="govuk-heading-m">The full agreement</h2>
+      <p class="govuk-body">View the full agreement, share or print it with the following link (opens in a new window or tab): <a href="agreement-govuk" target="_blank" class="govuk-link govuk-link--no-visited-state">https://www.gov.uk/government/publications/agreement-between-an-employer-and-the-education-and-skills-funding-agency-esfa</a></p>
 
-        <ul class="govuk-list govuk-list--bullet">
-            <li>using the apprenticeship service</li>
-            <li>using government funding to train and assess apprentices</li>
-            <li>working with the ESFA</li>
-        </ul>
-        <p class="govuk-body">You can sign the agreement later, but {{data['orgName'] or "Assurance Aerospace Ltd" }} will not be able to get or reserve funding until you do. </p>
-        <!-- <p class="govuk-body">Without a signed agreement, you can still register for an apprenticeship service account and add:</p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>your colleagues </li>
-            <li>apprentice details</li>
-            <li>levy funds (if applicable)</li>
-        </ul> -->
+      <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text govuk-!-font-weight-bold">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              The agreement is legally binding. If {{_orgName}} breaks it, we could close their account and stop them running apprenticeships.
+          </strong>
+      </div>
 
-        
+      <form method="post" class="form">
 
-        <!-- Key facts -->
-        <h2 class="govuk-heading-m">Key features of the employer agreement</h2>
-        
-        <p class="govuk-body">By signing the agreement, you confirm that:</p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>you have read and agree to the <a href="agreement-full">employer agreement</a></li>
-            <li>if you have levy funds, you will only use them to pay for apprenticeship training and assessment</li>
-            <li>you will pay co-investment costs for any apprenticeship training</li>
-            <li>you have a contract with your training provider</li>
-            <li>you understand we may ask you to repay any funding if you don’t follow the rules of this agreement</li>
-            <li>you understand we may ask you to pay any remaining training if you don’t follow the rules of this agreement </li>
-            <li>you must help with the investigation if the ESFA suspects that you are not following this agreement or the funding rules</li>     
-        </ul>
-        <p class="govuk-body">You can also <a href="/accounts/VYJW8B/agreements/MK77WW/agreement-pdf" target="_blank" class="govuk-link">view the agreement in PDF format</a> (400KB, 23 pages).</p>
-
-        <!-- Warning text -->
-        <br>
-        <div class="govuk-warning-text">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                This agreement is legally binding. If you breach it, we could terminate your account and you will not be able to use the apprenticeship service.
-            </strong>
-        </div>
-<br>
-        <!-- Radio buttons -->
-<form method="post" class="form">
-        {% from "radios/macro.njk" import govukRadios %}
-
-        {{ govukRadios({
-          idPrefix: "agreementSign",
-          name: "agreementSign",
-          fieldset: {
-            legend: {
-              text: "Do you want to sign the employer agreement now?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yesSign",
-              text: "Yes, I accept the employer agreement"
+          {% from "radios/macro.njk" import govukRadios %}
+          {% from "input/macro.njk" import govukInput %}
+          
+          {% set noHTML %}
+            {% if _referrer == "home" %}
+              <p class="govuk-body">You can accept the agreement later. {{_orgName}} will not be able to get or reserve funding until you accept.</p>
+            {% else %}
+              <p class="govuk-body">You can continue registering and accept the agreement later. {{_orgName}} will not be able to get or reserve funding until you accept.</p>
+            {% endif %}
+          {% endset -%}
+          
+          {{ govukRadios({
+            idPrefix: "agreementSign",
+            name: "agreementSign",
+            fieldset: {
+              legend: {
+                text: "Do you accept the agreement?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
             },
-            {
-              value: "noSignLater",
-              text: "No, I’ll sign it later"
-            }
-          ]
-        }) }}
+            items: [
+              {
+                value: "yesSign",
+                text: "Yes, I have read the agreement and accept it"
+              },
+              {
+                value: "noSignLater",
+                text: "I’ll review it later",
+                conditional: {
+                  html: noHTML
+                }
+              }
+            ]
+          }) }}
 
-        <!-- Call to action button -->
-        <button class="govuk-button" onclick="whereNow()">Continue</button>
-</form>
+          <!-- Call to action button -->
+          <button class="govuk-button" >Continue</button>
+
+      </form>
+
     </div>
 </div>
 
