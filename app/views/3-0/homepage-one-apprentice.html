@@ -8,10 +8,14 @@
 {% block content %}
 
     <section class="das-section das-section--header">
-            <div class="govuk-width-container">
-                <h1 class="govuk-heading-m das-account__title">Your employer account</h1>
-                <h2 class="govuk-heading-l das-account__account-name">Assurance Aerospace Ltd</h2>
-            </div>
+        <div class="govuk-width-container">
+            <h1 class="govuk-heading-m das-account__title">Your employer account</h1>
+            <h2 class="govuk-heading-l das-account__account-name">Assurance Aerospace Ltd</h2>
+            <a href="" class="das-favourites-link govuk-body">
+                <span class="das-favourites-link__icon"><img src="https://das-at-frnt-end.azureedge.net/images/favourite-unchecked-black.svg" alt=""></span>
+                <span class="das-favourites-link__text">View saved favourites</span>
+            </a>
+        </div>
         </section>
 
         <section class="das-section das-section--search">
@@ -65,9 +69,17 @@
                             <!-- <p><a href="#" class="das-panel__link govuk-link--no-visited-state">Review and approve</a> </p> -->
                         </div>
                         <div class="das-panel">
-                            <h3 class="das-panel__heading">Your saved apprenticeships and training providers</h3>
-                            <p>You do not have any apprenticeships or training providers saved.</p>
-                        </div>
+                                <h3 class="das-panel__heading" style="padding-bottom: 10px">Latest payment instalment</h3>
+                                <div style="background: #E5E5E5; padding: 15px;">
+                                        <h2 class="govuk-heading-l" style="margin: 0">
+                                          - £150.00
+                                        </h2>
+                                        <p style="margin: 0">
+                                            27 Feb 2019 - Your contribution
+                                        </p>
+                                      </div>
+                           <p><a href="#" class="govuk-link govuk-link--no-visited-state">View transactions</a> </p>
+                          </div>
                     </div>
                     <div class="das-panels__col das-panels__col--secondary">
                         <div class="das-panel">
@@ -76,14 +88,10 @@
                             <p><a href="#" class="govuk-link govuk-link--no-visited-state">Set permissions</a> </p>
                         </div>
                         <div class="das-panel">
-                            <h3 class="das-panel__heading">Your account settings</h3>
-                            <ul class="govuk-list">
-                               <li><a href="#" class="govuk-link govuk-link--no-visited-state">Your accounts</a> </li>
-                               <li><a href="#" class="govuk-link govuk-link--no-visited-state">Rename account </a> </li>
-                               <li><a href="#" class="govuk-link govuk-link--no-visited-state">Change your password </a> </li>
-                               <li><a href="#" class="govuk-link govuk-link--no-visited-state">Change your email address </a> </li>
-                               <li><a href="#" class="govuk-link govuk-link--no-visited-state">Notification settings </a> </li>
-                            </ul>
+                            <h3 class="das-panel__heading">Recruitment</h3>
+                            <p>Recruit an apprentice by creating a vacancy. This vacancy will be advertised on Find an apprenticeship.</p>
+                            <p><a href="#" class="govuk-link govuk-link--no-visited-state">Create vacancy</a> </p>
+                            <p><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your vacancy</a> </p>
                         </div>
                     </div>
                 </div>
