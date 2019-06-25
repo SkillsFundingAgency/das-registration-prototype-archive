@@ -155,7 +155,7 @@ module.exports = function (router) {
       if (answer === 'yesGive') {
         res.redirect('/' + version + '/provider-led-registration/new-employer-user')
       } else {
-        res.redirect('/' + version + '/provider-led-registration/noPermissionAccSetup')
+        res.redirect('/' + version + '/provider-led-registration/index')
       }
     })
 

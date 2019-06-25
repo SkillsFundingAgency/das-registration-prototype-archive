@@ -19,16 +19,16 @@
     <div class="govuk-grid-column-two-thirds">
         <form method="post" class="form">
            <h1 class="govuk-heading-xl">
-            You need permission from the employer to set up an account
+            Confirm you have permission from the employer to set up this account
            </h1>
-           <p class="govuk-body">Before you can set up an account for an employer, you need to make sure you have permission.</p>
+<!--            <p class="govuk-body">Before you can set up an account for an employer, you need to make sure you have permission.</p>
 
            {% from "warning-text/macro.njk" import govukWarningText %}
 
            {{ govukWarningText({
              text: "You must have permission from the employer to set up this account.",
              iconFallbackText: "Warning"
-           }) }}
+           }) }} -->
 
 
             {% from "radios/macro.njk" import govukRadios %}
@@ -38,7 +38,7 @@
               name: "permission-training-provider",
               fieldset: {
                 legend: {
-                  text: "Do you have permission to set up an account for an employer?",
+                  text: "Do you have the employer's permission to set up this account?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--m"
                 }
@@ -46,11 +46,11 @@
               items: [
                 {
                   value: "yesGive",
-                  text: "Yes, the employer has given their permission"
+                  text: "Yes"
                 },
                 {
                   value: "noDont",
-                  text: "No, the employer has not given their permission"
+                  text: "No, take me back to the homepage"
                 }
               ]
             }) }}
