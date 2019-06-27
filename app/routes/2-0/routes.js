@@ -18,10 +18,7 @@ module.exports = function (router) {
   
   
     router.post('/' + version + '/provider-led-registration/registration/ways-to-add-paye', function (req, res) {
-      // Get the answer from session data
-      // The name between the quotes is the same as the 'name' attribute on the input elements
-      // However in JavaScript we can't use hyphens in variable names
-    
+
       let answer = req.session.data['ways-to-add-your-paye']
     
       if (answer === 'govgateway') {
@@ -34,9 +31,6 @@ module.exports = function (router) {
   
   
     router.post('/' + version + '/provider-led-registration/registration/agreement', function (req, res) {
-      // Get the answer from session data
-      // The name between the quotes is the same as the 'name' attribute on the input elements
-      // However in JavaScript we can't use hyphens in variable names
     
       let answer = req.session.data['agreementSign']
     
@@ -49,9 +43,6 @@ module.exports = function (router) {
 
     
     router.post('/' + version + '/provider-led-registration/registration/gov-gateway', function (req, res) {
-      // Get the answer from session data
-      // The name between the quotes is the same as the 'name' attribute on the input elements
-      // However in JavaScript we can't use hyphens in variable names
 
       // && ggpassword ==='abcd123'
     
@@ -67,10 +58,7 @@ module.exports = function (router) {
     
 
     router.post('/' + version + '/provider-led-registration/registration/multiOrgsGG', function (req, res) {
-      // Get the answer from session data
-      // The name between the quotes is the same as the 'name' attribute on the input elements
-      // However in JavaScript we can't use hyphens in variable names
-    
+
       let answer = req.session.data['orgNotListed']
     
       if (answer === 'OrgNot') {
@@ -82,9 +70,6 @@ module.exports = function (router) {
 
 
     router.post('/' + version + '/provider-led-registration/registration/pensionsReg', function (req, res) {
-      // Get the answer from session data
-      // The name between the quotes is the same as the 'name' attribute on the input elements
-      // However in JavaScript we can't use hyphens in variable names
 
       // && ggpassword ==='abcd123'
     
@@ -99,9 +84,6 @@ module.exports = function (router) {
 
 
     router.post('/' + version + '/provider-led-registration/registration/multiOrgsAORN', function (req, res) {
-      // Get the answer from session data
-      // The name between the quotes is the same as the 'name' attribute on the input elements
-      // However in JavaScript we can't use hyphens in variable names
 
       // && ggpassword ==='abcd123'
     
@@ -116,10 +98,7 @@ module.exports = function (router) {
 
 
     router.post('/' + version + '/provider-led-registration/registration/changePermissions', function (req, res) {
-      // Get the answer from session data
-      // The name between the quotes is the same as the 'name' attribute on the input elements
-      // However in JavaScript we can't use hyphens in variable names
-    
+
       let answer = req.session.data['providerManageApprenticeships']
     
       if (answer === 'providerManageApprenticeshipsTrue') {
@@ -131,9 +110,6 @@ module.exports = function (router) {
 
 
     router.post('/' + version + '/provider-led-registration/registration/changePermissionsRecruit', function (req, res) {
-      // Get the answer from session data
-      // The name between the quotes is the same as the 'name' attribute on the input elements
-      // However in JavaScript we can't use hyphens in variable names
     
       let answer = req.session.data['providerManageRecruit']
     
@@ -146,9 +122,6 @@ module.exports = function (router) {
     
 
     router.post('/' + version + '/provider-led-registration/employer-permission', function (req, res) {
-      // Get the answer from session data
-      // The name between the quotes is the same as the 'name' attribute on the input elements
-      // However in JavaScript we can't use hyphens in variable names
     
       let answer = req.session.data['permission-training-provider']
     
