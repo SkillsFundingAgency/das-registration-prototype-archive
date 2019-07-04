@@ -93,6 +93,7 @@ module.exports = function (router) {
         // && ggpassword ==='abcd123'
       
         let aornnumber = req.session.data['employerRegisterAORN']
+
       
         if (aornnumber ==='123PA12345678') {
           res.redirect('/' + version + '/registration/multiOrgsAORN')
@@ -101,6 +102,7 @@ module.exports = function (router) {
         }
       })
 
+      
 
       router.post('/' + version + '/registration/multiOrgsAORN', function (req, res) {
         // Get the answer from session data
