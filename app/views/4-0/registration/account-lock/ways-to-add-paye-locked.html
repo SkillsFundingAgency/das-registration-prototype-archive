@@ -21,11 +21,11 @@
                <li>accounts office reference number and employer PAYE scheme reference</li>
            </ul>
            <br>
-           
            <!-- <h2 class="govuk-heading-m">By continuing you agree to the following:</h2>
                 <div class="govuk-inset-text">
                     I have the authority to add PAYE schemes to this account that are used by my organisation.
                 </div> -->
+
 
 <!-- 
                 {% from "radios/macro.njk" import govukRadios %}
@@ -54,7 +54,6 @@
                   ]
                 }) }} -->
 
-
            <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
@@ -72,7 +71,7 @@
                   </label> </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
                   <div class="govuk-form-group">
-                    <p>If you already have funds associated with your PAYE scheme, choose Government Gateway to keep access to your funds.</p>
+                      <p style="color: #b10e1e;">Your account is locked for <strong>30 minutes</strong>, please try again later</p>
                   </div>
           
                 </div>
@@ -89,7 +88,8 @@
             </strong>
           </div>
 
-           <button class="govuk-button">Continue</button>
+          <!-- <button class="govuk-button">Continue</button>-->
+            <a href="/1-0/registration/account-lock/pensionsRegLocked" class="govuk-button">Continue</a> 
 
 </form>
     </div>
