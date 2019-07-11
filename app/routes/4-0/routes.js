@@ -36,6 +36,18 @@ module.exports = function (router) {
           _referrer:req.query.referrer
         });
       })
+
+      router.post('/' + version + '/registration/agreement-check', function (req, res) {
+
+      
+        let answer = req.session.data['agreementCheck']
+      
+        if (answer === 'no') {
+          res.redirect('/' + version + '/registration/homepage-signAgreement')
+        } else {
+          res.redirect('/' + version + '/registration/agreement')
+        }
+      })
     
       router.post('/' + version + '/registration/agreement', function (req, res) {
         // Get the answer from session data
