@@ -16,6 +16,8 @@ Do you want to review the agreement now?
 }) }}
 {% endblock %}
 
+{% from "inset-text/macro.njk" import govukInsetText %}
+
 {% set _orgName = data['orgName'] or "ASSURANCE AEROSPACE LTD" %}
 
 {% block content %}
@@ -25,8 +27,25 @@ Do you want to review the agreement now?
 
         <h1 class="govuk-heading-xl">Do you want to review the agreement now?</h1>
 
-        <p class="govuk-body">The agreement is between {{_orgName}} and the ESFA. To get funding it needs to be reviewed and agreed.</p>
-        <p class="govuk-body">You can continue registering without reviewing it now.</p>
+        <p class="govuk-body">The agreement is between {{_orgName}} and the ESFA. To get or reserve funding it needs to be accepted.</p>
+
+        <h2 class="govuk-heading-m">Key features of the agreement</h2>
+        <p class="govuk-body">{{_orgName}} must:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>only use the funding in their apprenticeship service account to train and assess apprentices</li>
+            <li>have a contract with their training providers to train their apprentices</li>
+            <li>follow the apprenticeship funding rules</li>
+        </ul>
+        <p class="govuk-body">The ESFA can:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>suspend payments, recover funds or close {{_orgName}}’s account if {{_orgName}} breaks the agreement</li>
+            <li>change any part of the apprenticeship service</li>
+            <li>change the terms of the agreement (we will ask {{_orgName}} to accept the new terms if this happens)</li>
+        </ul>
+        
+        {{ govukInsetText({
+            text: "You can continue registering without reviewing the agreement."
+        }) }}
 
         <form method="post" class="form">
 
@@ -45,7 +64,7 @@ Do you want to review the agreement now?
                 },
                 {
                     value: "yes",
-                    text: "Review it now"
+                    text: "Review the agreement"
                 }
                 ]
             }) }}
