@@ -670,6 +670,50 @@ if (
 
 </form>
 
+<!-- <form method="post" class="form">
+        
+
+    {% from "radios/macro.njk" import govukRadios %}
+    {% from "input/macro.njk" import govukInput %}
+    
+    {% set noHTML %}
+      {% if _referrer == "home" %}
+        <p class="govuk-body">You can accept the agreement later. {{_orgName}} will not be able to get or reserve funding until you accept.</p>
+      {% else %}
+        <p class="govuk-body">You can continue registering and accept the agreement later. {{_orgName}} will not be able to get or reserve funding until you accept.</p>
+      {% endif %}
+    {% endset -%}
+    
+    {{ govukRadios({
+      idPrefix: "agreementSign",
+      name: "agreementSign",
+      fieldset: {
+        legend: {
+          text: "Do you accept the agreement?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yesSign",
+          text: "Yes, I have read the agreement and accept it"
+        },
+        {
+          value: "noSignLater",
+          text: "I’ll review it later",
+          conditional: {
+            html: noHTML
+          }
+        }
+      ]
+    }) }}
+
+    <!-- Call to action button
+    <button class="govuk-button" >Continue</button>
+
+</form> --> 
+
 
 <!-- 
     remove these 3 to put the div back in the page
