@@ -10,21 +10,30 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">
-            Create an account to manage apprenticeships
-        </h1>
-        <!-- <p class="govuk-body-lead">This service is for organisations that want to take on apprentices.</p> -->
-        <p>You need to create or <a href="signin" class="govuk-link--no-visited-state">sign in</a> to an apprenticeship account, then you'll be able to get funding to pay for apprenticeship training and assessment costs.</p>
-        <p>You'll use your account to:</p>
+
+        <h1 class="govuk-heading-xl">Create an account to manage apprenticeships</h1>
+
+        <p class="govuk-body">Use this service to find and save apprenticeships.</p>
+
+        <p class="govuk-body">You'll need your PAYE scheme details to:</p>
         <ul class="govuk-list govuk-list--bullet">
-            <li>get apprenticeship funding</li>
-            <li>find and save apprenticeships</li>
             <li>find, save and manage training providers</li>
             <li>recruit apprentices</li>
             <li>add and manage apprenticeships</li>
         </ul>
-        <br>
-        <a href="new-user" class="govuk-button govuk-button--start">Create account</a>
+
+        <p class="govuk-body">You'll need to agree to an employer agreement to get apprenticeship funding.</p>
+
+        <p class="govuk-body">If you already have an account then <a href="signin" class="govuk-link--no-visited-state">sign in</a> using your email address.</p>
+
+        {% from "button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Create account",
+          href: "new-user",
+          classes: "govuk-button--start"
+        }) }}
+        
     </div>
 </div>
 
