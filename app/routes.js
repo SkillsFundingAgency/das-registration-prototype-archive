@@ -5,6 +5,7 @@ require('./routes/1-0/routes.js')(router);
 require('./routes/2-0/routes.js')(router);
 require('./routes/3-0/routes.js')(router);
 require('./routes/4-0/routes.js')(router);
+require('./routes/5-0/routes.js')(router);
 
 // Employer started
 router.get('/directEmployer', function (req, res) {
