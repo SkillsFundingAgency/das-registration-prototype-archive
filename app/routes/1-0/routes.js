@@ -37,7 +37,7 @@ module.exports = function (router) {
         });
       })
     
-      router.post('/' + version + '/registration/agreement', function (req, res) {
+      router.post('/' + version + '/registration/agreement/v1/agreement', function (req, res) {
         // Get the answer from session data
         // The name between the quotes is the same as the 'name' attribute on the input elements
         // However in JavaScript we can't use hyphens in variable names
