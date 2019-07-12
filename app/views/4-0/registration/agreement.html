@@ -23,14 +23,14 @@
       
       <p class="govuk-body">We updated the agreement on 1 May 2018.</p>
 
-      <h2 class="govuk-heading-m">The full agreement</h2>
-      <p class="govuk-body">View the full agreement, share or print it with the following link (opens in a new window or tab): <a href="agreement-govuk" target="_blank" class="govuk-link govuk-link--no-visited-state">https://www.gov.uk/government/publications/agreement-between-an-employer-and-the-education-and-skills-funding-agency-esfa</a></p>
+      <!-- <h2 class="govuk-heading-m">View, share or print the full agreement</h2> -->
+      <p class="govuk-body">View, share or print the full agreement with the following link (opens in a new window or tab): <br><a href="agreement-govuk" target="_blank" class="govuk-link govuk-link--no-visited-state">https://www.gov.uk/government/publications/agreement-between-an-employer-and-the-education-and-skills-funding-agency-esfa</a></p>
 
       <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text govuk-!-font-weight-bold">
               <span class="govuk-warning-text__assistive">Warning</span>
-              The agreement is legally binding. If {{_orgName}} breaks it, we could close their account and stop them running apprenticeships.
+              The agreement is legally binding. If {{_orgName}} breaks it, we could stop it hiring apprentices and close its account. 
           </strong>
       </div>
 
@@ -42,10 +42,17 @@
           
           {% set noText %}
             {% if _referrer == "home" %}
-              You can accept the agreement later. {{_orgName}} will not be able to get or reserve funding until you accept.
+              You can accept the agreement later. {{_orgName}} will not be able to get or reserve funding until it accepts.
             {% else %}
-              You can continue registering and accept the agreement later. {{_orgName}} will not be able to get or reserve funding until you accept.
+              You can continue registering and accept the agreement later. {{_orgName}} will not be able to get or reserve funding until it accepts.
             {% endif %}
+          {% endset -%}
+
+          {% set _legend %} 
+            Do you accept the agreement on behalf of {{_orgName}}?
+          {% endset -%}
+          {% set _yesText %} 
+            Yes, I have read the agreement and accept it
           {% endset -%}
           
           {{ govukRadios({
@@ -53,7 +60,7 @@
             name: "agreementSign",
             fieldset: {
               legend: {
-                text: "Do you accept the agreement?",
+                text: _legend,
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--m"
               }
@@ -61,7 +68,7 @@
             items: [
               {
                 value: "yesSign",
-                text: "Yes, I have read the agreement and accept it"
+                text: _yesText
               },
               {
                 value: "noSignLater",
