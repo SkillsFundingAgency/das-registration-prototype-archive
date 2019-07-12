@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+<script src="/public/javascripts/accordion.js"></script>
+
+
+ <script>
+
+// uncomment this to turn on the accordions
+
+if (
+    'addEventListener' in document &&
+    document.querySelectorAll
+) {
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var accordions = document.querySelectorAll('.accordion')
+
+        for (var i = accordions.length - 1; i >= 0; i--) {
+            new Accordion(accordions[i])
+        };
+
+    })
+
+}
+</script>
+
+<style>
+/* REMOVES THE GOV FOOTER BECAUSE OF THE STICKY THING. NEED TO DO PROPERLY */
+/*.govuk-footer {display:none;}
+*/
+.agreement ol a {color:#005ea5; text-decoration: underline}
+.agreement header {color:#000;}
+.agreement .agreement-contents h2 .number {padding-left:0; font-size:36px; left:-8%; font-weight:700; background-color:#fff; width:8%; z-index:9999;}
+
+/* Fiddling about with the ordered list, to make it left aligned to see what it looks like */
+.dinosaurs {list-style-position: inside !important;}
+.dinosaurs li{ position: relative; list-style-position: inside !important;}
+.dinosaurs li a {position: absolute; left: 40px;}
+
+</style>
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l">
+    
+     <div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+         <h1 class="govuk-heading-xl">MoU between WHITELISTED COMPANY and the Education and Skills Funding Agency (ESFA)</h1>
+          <p class="govuk-body">We updated the MoU on 1 JULY 2019.</p>
+          <h2 class="govuk-heading-m">Key features of the MoU</h2>
+          <p class="govuk-body">WHITELISTED COMPANY must:</p>
+          <ul class="govuk-list govuk-list--bullet">
+              <li>have content here that Tom's team will provide with Helen</li>
+          </ul>
+          <p class="govuk-body">The ESFA can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+              <li>do anything because we are awesome</li>
+          </ul>
+            <br>
+          <h2 class="govuk-heading-m">Your MoU</h2>
+          <p>Content will go here...</p>
+
+</div>
+</div>
+
+<div class="govuk-grid-column-two-thirds">
+
+
+</main>
+
+
+
+</div>
+
+    <br>
+
+    <div>
+        <a href="#" target="_blank" class="download">Save this MoU as a PDF</a>
+    </div>
+
+    <br>
+    <br>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  <!--       <h2 class="govuk-heading-l">Sign this agreement</h2> -->
+
+
+
+
+<!-- </div> -->
+
+
+<form method="post" class="form">
+        
+
+    {% from "radios/macro.njk" import govukRadios %}
+    {% from "input/macro.njk" import govukInput %}
+    
+    
+    {{ govukRadios({
+      idPrefix: "agreementSign",
+      name: "agreementSign",
+      fieldset: {
+        legend: {
+          text: "Do you accept the MoU?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yesSign",
+          text: "Yes, I have read the MoU and accept it"
+        },
+        {
+          value: "noSignLater",
+          text: "I’ll review it later",
+          conditional: {
+            html: noHTML
+          }
+        }
+      ]
+    }) }}
+
+    <!-- Call to action button -->
+    <button class="govuk-button" >Continue</button>
+
+</form>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+  </div>
+      </div>
+</main>
+</fieldset>
+</div>
+</form>
+</nav>
+</header>
+</article>
+</div>
+</div>
+</div>
+
+{% endblock %}
