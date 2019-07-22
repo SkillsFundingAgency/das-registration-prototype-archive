@@ -1,26 +1,11 @@
 module.exports = function (router) {
 
-    var version = "1-0";
-
-    //
-    // For setting team variable (different routing for compliance team)
-    // "default" is set on the main index and first page in reg journey UNLESS a query string is present
-    // compliance team use the query sting "?team=compliance" to override the team variable
-    // this team variable is used for alternate routing and navigation within the routes file and pon specific pages
-    //
-    router.all('/' + version + '/*', function (req, res, next) {
-      req.session.team = req.query.team || req.session.team
-      next()
-    })
-    router.get([
-      '/index',
-      '/' + version + '/registration/index'
-    ], function (req, res, next) {
-      req.session.team = req.query.team || "default"
-      next()
-    })
+    var version = "4-1";
 
     router.post('/' + version + '/registration/gov-funding', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
       
         let answer = req.session.data['add-your-paye']
       
@@ -33,6 +18,9 @@ module.exports = function (router) {
     
     
       router.post('/' + version + '/registration/ways-to-add-paye', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
       
         let answer = req.session.data['ways-to-add-your-paye']
       
@@ -43,22 +31,28 @@ module.exports = function (router) {
         }
       })
       
-      // Compliance team - agreement
       router.get('/' + version + '/registration/agreement', function (req, res) {
         res.render(version + '/registration/agreement', {
           _referrer:req.query.referrer
         });
       })
-      router.post('/' + version + '/registration/agreement', function (req, res) {
-        let answer = req.session.data['agreementSign']
-        if (answer === 'yesSign') {
-          res.redirect('/' + version + '/registration/interim-homepage')
-        } else {
+
+      router.post('/' + version + '/registration/agreement-check', function (req, res) {
+
+      
+        let answer = req.session.data['agreementCheck']
+      
+        if (answer === 'no') {
           res.redirect('/' + version + '/registration/homepage-signAgreement')
+        } else {
+          res.redirect('/' + version + '/registration/agreement')
         }
       })
     
-      router.post('/' + version + '/registration/agreement/v1/agreement', function (req, res) {
+      router.post('/' + version + '/registration/agreement', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
       
         let answer = req.session.data['agreementSign']
       
@@ -71,6 +65,11 @@ module.exports = function (router) {
 
       
       router.post('/' + version + '/registration/gov-gateway', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
+
+        // && ggpassword ==='abcd123'
       
         let ggid = req.session.data['gatewayLogin']
         let ggpassword = req.session.data['gatewayPassword']
@@ -84,6 +83,9 @@ module.exports = function (router) {
       
 
       router.post('/' + version + '/registration/multiOrgsGG', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
       
         let answer = req.session.data['orgNotListed']
       
@@ -94,33 +96,13 @@ module.exports = function (router) {
         }
       })
 
-      router.get('/' + version + '/registration/check-your-aorn-details-from-multiorg', function (req, res) {
-        res.render(version + '/registration/check-your-aorn-details-from-multiorg', {
-          team:req.session.team
-        });
-      })
-      router.get('/' + version + '/registration/check-your-details-aorn', function (req, res) {
-        res.render(version + '/registration/check-your-details-aorn', {
-          team:req.session.team
-        });
-      })
-      router.get('/' + version + '/registration/check-your-details', function (req, res) {
-        res.render(version + '/registration/check-your-details', {
-          team:req.session.team
-        });
-      })
-      router.get('/' + version + '/registration/check-your-gg-details-from-multiorg', function (req, res) {
-        res.render(version + '/registration/check-your-gg-details-from-multiorg', {
-          team:req.session.team
-        });
-      })
-      router.get('/' + version + '/registration/homepage-signAgreement', function (req, res) {
-        res.render(version + '/registration/homepage-signAgreement', {
-          team:req.session.team
-        });
-      })
 
       router.post('/' + version + '/registration/pensionsReg', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
+
+        // && ggpassword ==='abcd123'
       
         let aornnumber = req.session.data['employerRegisterAORN']
 
@@ -132,7 +114,14 @@ module.exports = function (router) {
         }
       })
 
+      
+
       router.post('/' + version + '/registration/multiOrgsAORN', function (req, res) {
+        // Get the answer from session data
+        // The name between the quotes is the same as the 'name' attribute on the input elements
+        // However in JavaScript we can't use hyphens in variable names
+
+        // && ggpassword ==='abcd123'
       
         let answer = req.session.data['orgNotListed']
       

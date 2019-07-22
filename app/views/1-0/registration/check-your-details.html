@@ -56,8 +56,12 @@
             </div>
           </dl>
 
-          <a href="/1-0/registration/agreement/v1/aboutAgreement" class="govuk-button">These details are correct</a>
-        <p style="padding-top:20px">
+          {% if team == "compliance" %}
+          <a href="agreement" class="govuk-button">These details are correct</a>
+          {% else %}
+          <a href="agreement/v1/aboutAgreement" class="govuk-button">These details are correct</a>
+          {% endif %}
+
     </div>
 </div>
 

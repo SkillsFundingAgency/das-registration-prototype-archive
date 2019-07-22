@@ -1,9 +1,11 @@
 {% extends "layout-ma.html" %}
 
 {% block pageTitle %}
-  Apprenticeships
+  Manage apprenticeships
 {% endblock %}
 
+{% set serviceName = "Manage apprenticeships" %}
+{% set backLinkHref = "new-user" %}
 
 {% block content %}
 
@@ -43,14 +45,8 @@
                 <div class="das-panels__col das-panels__col--primary">
                     <div class="das-panel das-panel--featured">
                         <h3 class="das-panel__heading">You’ve successfully <br>registered your account</h3>
-                        <p>Sign your employer agreement with the Education and Skills Funding Agency to  get funding for apprenticeship training.</p>
-
-                        {% if team == "compliance" %}
-                        <p><a href="agreement?referrer=home" class="das-panel__link">Sign your employer agreement</a> </p>
-                        {% else %}
-                        <p><a href="agreement/v1/agreement?referrer=home" class="das-panel__link">Sign your employer agreement</a> </p>
-                        {% endif %}
-
+                        <p>Add your organisation’s PAYE scheme and sign your employer agreement with the Education and Skills Funding Agency to get funding for apprenticeship training.</p>
+                        <p><a href="ways-to-add-paye" class="das-panel__link">Add your PAYE scheme</a> </p>
                     </div>
                     <div class="das-panel">
                         <h3 class="das-panel__heading">Financial transactions</h3>
@@ -65,9 +61,9 @@
                     </div>
                     <div class="das-panel">
                         <h3 class="das-panel__heading">Recruitment</h3>
-                        <p>Recruit an apprentice by creating a vacancy. This vacancy will be advertised on Find an apprenticeship.</p>
-                        <p><a href="#" class="govuk-link govuk-link--no-visited-state">Create a vacancy</a> </p>
-                        <p><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your vacancy</a> </p>
+                        <p>Add your PAYE scheme first, then you can advertise apprenticeship vacancies.</p>
+                        <!--<p><a href="#" class="govuk-link govuk-link--no-visited-state">Create a vacancy</a> </p>-->
+                        <p style="padding-bottom: 60px";></p>
                     </div>
                 </div>
             </div>

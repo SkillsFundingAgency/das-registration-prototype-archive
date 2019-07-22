@@ -5,8 +5,6 @@
 {% endblock %}
 
 {% set serviceName = "Manage apprenticeships" %}
-{# % set backLinkHref = "gov-gateway" % #} 
-
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -24,7 +22,7 @@
                 Assurance Aerospace Ltd
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="multiOrgsAORN">
+                <a class="govuk-link" href="searchOrg">
                   Change<span class="govuk-visually-hidden"> name</span>
                 </a>
               </dd>
@@ -45,38 +43,21 @@
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Account office reference number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                1298371283712
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="pensionsReg">
-                  Change<span class="govuk-visually-hidden"> contact information</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
                 PAYE scheme
               </dt>
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">001/HR001</p>
+                <p class="govuk-body">07700900457</p>
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="ways-to-add-paye">
-                  Change<span class="govuk-visually-hidden">001/HR001</span>
+                  Change<span class="govuk-visually-hidden"> contact details</span>
                 </a>
               </dd>
             </div>
           </dl>
 
-          {% if team == "compliance" %}
-          <a href="agreement" class="govuk-button">These details are correct</a>
-          {% else %}
-          <a href="agreement/v1/aboutAgreement" class="govuk-button">These details are correct</a>
-          {% endif %}
-
+          <a href="agreement-check" class="govuk-button">These details are correct</a>
+        <p style="padding-top:20px">
     </div>
 </div>
 
