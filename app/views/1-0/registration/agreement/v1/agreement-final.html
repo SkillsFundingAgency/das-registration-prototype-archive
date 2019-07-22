@@ -1,85 +1,65 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
 
-{% block beforeContent %}
+<html lang="en">
 
-{% from "back-link/macro.njk" import govukBackLink %}
+    <head>
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.back()"
-}) }}
-{% endblock %}
-{% block content %}
+        <meta charset="utf-8" />
+        <title>Home - Manage apprentices</title>
+        <!--[if gt IE 8]><!-->
+        <link href="https://accounts.manage-apprenticeships.service.gov.uk/dist/css/govuk-template.css" media="screen" rel="stylesheet" /><!--<![endif]-->
+        <!--[if IE 6]><link href="https://accounts.manage-apprenticeships.service.gov.uk/dist/css/govuk-template-ie6.css" media="screen" rel="stylesheet" /><![endif]-->
+        <!--[if IE 7]><link href="https://accounts.manage-apprenticeships.service.gov.uk/dist/css/govuk-template-ie7.css" media="screen" rel="stylesheet" /><![endif]-->
+        <!--[if IE 8]><link href="https://accounts.manage-apprenticeships.service.gov.uk/dist/css/govuk-template-ie8.css" media="screen" rel="stylesheet" /><![endif]-->
+        <link href="https://accounts.manage-apprenticeships.service.gov.uk/dist/css/govuk-template-print.css" media="print" rel="stylesheet" />
+        <!--[if IE 8]><link href="https://accounts.manage-apprenticeships.service.gov.uk/dist/css/fonts-ie8.css" media="all" rel="stylesheet" /><![endif]-->
+        <!--[if gte IE 9]><!-->
+        <link href="https://accounts.manage-apprenticeships.service.gov.uk/dist/css/fonts.css" media="all" rel="stylesheet" /><!--<![endif]-->
+        <!--[if lt IE 9]><script src="https://accounts.manage-apprenticeships.service.gov.uk/dist/javascripts/ie.js"></script><![endif]-->
+        <link rel="shortcut icon" href="https://accounts.manage-apprenticeships.service.gov.uk/dist/images/favicon.ico" type="image/x-icon" />
+        <link rel="mask-icon" href="https://accounts.manage-apprenticeships.service.gov.uk/dist/images/gov.uk_logotype_crown.svg" color="#0b0c0c">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://accounts.manage-apprenticeships.service.gov.uk/dist/images/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://accounts.manage-apprenticeships.service.gov.uk/dist/images/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://accounts.manage-apprenticeships.service.gov.uk/dist/images/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon-precomposed" href="https://accounts.manage-apprenticeships.service.gov.uk/dist/images/apple-touch-icon-60x60.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <meta property="og:image" content="https://accounts.manage-apprenticeships.service.gov.uk/dist/images/opengraph-image.png">
+    
+        <link href="https://accounts.manage-apprenticeships.service.gov.uk/dist/css/select2.min.css" media="all" rel="stylesheet" />
+    
+        <!--[if gt IE 8]><!-->
+        <link href="https://accounts.manage-apprenticeships.service.gov.uk/bundles/screen?v=_wYc3S4r5iUpyVK381AqD4URVMLHgtw3Rkg7j-gDJFQ1" media="all" rel="stylesheet" />
+        <!--<![endif]-->
+    </head>
+
+
 <script src="/public/javascripts/accordion.js"></script>
 
 
- <script>
-
-// uncomment this to turn on the accordions
-
-if (
-    'addEventListener' in document &&
-    document.querySelectorAll
-) {
-
-    document.addEventListener('DOMContentLoaded', function() {
-
-        var accordions = document.querySelectorAll('.accordion')
-
-        for (var i = accordions.length - 1; i >= 0; i--) {
-            new Accordion(accordions[i])
-        };
-
-    })
-
-}
-</script>
-
-<style>
-/* REMOVES THE GOV FOOTER BECAUSE OF THE STICKY THING. NEED TO DO PROPERLY */
-/*.govuk-footer {display:none;}
-*/
-.agreement ol a {color:#005ea5; text-decoration: underline}
-.agreement header {color:#000;}
-.agreement .agreement-contents h2 .number {padding-left:0; font-size:36px; left:-8%; font-weight:700; background-color:#fff; width:8%; z-index:9999;}
-
-/* Fiddling about with the ordered list, to make it left aligned to see what it looks like */
-.dinosaurs {list-style-position: inside !important;}
-.dinosaurs li{ position: relative; list-style-position: inside !important;}
-.dinosaurs li a {position: absolute; left: 40px;}
-
-</style>
-
-
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-main-wrapper--l">
+<main role="main" id="content">
     
-     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-         <h1 class="govuk-heading-xl">Agreement between ASSURANCE AEROSPACE LTD and the Education and Skills Funding Agency (ESFA)</h1>
-            
-
-<p class="govuk-body">We updated the agreement on 1 May 2018.</p>
-    
-<h2 class="govuk-heading-m">Key features of the agreement</h2>
-<p class="govuk-body">ASSURANCE AEROSPACE LTD must:</p>
-<ul class="govuk-list govuk-list--bullet">
-    <li>only use the funding in their apprenticeship service account to train and assess apprentices</li>
-    <li>have a ‘contract for services’ with their training providers</li>
-    <li>follow the apprenticeship funding rules</li>
-</ul>
-<p class="govuk-body">The ESFA can:</p>
-<ul class="govuk-list govuk-list--bullet">
-    <li>suspend payments, recover funds or close ASSURANCE AEROSPACE LTD’s account if ASSURANCE AEROSPACE LTD breaks the agreement</li>
-    <li>change the terms of the agreement and any part of the apprenticeship service</li>
-</ul>
-
-<h2 class="govuk-heading-m">The full agreement</h2>
-
-</div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+          <h1 class="heading-xlarge">Agreement between {Insert org name} and the Education and Skills Funding Agency (ESFA)</h1>
+          <p class="govuk-body">We updated the agreement on 1 May 2018.</p> 
+          <h2 class="govuk-heading-m">Key features of the agreement</h2>
+          <p class="govuk-body">{Insert org name} must:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>only use the funding in their apprenticeship service account to train and assess apprentices</li>
+                <li>have a ‘contract for services’ with their training providers</li>
+                <li>follow the apprenticeship funding rules</li>
+            </ul>
+          <p class="govuk-body">The ESFA can:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>suspend payments, recover funds or close {Insert org name}’s account if {Insert org name} breaks the agreement</li>
+                <li>change the terms of the agreement and any part of the apprenticeship service</li>
+            </ul>
+      <h2 class="govuk-heading-m">The full agreement</h2>
+      </div>
 </div>
 
-<div class="govuk-grid-column-two-thirds">
+<div class="column-two-thirds">
 <div class="accordion">
     <div class="accordion-section">
         <div class="accordion-section-header">
@@ -93,17 +73,16 @@ if (
         <div class="headings">
             <div class="agreement-title">
 
-               <!--  <h1>ESFA Apprenticeship Agreement for Employers</h1> -->
+
                 <p class="context" style="color:#000">For the provision of apprenticeship training</p>
             </div>
             <p class="updated" style="color:#000">1 May 2018</p>
         </div>
         <nav id="contents">
-            <h2 class="govuk-heading-m">Contents</h2>
+            <h2 >Contents</h2>
             <div class="contents">
 
-<!--                 <a href="#background" style="color:#000" class="background">Background</a>
- -->                <ol class="dinosaurs">
+               <ol class="dinosaurs">
                         <li><a href="#background">Background </a></li>
                     <li><a href="#1">Definitions and Interpretation </a></li>
                     <li><a href="#2">Purpose and Use of Funding</a></li>
@@ -134,12 +113,12 @@ if (
                     <li><a href="#27">Contracts (Rights of Third Parties) Act 1999</a></li>
                     <li><a href="#28">Governing law</a></li>
                 </ol>
-            </div-1
+              </div>
         </nav>
     </header>
     <div class="agreement-contents" style="float:none">
 
-        <h2 class="govuk-heading-m" id="background" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff" >Background</h2>
+        <h2 id="background" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff" >Background</h2>
         <p>This Agreement sets out the terms for use of the Apprenticeship Service by the Employer and the obligations by which the Employer agrees to be bound.</p>
 
         <p><strong>This Agreement applies to employers who pay the apprenticeship levy (Levy Paying Employers) as well as those employers who do not pay the apprenticeship levy (Non-Levy Paying Employers) but who will receive a Transfer of Funds via the Apprenticeship Service.</strong> Non-Levy Paying Employers must comply with the terms of this Agreement in respect of its use of Transferred Funds to pay for apprenticeship training via the Apprenticeship Service only.</p>
@@ -148,7 +127,7 @@ if (
 
         <h1 class="govuk-heading-m">AGREED TERMS</h1>
 
-        <h2 class="govuk-heading-m" id="1" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">1.</span> Definitions and Interpretation</h2>
+        <h2 id="1" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">1.</span> Definitions and Interpretation</h2>
         <h3 style="z-index:1">1.1</h3>
         <p>In this Agreement the following terms shall have the following meanings:</p>
         <p><strong>Apprentice: </strong>a person who works under an Apprenticeship Agreement.</p>
@@ -223,25 +202,25 @@ if (
         <h3>1.6</h3>
         <p>Any words following the terms including, include, in particular, for example or any similar expression shall be construed as illustrative and shall not limit the sense of the words, description, definition, phrase or term preceding those terms.</p>
 
-        <h2 class="govuk-heading-m" id="2" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">2.</span> Purpose and Use of Funding</h2>
+        <h2 id="2" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">2.</span> Purpose and Use of Funding</h2>
         <h3>2.1</h3>
         <p>The Employer acknowledges and accepts that the Funding available in the Employer's Digital Account is to support the Training and End-Point Assessment of Apprentices and shall be paid directly to the Training Provider in accordance with the Funding Rules. The Employer understands that the Funding may not be used for any other purpose.</p>
         <h3>2.2</h3>
         <p>Where the Employer receives Transferred Funds it may only use such Transferred Funds to pay for the Training and End-Point Assessment for a new apprenticeship start identified at the time that the Transfer of Funding is agreed in accordance with the Funding Rules.</p>
 
-        <h2 class="govuk-heading-m" id="3" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">3.</span> Commencement and Duration</h2>
+        <h2 id="3" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">3.</span> Commencement and Duration</h2>
         <h3>3.1</h3>
         <p>Except where otherwise specified or as agreed in writing between the parties, the terms of this Agreement shall apply from 1st May 2017 or the date of the Employer's electronic acceptance of these terms and conditions on <a href="http://www.gov.uk">www.gov.uk </a> (whichever is later) and shall continue in force until it is terminated in accordance with clause 18 of this Agreement.</p>
         <h3>3.2</h3>
         <p>By electronically accepting these terms and conditions, the Employer confirms it is authorised to use funds in the Employer's Digital Account and agrees to be legally bound by this Agreement.</p>
 
-        <h2 class="govuk-heading-m" id="4" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">4. </span>Payment of Funding</h2>
+        <h2 id="4" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">4. </span>Payment of Funding</h2>
         <h3>4.1</h3>
         <p>Subject to any other provision of this Agreement, the ESFA shall pay the Funding to the Training Provider in accordance with the Technical Funding Guide. </p>
         <h3>4.2</h3>
         <p>The ESFA reserves the right to change or discontinue all or any part of the Apprenticeship Service at any time.</p>
 
-        <h2 class="govuk-heading-m" id="5" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">5.</span> Employer's Obligations</h2>
+        <h2 id="5" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">5.</span> Employer's Obligations</h2>
         <h3>5.1</h3>
         <p>In order for the ESFA to pay Funding to a Training Provider on behalf of the Employer, the Employer agrees to:</p>
         <ol type="a" class="govuk-list govuk-list--number">
@@ -250,13 +229,13 @@ if (
             <li>assist and cooperate with the Training Provider to enable them to deliver the Training in compliance with the Funding Rules and, upon request, to supply the Training Provider with any information they may reasonably require in relation to any Apprentice or the delivery of any Training.</li>
         </ol>
 
-        <h2 class="govuk-heading-m" id="6" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">6. </span>Employer Co-Investment</h2>
+        <h2 id="6" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">6. </span>Employer Co-Investment</h2>
         <h3>6.1</h3>
         <p>The Employer agrees to pay the Training Provider directly for any Employer Co-Investment which is or becomes payable in accordance with the Funding Rules.</p>
         <h3>6.2</h3>
         <p>Where the Employer's liability to pay an Employer Co-Investment occurs after the cost of Training has been paid in full from the Employer's Digital Account, (for example, where a change in the Employer or a Connected Employer's tax liability reduces the amount of funds that were previously in the Employer's Digital Account), the Employer agrees to pay the Employer's Co-Investment to the ESFA upon request.</p>
 
-        <h2 class="govuk-heading-m" id="7" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">7. </span>Transfer of funding</h2>
+        <h2 id="7" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">7. </span>Transfer of funding</h2>
         <h3>7.1</h3>
         <p>Where the Employer is a Sending Employer, it may transfer up to 10% of their previous financial year’s levy declaration. In doing so, it must comply with the Sending Employer's obligations in this Agreement and the Funding Rules. </p>
         <h3>7.2</h3>
@@ -275,7 +254,7 @@ if (
         <h3>7.8</h3>
         <p>Where there are insufficient Transferred Funds in a Receiving Employer's Digital Account to meet the agreed cost of the Apprenticeship, the Receiving Employer shall pay Employer Co-Investment [further to clause 6 and as set out in the Funding Rules]</p>
 
-        <h2 class="govuk-heading-m" id="8" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">8. </span>Withholding, Suspension and repayment of Funding</h2>
+        <h2 id="8" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">8. </span>Withholding, Suspension and repayment of Funding</h2>
         <h3>8.1</h3>
         <p>Without prejudice to the ESFA's other rights and remedies, the ESFA may at its discretion withhold or suspend payment of funds from the Employer's Digital Account if:</p>
         <ol type="a" class="list letters">
@@ -297,19 +276,19 @@ if (
         <h3>8.6</h3>
         <p>Should the Employer be subject to financial or other difficulties which are capable of having a material impact on its ability to comply with its obligations under this Agreement it will notify the ESFA as soon as possible so that, if possible, and without creating any legal obligation, the ESFA will have an opportunity to provide assistance in resolving the problem or to take action to protect the ESFA and any Funding spent from the Employer's Digital Account.</p>
 
-        <h2 class="govuk-heading-m" id="9" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">9. </span>State Aid</h2>
+        <h2 id="9" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">9. </span>State Aid</h2>
         <h3>9.1</h3>
         <p>Transferred Funds paid on behalf of a Receiving Employer will constitute de minimis state aid under Commission Regulation (EU) No 1407/2013 of 18 December 2013 on the applications of Articles 107 and 108 of the Treaty on the Functioning of the European Union to de minimis aid. The amount of de minimis state aid amounts to 10% of the total Transferred Funds.</p>
         <h3>9.2</h3>
         <p>Where the Employer receives Transferred Funds or is otherwise notified that any Funding paid on its behalf or on behalf of a Connected Employer to a Training Provider constitutes de minimis state aid, the Employer must keep a record of all de minimis state aid received (from any source) during the current and two previous financial years and notify the ESFA if it has any reason to believe it may have received or is at risk of receiving more than their permitted allowance of de minimis state aid over any three consecutive financial years. (Further requirements relating to state aid are set out in the Funding Rules.)</p>
 
-        <h2 class="govuk-heading-m" id="10" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">10.</span> Information, Audit and Reporting</h2>
+        <h2 id="10" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">10.</span> Information, Audit and Reporting</h2>
         <h3>10.1</h3>
         <p>The Employer shall, upon request, supply any documents, information, data, reports, accounts, records or written or verbal explanations which may be reasonably required by the ESFA or its authorised representatives or auditors in connection with this Agreement or the Apprenticeship Service, including in relation to any Apprentice or PAYE scheme of the Employer or any Connected Employer. </p>
         <h3>10.2</h3>
         <p>The Employer shall assist and cooperate with the ESFA in relation to any audit or investigation and shall grant the ESFA or its authorised representatives or auditors access to its premises at any reasonable time, with or without notice, to examine, remove and/or copy any relevant documents and records (including electronic records) and to interview the Employer's and any Connected Employer's employees or staff carrying out activities in connection with this Agreement or any Apprentice receiving Training under this Agreement.</p>
 
-        <h2 class="govuk-heading-m" id="11" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">11.</span> Intellectual Property Rights</h2>
+        <h2 id="11" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">11.</span> Intellectual Property Rights</h2>
         <h3>11.1</h3>
         <p>The ESFA and the Employer agree that all rights, title and interest in or to any information, data, reports, documents, procedures, forecasts, technology, Know-How and any other Intellectual Property Rights whatsoever owned by either the ESFA or the Employer before the Commencement Date or developed by either party during the Grant Period, shall remain the property of that party.</p>
         <h3>11.2</h3>
@@ -319,7 +298,7 @@ if (
         <h3>11.4</h3>
         <p>Where the ESFA has allowed the Employer or a Connected Employer to use any of its Intellectual Property Rights in connection with this Agreement, the Employer shall immediately cease to use such Intellectual Property Rights upon request or upon on termination of this Agreement, and shall either return or destroy such Intellectual Property Rights as requested by the ESFA and, where relevant, shall procure that any Connected Employer also complies with the provisions of this clause 11.</p>
 
-        <h2 class="govuk-heading-m" id="12" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">12.</span> Confidentiality</h2>
+        <h2 id="12" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">12.</span> Confidentiality</h2>
         <h3>12.1</h3>
         <p>Subject to clause 13 (Freedom of Information), each party shall during the term of this Agreement and thereafter keep secret and confidential all Intellectual Property Rights or Know-How or other business, technical or commercial information disclosed to it as a result of the Agreement and shall not disclose the same to any person save to the extent necessary to perform its obligations in accordance with the terms of this Agreement or save as expressly authorised in writing by the other party.</p>
         <h3>12.2</h3>
@@ -339,7 +318,7 @@ if (
         <h3>12.4</h3>
         <p>The Employer shall, where relevant, procure that any Connected Employer complies with the provisions of this clause 12 as though it were a party to this Agreement.  </p>
 
-        <h2 class="govuk-heading-m" id="13" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">13.</span> Freedom of information</h2>
+        <h2 id="13" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">13.</span> Freedom of information</h2>
         <h3>13.1</h3>
         <p>The Employer acknowledges that the ESFA is subject to the requirements of the Freedom of Information Act 2000 (<strong>FOIA</strong>) and the Environmental Information Regulations 2004 (<strong>EIRs</strong>).</p>
         <h3>13.2</h3>
@@ -357,7 +336,7 @@ if (
         <h3>13.5</h3>
         <p>The Employer shall, where relevant, procure that any Connected Employer complies with the provisions of this clause 13 as though it were a party to this Agreement.  </p>
 
-        <h2 class="govuk-heading-m" id="14" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">14.</span> Data protection</h2>
+        <h2 id="14" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">14.</span> Data protection</h2>
         <h3>14.1</h3>
         <p>The Employer shall (and shall procure that any of its staff involved in connection with the activities under the Agreement shall) comply with any notification requirements under (i) the Data Protection Act 1998 and, for the periods when they are in force, (ii) the General Data Protection Regulation (Regulation (EU) 2016/679) and the Law Enforcement Directive (Directive (EU) 2016/680) and any applicable national implementing Laws as amended from time to time, and (iii) the Data Protection Act 2018 (subject to Royal Assent)  (together, the Data Protection Legislation).</p>
         <h3>14.2</h3>
@@ -365,7 +344,7 @@ if (
         <h3>14.3</h3>
         <p>The Employer shall, where relevant, procure that any Connected Employer complies with the provisions of this clause 14 as though it were a party to this Agreement.</p>
 
-        <h2 class="govuk-heading-m" id="15" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">15. </span>Anti-discrimination</h2>
+        <h2 id="15" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">15. </span>Anti-discrimination</h2>
         <h3>15.1</h3>
         <p>The Employer shall not unlawfully discriminate within the meaning and scope of any law, enactment, order, or regulation relating to discrimination (whether in race, gender, religion, disability, sexual orientation, age or otherwise) in employment.</p>
         <h3>15.2</h3>
@@ -373,7 +352,7 @@ if (
         <h3>15.3</h3>
         <p>The Employer shall, where relevant, procure that any Connected Employer complies with the provisions of this clause 15 as though it were a party to this Agreement.</p>
 
-        <h2 class="govuk-heading-m" id="16" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">16.</span> Limitation of liability</h2>
+        <h2 id="16" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">16.</span> Limitation of liability</h2>
         <h3>16.1</h3>
         <p>The ESFA accepts no liability for any consequences, whether direct or indirect, that may come about from the Employer or a Connected Employer running any Apprenticeship. The Employer shall indemnify and hold harmless the ESFA, its employees, agents, officers or sub-contractors with respect to all claims, demands, actions, costs, expenses, losses, damages and all other liabilities arising from or incurred by reason of the actions and/ or omissions of the Employer or a Connected Employer in relation to this Agreement, the non-fulfilment of obligations of the Employer or a Connected Employer under this Agreement or its obligations to third parties.</p>
         <h3>16.2</h3>
@@ -381,7 +360,7 @@ if (
         <h3>16.3</h3>
         <p>Subject to clauses 16.1 and 16.2 above, the ESFA's liability under this Agreement is limited to the amount of the Funding for the training of an Apprentice.</p>
 
-        <h2 class="govuk-heading-m" id="17" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">17.</span> Warranties</h2>
+        <h2 id="17" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">17.</span> Warranties</h2>
         <h3>17.1</h3>
         <p>The Employer warrants, undertakes and agrees that:</p>
         <ol type="a" class="list letters">
@@ -397,7 +376,7 @@ if (
             <li>as of the date on which it enters into this Agreement there has been no material change in its financial position or prospects since the date of its last accounts.</li>
         </ol>
 
-        <h2 class="govuk-heading-m" id="18" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">18.</span> Termination</h2>
+        <h2 id="18" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">18.</span> Termination</h2>
         <h3>18.1</h3>
         <p>Without affecting any other right or remedy available to it, the ESFA may terminate this Agreement with immediate effect by giving written notice to the Employer if:</p>
         <ol type="a" class="list letters">
@@ -416,43 +395,43 @@ if (
         <h3>18.4</h3>
         <p>Following the termination of this Agreement, the following clauses shall remain in full force and effect: 1 (Definitions and Interpretation); 8 (Withholding, Suspension and Repayment of Funding); 10 (Information, Audit and Reporting), 11 (Intellectual Property Rights), 13 (Freedom of Information), 14 (Data Protection), 16 (Limitation of Liability), 23 (Notices), 24 (Dispute Resolution), 26 (Joint and Several Liability), 27 (Contracts (Rights of Third Parties) Act 1999) and 28 (Governing Law).</p>
 
-        <h2 class="govuk-heading-m" id="19" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">19.</span> Force Majeure</h2>
+        <h2 id="19" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">19.</span> Force Majeure</h2>
         <h3>19.1</h3>
         <p>Neither party shall be in breach of this Agreement nor liable for delay in performing, or failure to perform, any of its obligations under this Agreement if such delay or failure result from events, circumstances or causes beyond its reasonable control. In such circumstances the affected party shall be entitled to a reasonable extension of the time for performing such obligations.</p>
 
-        <h2 class="govuk-heading-m" id="20" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">20.</span> Assignment</h2>
+        <h2 id="20" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">20.</span> Assignment</h2>
         <h3>20.1</h3>
         <p>The Employer may not, without the prior written consent of the ESFA, assign, transfer, sub-contract, or in any other way make over to any third party the benefit and/or the burden of this Agreement.</p>
 
-        <h2 class="govuk-heading-m" id="21" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">21.</span> Variation</h2>
+        <h2 id="21" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">21.</span> Variation</h2>
         <h3>21.1</h3>
         <p>The ESFA reserves the right to vary the terms of this Agreement at its absolute discretion.  The Employer will receive an electronic notification of the change when it accesses the Employer's Digital Account and will be asked to confirm its acceptance of the new terms and conditions.</p>
 
-        <h2 class="govuk-heading-m" id="22" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">22.</span> Waiver</h2>
+        <h2 id="22" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">22.</span> Waiver</h2>
         <h3>22.1</h3>
         <p>No failure or delay by either party to exercise any right or remedy under this Agreement shall be construed as a waiver of any other right or remedy.</p>
 
-        <h2 class="govuk-heading-m" id="23" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">23.</span> Notices</h2>
+        <h2 id="23" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">23.</span> Notices</h2>
         <h3>23.1</h3>
         <p>All notices and other communications in relation to this Agreement shall be in writing and shall be deemed to have been duly given if personally delivered, e-mailed, or mailed (first class postage prepaid) to the address of the relevant party, as referred to above or otherwise notified in writing. If personally delivered or if e-mailed all such communications shall be deemed to have been given when received (except that if received on a non-working day or after 5.00 pm on any working day they shall be deemed received on the next working day) and if mailed all such communications shall be deemed to have been given and received on the second working day following such mailing.</p>
 
-        <h2 class="govuk-heading-m" id="24" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">24.</span> Dispute resolution</h2>
+        <h2 id="24" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">24.</span> Dispute resolution</h2>
         <h3>24.1</h3>
         <p>Any complaint or dispute arising in relation to this Agreement shall be resolved in accordance with ESFA's official complaints procedure. </p>
 
-        <h2 class="govuk-heading-m" id="25" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">25.</span> No partnership or agency</h2>
+        <h2 id="25" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">25.</span> No partnership or agency</h2>
         <h3>25.1</h3>
         <p>This Agreement shall not create any partnership or joint venture between the ESFA and the Employer, nor any relationship of principal and agent, nor authorise any party to make or enter into any commitments for or on behalf of the other party.</p>
 
-        <h2 class="govuk-heading-m" id="26" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">26.</span> Joint and several liability</h2>
+        <h2 id="26" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">26.</span> Joint and several liability</h2>
         <h3>26.1</h3>
         <p>Where the Employer is not a company nor an incorporated entity with a distinct legal personality of its own, the individuals who enter into and sign this Agreement on behalf of the Employer shall be jointly and severally liable for the Employer's obligations and liabilities arising under this Agreement.</p>
 
-        <h2 class="govuk-heading-m" id="27" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">27.</span> Contracts (Rights of Third Parties) Act 1999</h2>
+        <h2 id="27" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">27.</span> Contracts (Rights of Third Parties) Act 1999</h2>
         <h3>27.1</h3>
         <p>This Agreement does not and is not intended to confer any contractual benefit on any person pursuant to the terms of the Contracts (Rights of Third Parties) Act 1999.</p>
 
-        <h2 class="govuk-heading-m" id="28" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">28.</span> Governing law</h2>
+        <h2 id="28" style="position: -webkit-sticky; position: sticky; top: -1px; background-color:#fff"><span class="number">28.</span> Governing law</h2>
         <h3>28.1</h3>
         <p>This Agreement shall be governed by and construed in accordance with the law of England and Wales and the parties irrevocably submit to the exclusive jurisdiction of the English and Welsh courts.</p>
     </div>
@@ -461,19 +440,16 @@ if (
 <a href="#contents" style="font-size:19px">Back to contents</a>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-</main>
 
 
 
 </div>
-    <div class="">
-        
-    </div>
-    <div style="clear:both; "></div>
+ 
+
     <br>
 
-    <div style="padding-left: 16px;">
-        <a href="/accounts/VYJW8B/agreements/MK77WW/agreement-pdf" target="_blank" class="download">Save this agreement as a PDF</a>
+    <div>
+        <a href="#" target="_blank" class="download">Save this agreement as a PDF</a>
     </div>
 
     <br>
@@ -489,12 +465,7 @@ if (
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-  <!--       <h2 class="govuk-heading-l">Sign this agreement</h2> -->
 
-
-
-
-<!-- </div> -->
 
 
 <form method="post" class="form">
@@ -541,74 +512,14 @@ if (
 
 </form>
 
-<!-- <form method="post" class="form">
-        
-
-    {% from "radios/macro.njk" import govukRadios %}
-    {% from "input/macro.njk" import govukInput %}
-    
-    {% set noHTML %}
-      {% if _referrer == "home" %}
-        <p class="govuk-body">You can accept the agreement later. {{_orgName}} will not be able to get or reserve funding until you accept.</p>
-      {% else %}
-        <p class="govuk-body">You can continue registering and accept the agreement later. {{_orgName}} will not be able to get or reserve funding until you accept.</p>
-      {% endif %}
-    {% endset -%}
-    
-    {{ govukRadios({
-      idPrefix: "agreementSign",
-      name: "agreementSign",
-      fieldset: {
-        legend: {
-          text: "Do you accept the agreement?",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "yesSign",
-          text: "Yes, I have read the agreement and accept it"
-        },
-        {
-          value: "noSignLater",
-          text: "I’ll review it later",
-          conditional: {
-            html: noHTML
-          }
-        }
-      ]
-    }) }}
-
-    <!-- Call to action button
-    <button class="govuk-button" >Continue</button>
-
-</form> --> 
-
-
-<!-- 
-    remove these 3 to put the div back in the page
--->
 </div>
 </div>
 </div>
 </div>
-<!-- end of 3 divs to remove -->
 
-<!-- <div style="position:fixed; width:100%; bottom:0; height:130px;background-color: #fff; border-top:4px solid #6f777b        ; ">
-    <div class="govuk-width-container">
-        <div class="govuk-main-wrapper govuk-main-wrapper--l" style="padding-top:0; padding-bottom:0">
-            <h2 class="govuk-heading-m" style="margin:25px 0 20px 0; float:left">Sign this agreement</h2>
-            <div style="float:right; margin:25px 0 20px 0;"> <a href="/accounts/VYJW8B/agreements/MK77WW/agreement-pdf" target="_blank" class="download">Save this agreement as a PDF</a></div>
-            <div style="clear:both"></div>
-            <button type="submit" class="govuk-button" onclick="whereNow()" style="margin-left:0px;  margin-bottom:10px;  ">Sign now</button>
-            <a  class="govuk-button clear-button" onclick="whereNowUnsigned()" >Not yet, I'll sign it later</a>
-        </div>
-    </div>
-</div> -->
 
       </div>
-  </div>
+    </main>
       </div>
 </main>
 </fieldset>
@@ -620,5 +531,3 @@ if (
 </div>
 </div>
 </div>
-
-{% endblock %}

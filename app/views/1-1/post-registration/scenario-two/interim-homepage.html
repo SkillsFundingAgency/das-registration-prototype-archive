@@ -198,9 +198,9 @@
                                     <ul role="menu" class="js-hidden" id="settings-menu">
                                         <li><a href="/service/accounts" role="menuitem" class="sub-menu-item">Your accounts</a></li>
                                             <li><a href="/accounts/84VBNV/rename" role="menuitem" class="sub-menu-item">Rename account</a></li>
-                                        <li><a href="#" class="sub-menu-item">Change your password</a></li>
-                                        <li><a href="#" class="sub-menu-item">Change your email address</a></li>
-                                            <li><a href="#" class="sub-menu-item">Notification settings</a></li>
+                                        <li><a href="https://beta-login.apprenticeships.education.gov.uk/account/changepassword?clientId=easaccprd&amp;returnurl=https%3a%2f%2faccounts.manage-apprenticeships.service.gov.uk%2f%2fservice%2fpassword%2fchange" class="sub-menu-item">Change your password</a></li>
+                                        <li><a href="https://beta-login.apprenticeships.education.gov.uk/account/changeemail?clientId=easaccprd&amp;returnurl=https%3a%2f%2faccounts.manage-apprenticeships.service.gov.uk%2f%2fservice%2femail%2fchange" class="sub-menu-item">Change your email address</a></li>
+                                            <li><a href="/settings/notifications" class="sub-menu-item">Notification settings</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="signin" role="menuitem">Sign out</a></li>
@@ -213,168 +213,156 @@
             <div class="header-organisation" role="navigation">
                 <nav class="header-inner">
                     <ul id="global-nav-links">
-                        <li><a href="/1-1/post-registration/interim-homepage" class="" role="menuitem">Home</a></li>
+                        <li><a href="/" class="selected" role="menuitem">Home</a></li>
                         <li><a href="#" class="" role="menuitem">Finance</a></li>
                             <li><a href="#" role="menuitem">Recruitment</a></li>
                         <li><a href="#" class="" role="menuitem">Apprentices</a></li>
                         <li><a href="#" class="" role="menuitem">Your team</a></li>
-                        <li><a href="#" class="selected" role="menuitem">Your organisations and agreements</a></li>
+                        <li><a href="/1-1/post-registration/scenario-one/orgAgreement" class="" role="menuitem">Your organisations and agreements</a></li>
                         <li><a href="#" class="" role="menuitem">PAYE schemes</a></li>
                     </ul>
                 </nav>
             </div>
+    <main id="content">
 
+        
+         <h1 class="heading-secondary dashboard-heading">Your employer account</h1>
+        <p class="heading-xlarge dashboard-heading-company">Assurance Aerospace Ltd</p>
 
+        <a href="" class="das-favourites-link govuk-body">
+            <span class="das-favourites-link__icon"><img src="https://das-at-frnt-end.azureedge.net/images/favourite-unchecked-black.svg" alt=""></span>
+            <span class="das-favourites-link__text">View saved favourites</span>
+        </a> 
 
-            <main role="main" id="content">
-    
-                <div class="breadcrumbs">
-                    <ol role="navigation">
-                        <li><a href="/accounts/MWDKDN/teams">Home</a></li>
-                        <li>Your organisations and agreements</li>
-                    </ol>
-                </div>
-            
-                
-            
-            
-            
-                
-            
-            
-            <div class="grid-row header-index">
-                <div class="column-two-thirds">
-                    <h1 class="heading-xlarge">Your organisations and agreements</h1>
-                </div>
-                <div class="column-one-third">
-                        <div>
-                            <a href="remainingOrgsToAdd" class="button action-add">Add new organisation</a>
+        <!-- <section class="das-section das-section--header">
+            <div class="govuk-width-container">
+                <h1 class="govuk-heading-m das-account__title">Your employer account</h1>
+                <h2 class="govuk-heading-l das-account__account-name">Assurance Aerospace Ltd</h2>
+                <a href="" class="das-favourites-link govuk-body">
+                    <span class="das-favourites-link__icon"><img src="https://das-at-frnt-end.azureedge.net/images/favourite-unchecked-black.svg" alt=""></span>
+                    <span class="das-favourites-link__text">View saved favourites</span>
+                </a>
+            </div>
+        </section> -->
+
+        <div class="grid-row">
+            <div class="column-two-thirds">
+
+                <section class="dashboard-section">
+                    <div class="grid-row">
+                        <div class="column-two-thirds">
+                            <h2 class="section-heading heading-large">Apprenticeships</h2>
+                            <p class="section-description">Manage your apprentices, recruit apprentice and set training provider permissions.</p>
                         </div>
-                        <!-- <button type="submit" class="button action-add">
-                                Add new organisation
-                        </button> -->
-                    <!-- <form method="POST">
-                        <input class="button action-add" id="addNewOrg" type="submit" value="Add new organisation">
-                    </form> -->
-                </div>
-            </div>
-            <div class="grid-row">
-                <div class="column-two-thirds">
-                    <p>Add each organisation that will contract with your training providers.</p>
-                    <p>There is no restriction on the number of <a href="https://www.gov.uk/government/publications/employment-allowance-more-detailed-guidance" target="_blank" rel="external">connected organisations</a> you can add.</p>
-                </div>
-            </div>
-            <div class="grid-row">
-                <div class="column-two-thirds">
-                    <details class="transfers-status">
-                        <summary>
-                            <span class="summary">Transfers status: 
-                                <span class="bold">
-                                            Disabled
-                                </span>
-                            </span>
-                        </summary>
-                        <div class="text panel">
-                            <p>You must sign the most up-to-date agreement for all organisations to use transfers functionality.</p>
+                    </div>
+                     <div class="cards">
+                        <div class="card">
+                            <h3 class="heading-medium"><a href="#">Apprentices</a></h3>
+                            <p>Add apprentices, update details of existing apprentices and authorise payments to training providers.</p>
                         </div>
-                    </details>
+                        <div class="card">
+                            <h3 class="heading-medium"><a href="#">Recruitment</a></h3>
+                            <p>Recruit an apprentice by creating a vacancy. This vacancy will be advertised on Find an apprenticeship.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="heading-medium"><a href="#">Training provider permissions</a></h3>
+                            <p>Set training provider permissions and control what tasks they can do on your behalf.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-section">
+                    <div class="grid-row">
+                        <div class="column-two-thirds">
+                            <h2 class="section-heading heading-large">Finances</h2>
+                            <p class="section-description">Manage your apprenticeship funds.</p>
+                        </div>
+                    </div>
+                     <div class="cards">
+                        <div class="card">
+                            <h3 class="heading-medium"><a href="#">Your funding reservations</a></h3>
+                            <p>Reserve and manage funding.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="heading-medium"><a href="#">Manage your levy</a></h3>
+                            <p>View your financial transactions, connect with other employers and send or receive transfer funds.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-section">
+                    <div class="grid-row">
+                        <div class="column-two-thirds">
+                            <h2 class="section-heading heading-large">Account</h2>
+                            <p class="section-description">Manage your account details and team.</p>
+                        </div>
+                    </div>
+                     <div class="cards">
+                        <div class="card">
+                            <h3 class="heading-medium"><a href="/1-1/post-registration/scenario-one/orgAgreement">Your organisations and agreements</a></h3>
+                            <p>Add your organisations that will make contracts with training providers.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="heading-medium"><a href="#">Your team</a></h3>
+                            <p>Control what your team can do and invite new team members.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="heading-medium"><a href="#">PAYE schemes</a></h3>
+                            <p>Add or remove PAYE schemes.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-section-last">
+                    <div class="cards">
+                        <div class="card">
+                            <h3 class="heading-medium"><a href="#" rel="external">Find apprenticeship training </a></h3>
+                            <p>Search for apprenticeships and see details of approved providers who can deliver the training.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="panel panel-filled">
+                    <h3 class="heading-medium">Help us improve this service</h3>
+                    <p><a href="https://www.smartsurvey.co.uk/s/apprenticeshipservicefeedback/" target="_blank">Take our 3 minute survey</a> so that we can improve this service.</p>
+                    <p><a href="https://www.smartsurvey.co.uk/s/apprenticeshipservicefeedback/" target="_blank" class="button">Take the survey <span class="vh">so that we can improve the service</span></a></p>
                 </div>
+
+
             </div>
-            <div class="grid-row">
-                <div class="column-full">
-                    <table class="responsive">
-                        <thead>
-                        <tr>
-                            <th scope="col">Organisation</th>
-                            <th scope="col">Agreement status</th>
-                            <th scope="col">Action</th>
-                            <th class="no-wrap" scope="col">Agreement ID</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Organisation">MINISTRY OF RESTORATION CHARITABLE TRUST</td>
-                                <td data-label="Agreement status">
-                                            Updated agreement available
-                                </td>
-                                <td data-label="Action">
-                                        <a href="#" title="View agreement for MINISTRY OF RESTORATION CHARITABLE TRUST">Sign agreement</a>
-                                </td>
-                                <td data-label="Agreement ID">
-                                        <span>2EPD9X</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Organisation">Wolf Fields Primary School</td>
-                                <td data-label="Agreement status">
-                                            Updated agreement available
-                                </td>
-                                <td data-label="Action">
-                                        <a href="#" title="View agreement for Wolf Fields Primary School">Sign agreement</a>
-                                </td>
-                                <td data-label="Agreement ID">
-                                        <span>2J6782</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Organisation">DAYCARE TRUST</td>
-                                <td data-label="Agreement status">
-                                            Agreement not signed
-                                </td>
-                                <td data-label="Action">
-                                        <a href="#" title="View agreement for DAYCARE TRUST">Sign agreement</a>
-                                </td>
-                                <td data-label="Agreement ID">
-                                        <span>Sign agreement to receive an agreement ID</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Organisation">Public Health Wales NHS Trust</td>
-                                <td data-label="Agreement status">
-                                            Agreement not signed
-                                </td>
-                                <td data-label="Action">
-                                        <a href="#" title="View agreement for Public Health Wales NHS Trust">Sign agreement</a>
-                                </td>
-                                <td data-label="Agreement ID">
-                                        <span>Sign agreement to receive an agreement ID</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Organisation">NHS Blood and Transplant</td>
-                                <td data-label="Agreement status">
-                                            Updated agreement available
-                                </td>
-                                <td data-label="Action">
-                                        <a href="#" title="View agreement for NHS Blood and Transplant">Sign agreement</a>
-                                </td>
-                                <td data-label="Agreement ID">
-                                        <span>2M5GK2</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Organisation">John Aird School</td>
-                                <td data-label="Agreement status">
-                                            Agreement not signed
-                                </td>
-                                <td data-label="Action">
-                                        <a href="#" title="View agreement for John Aird School">Sign agreement</a>
-                                </td>
-                                <td data-label="Agreement ID">
-                                        <span>Sign agreement to receive an agreement ID</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            
-                        <p class="font-xsmall"><a href="#">Remove an organisation from your account</a></p>
-                </div>
+            <div class="column-one-third">
+                <section>
+                    <nav>
+                        <ul class="js-tabs" role="tablist">
+                            <li role="tab" id="tab-tasks" aria-controls="pane-tasks"><a href="#pane-tasks">Tasks</a></li>
+                                <li role="tab" id="tab-activity" aria-controls="pane-activity"><a href="#pane-activity">Activity</a></li>
+                        </ul>
+                    </nav>
+                    <div class="panes">
+                        <div class="js-tab-pane" id="pane-tasks" role="tabpanel">
+                                <ul class="task-list">
+                                    <li>
+                                                    <p>
+                                                        Levy declaration due by 19 May
+                                                    </p>
+                                                    <form action="/tasks/84VBNV/dismissTask" method="POST">
+                                                        <input type="hidden" name="taskType" value="LevyDeclarationDue" />
+                                                        <button class="button-link" type="submit">Dismiss this message</button>
+                                                    </form>
+                                        </li>
+                                </ul>
+                        </div>
+                        <div class="js-tab-pane" id="pane-activity" role="tabpanel">
+                            <ol id="item-list"><li class="item"><div class="item-label">28th Mar 2019</div><div class="item-description">Raina Nisar joined</div></li><li class="item"><div class="item-label">28th Mar 2019</div><div class="item-description">raina nisar invited by Sultan Mahmood</div></li><li class="item"><div class="item-label">25th Mar 2019</div><div class="item-description">2 users joined</div></li><li class="item"><div class="item-label">25th Mar 2019</div><div class="item-description">2 users invited</div></li><li class="item all-activity"><div class="item-label"><a href="/accounts/84VBNV/activity">See all activity</a></div></li></ol>
+                        </div>
+                    </div>
+                </section>
             </div>
-            
-            
-            </main>
-            
-                
+        </div>
+
+
+
+    </main>
 
     <footer class="group js-footer" id="footer" role="contentinfo">
         <div class="footer-wrapper">
