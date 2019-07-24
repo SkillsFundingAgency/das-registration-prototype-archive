@@ -12,8 +12,6 @@
   {% set backLinkHref = "agreement-check" %}
 {% endif %}
 
-{% from "inset-text/macro.njk" import govukInsetText %}
-
 {% set _orgName = data['orgName'] or "ASSURANCE AEROSPACE LTD" %}
 
 {% block pageScripts %}
@@ -105,23 +103,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-      <!-- <h1 class="govuk-heading-xl">Do you accept the agreement on behalf of {{_orgName}}?</h1> -->
-
       <h1 class="govuk-heading-xl">Agreement between {{_orgName}} and the ESFA</h1>
-      <!-- <span class="govuk-caption-l">Updated on 1 May 2018</span> -->
       
       <p class="govuk-body">Updated on 1 May 2018.</p>
-      <!-- <br> -->
-
-      <!-- {{ govukInsetText({
-        text: "You can choose to accept or review later at the bottom of this page."
-      }) }} -->
 
       <p class="govuk-body" style="margin-bottom: 0">You can choose to accept or review later at the bottom of this page.</p>
-      <!-- <br> -->
-      <!-- <p class="govuk-body">There are also options to share at the bottom of this page.</p> -->
-
-      <!-- <p style="color: red">AGREEMENT TO GO HERE</p> -->
 
   </div>
 </div>
@@ -616,21 +602,8 @@
     &nbsp;
   </div>
   <div class="govuk-grid-column-three-quarters">
-  <!-- <div class="govuk-grid-column-two-thirds"> -->
 
-      <p class="govuk-body" style="margin-bottom: 40px"><a href="#" class="govuk-link govuk-link--no-visited-state">Download the agreement as PDF</a> (400KB, 23 pages).</p>
-
-      <!-- <h2 class="govuk-heading-m">Share or view offline</h2> -->
-      <!-- <ul class="govuk-list govuk-list--bullet"> -->
-        
-        <!-- <p class="govuk-body">This agreement can also be found on GOV.UK.</p> -->
-
-        <!-- <li>share the following link <a href="agreement-govuk" target="_blank" class="govuk-link govuk-link--no-visited-state" style="word-wrap: break-word; word-break: break-all" >https://www.gov.uk/government/publications/agreement-between-an-employer-and-the-education-and-skills-funding-agency-esfa</a></li>
-      </ul> -->
-
-
-      <!-- <h2 class="govuk-heading-m">Download as PDF</h2>
-      <p class="govuk-body">View, share or print the agreement with the following link (opens in a new window or tab): <br><a href="agreement-govuk" target="_blank" class="govuk-link govuk-link--no-visited-state" style="word-wrap: break-word; word-break: break-all" >https://www.gov.uk/government/publications/agreement-between-an-employer-and-the-education-and-skills-funding-agency-esfa</a></p> -->
+      <p class="govuk-body" style="margin-bottom: 40px"><a href="/public/downloads/ESFA_Apprenticeship_Agreement_for_Employers_1_May_2018.pdf" class="govuk-link govuk-link--no-visited-state">Download the agreement as PDF</a> (PDF, 493KB, 19 pages)</p>
 
       <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
