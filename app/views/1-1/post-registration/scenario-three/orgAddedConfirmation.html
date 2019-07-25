@@ -228,50 +228,66 @@
             <main role="main" id="content">
                 
             
-                <div class="grid-row">
+                <div class="grid-row notification-wrapper">
                     <div class="column-two-thirds">
-                        <h1 class="heading-xlarge">
-                            Check your details
-                        </h1>
-                        <table>
-                            <tr>
-                                <th role="row">Organisation name</th>
-                                <td class="responsive-td">ASSURANCE AEROSPACE (AVIONICS) LTD</td>
-                            </tr>
-                            <tr>
-                                <th role="row">Organisation address</th>
-                                <td class="responsive-td">Avionics House, <br>1234-5678 Avionics Road, <br>Somewhere, <br>SS1 7AD</td>
-                            </tr>
-                
-                                <tr>
-                                    <th role="row">PAYE scheme</th>
-                                    <td class="responsive-td">123/AB45678</td>
-                                </tr>
-                        </table>
-                
-                        <form method="POST">
-                            <input name="__RequestVerificationToken" type="hidden" value="gZQSbbF0iQjAvjqdNjWMnk7J1T4VFS67Cr86GuJqa9D74O9DX69SjY9vBgsYvUyuFcF0JhUkUH3WbaP4K7B3mU9XYY7ZwTkWclxOSzn7FscP8Q7lyBhiYYUD5jBvuYi45XNEiLzW7VGdAMcBtBulTA2" />
-                            <input type="hidden" id="legalEntityName" name="name" value="LYDIA SINIAK  LIMITED"/>
-                            <input type="hidden" id="legalEntityCode" name="code" value="07712135"/>
-                            <input type="hidden" id="legalEntityAddress" name="address" value="Devine House 1299-1301 London Road, Leigh-On-Sea, Essex, SS9 2AD"/>
-                            <input type="hidden" id="legalEntityIncorporationDate" name="incorporated" value="7/20/2011 12:00:00 AM"/>
-                            <input type="hidden" id="legalEntityStatus" name="legalEntityStatus"/>
-                            <input type="hidden" id="publicSectorDataSource" name="publicSectorDataSource"/>
-                            <input type="hidden" id="organisationType" name="organisationType" value="CompaniesHouse"/>
-                            <input type="hidden" id="sector" name="sector"/>
-                            <input type="hidden" id="newSearch" name="newSearch" value="True"/>
-                            <!-- <p class="heading-medium">Is this correct?</p> -->
-                            <br>
-                            <span>
-                                <a class="button" href="orgAddedConfirmation">These details are correct</a>
-                                <!-- <a class="button button-link" href="#">No, search again</a> -->
-                            </span>
-                        </form>
-                
+                        <div class="success-summary" tabindex="-1">
+                                <h1 class="bold-large">ASSURANCE AEROSPACE (AVIONICS) LTD has been added</h1>
+                                                                        </div>
+            
                     </div>
                 </div>
-             
-
+            
+                    
+            
+            
+            
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <h1 class="heading-large">What's next?</h1>
+                    
+                    <form action="/accounts/MWDKDN/organisations/nextStep" method="post">
+                        <fieldset>
+            
+                            <legend>
+                                <span class="vh">What's next?</span>
+                            </legend>
+            
+                            <div class="form-group ">
+                        <label for="acceptAgreement" class="block-label">
+                            <span class="form-label">Sign an agreement to allow ASSURANCE AEROSPACE (AVIONICS) LTD to spend funds</span>
+                            <input type="radio" name="nextStep" value="agreement" id="acceptAgreement" />
+                        </label>
+                        <label for="teamMembers" class="block-label">
+                            <span class="form-label">Check which team members can sign the agreement</span>
+                            <input type="radio" name="nextStep" value="teamMembers" id="teamMembers" />
+                        </label>
+                                <label for="addAnotherOrganisation" class="block-label">
+                                    <span class="form-label">Add another organisation</span>
+                                    <input type="radio" name="nextStep" value="addOrganisation" id="addAnotherOrganisation" />
+                                </label>
+            
+                                <label for="GoToDashboard" class="block-label">
+                                    <span class="form-label">Return to homepage</span>
+                                    <input type="radio" name="nextStep" value="dashboard" id="GoToDashboard" />
+                                </label>
+            
+                            </div>
+            
+                            <input type="hidden" name="organisationName" value="CANDY CARTS  LTD" />
+                            <input type="hidden" name="hashedAgreementId" value="MWJ87P" />
+            
+                            <div class="form-group">
+                                <a class="button" href="interim-homepage">Yes, continue</a>
+                            </div>
+            
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            
+            
+            
+                
                 
             
             </main>

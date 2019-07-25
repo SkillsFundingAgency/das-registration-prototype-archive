@@ -247,11 +247,158 @@
                   </div>
             </div>  -->
 
-        <div class="column-two-thirds">
-            <h1 class="heading-xlarge">JOE BLOGGS LIMITED already exist in your account</h1>
-            <p>This organisation is already associated with your account, please <a href="searchOrg">try again</a>.</p>
-        </div> 
 
+
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <h1 class="heading-xlarge">Select your organisation</h1>
+                    <form action="/accounts/MWDKDN/organisations/search/results" method="POST">
+                        <div class="search-field">
+                            <fieldset class="search-input">
+                                <label for="searchTerm">
+                                    <span class="form-label-bold">Search results</span>
+                                </label>
+                                <input type="text" id="searchTerm" name="searchTerm" value="Joe Bloggs" class="form-control" />
+                            </fieldset>
+                            <fieldset class="search-submit">
+                                <button type="submit" class="button">Search</button>
+                            </fieldset>
+                        </div>
+                    </form>
+                    <p>5 results found</p>
+                </div>
+            </div>
+            
+            <div class="grid-row search-results">
+                <aside>
+                    <h2 class="heading-medium">Filter results</h2>
+                    <form action="/accounts/MWDKDN/organisations/search/results?searchTerm=Sinia+group" method="POST">
+                        <div class="filter">
+                            <fieldset>
+                                <legend class="vh">Filter by organisation type</legend>
+                                <h3>Organisation type</h3>
+                                <label class="block-label selection-button-radio" for="company">
+                                    <input id="company" type="radio" name="organisationType" value="CompaniesHouse"  /> Company
+                                </label>
+                                <label class="block-label selection-button-radio" for="charity">
+                                    <input id="charity" type="radio" name="organisationType" value="Charities"  /> Charity
+                                </label>
+                                <label class="block-label selection-button-radio" for="publicSector">
+                                    <input id="publicSector" type="radio" name="organisationType" value="PublicBodies"  /> Public sector
+                                </label>
+                                <label class="block-label selection-button-radio" for="all">
+                                    <input id="all" type="radio" name="organisationType" value="" checked=&quot;checked&quot; /> Show all
+                                </label>
+                            </fieldset>
+                            <!-- <div class="form-group" id="apply-filter">
+                                <button type="submit" class="button-secondary">Apply filter</button>
+                            </div> -->
+                        </div>
+                     
+                    </form>
+                </aside>
+                <section class="results-list">
+                    
+            
+                            <ol>
+                                    <li>
+                                        <article>
+                                            <form action="/accounts/MWDKDN/organisations/search/confirm" method="post">
+                                                <input type="hidden" name="DateOfInception" value="2/9/2018 12:00:00 AM"/>
+                                                <input type="hidden" name="ReferenceNumber" value="11198267"/>
+                                                <input type="hidden" name="Sector"/>
+                                                <input type="hidden" name="Type" value="CompaniesHouse"/>
+                                                <input type="hidden" name="Name" value="SINIA GROUP LIMITED"/>
+                                                <input type="hidden" name="Address" value="First Floor, Telecom House 125-135 Preston Road, Brighton, BN1 6AF"/>
+                                                <button type="submit" class="heading-medium link-button">JOSON GROUP LIMITED</button>
+                                            </form>
+            
+                                            <dl class="inline">
+                                                <dt>Address</dt>
+                                                <dd>First Floor, Telecom House 1235-1335 Preston Road, Brighton, BN1 6AF</dd>
+                                                <dt>Type</dt>
+                                                <dd>Listed on Companies House</dd>
+                                            </dl>
+                                        </article>
+                                    </li>
+                                    <li>
+                                        <article>
+                                            <form action="/accounts/MWDKDN/organisations/search/confirm" method="post">
+                                                <input type="hidden" name="DateOfInception" value="7/20/2011 12:00:00 AM"/>
+                                                <input type="hidden" name="ReferenceNumber" value="07712135"/>
+                                                <input type="hidden" name="Sector"/>
+                                                <input type="hidden" name="Type" value="CompaniesHouse"/>
+                                                <input type="hidden" name="Name" value="LYDIA SINIAK  LIMITED"/>
+                                                <input type="hidden" name="Address" value="Devine House 1299-1301 London Road, Leigh-On-Sea, Essex, SS9 2AD"/>
+                                                <button type="submit" class="heading-medium link-button">JOC SINIAK  LIMITED</button>
+                                            </form>
+            
+                                            <dl class="inline">
+                                                <dt>Address</dt>
+                                                <dd>Devine House 1299-1301 London Road, Leigh-On-Sea, Essex, SS9 2AD</dd>
+                                                <dt>Type</dt>
+                                                <dd>Listed on Companies House</dd>
+                                            </dl>
+                                        </article>
+                                    </li>
+                                    <li class="added">
+                                        <article>
+                                            <h1 class="heading-medium">JOE BLOGGS LIMITED</h1>
+                                            <dl class="inline">
+                                                <dt>Address</dt>
+                                                <dd>5  Melton Court, Aston, Sheffield, S26 2EX</dd>
+                                                <dt>Type</dt>
+                                                <dd>Listed on The Pensions Regulator</dd>
+                                            </dl>
+                                            <p>Already added - <a href="/accounts/MWDKDN/agreements">view my organisations</a>
+                                            </p>
+                                        </article>
+                                    </li>
+                                    <li>
+                                        <article>
+                                            <form action="/accounts/MWDKDN/organisations/search/confirm" method="post">
+                                                <input type="hidden" name="DateOfInception" value="2/16/2017 12:00:00 AM"/>
+                                                <input type="hidden" name="ReferenceNumber" value="10622318"/>
+                                                <input type="hidden" name="Sector"/>
+                                                <input type="hidden" name="Type" value="CompaniesHouse"/>
+                                                <input type="hidden" name="Name" value="SINIAWSKI  LIMITED"/>
+                                                <input type="hidden" name="Address" value="8  Raleigh Walk,, Brigantine Place, Cardiff, CF10 4LN"/>
+                                                <button type="submit" class="heading-medium link-button">JOGGING  LIMITED</button>
+                                            </form>
+            
+                                            <dl class="inline">
+                                                <dt>Address</dt>
+                                                <dd>8  Raleigh Walk,, Brigantine Place, Cardiff, CF10 4LN</dd>
+                                                <dt>Type</dt>
+                                                <dd>Listed on Companies House</dd>
+                                            </dl>
+                                        </article>
+                                    </li>
+                                    <li>
+                                        <article>
+                                            <form action="/accounts/MWDKDN/organisations/search/confirm" method="post">
+                                                <input type="hidden" name="DateOfInception" value="9/14/1987 12:00:00 AM"/>
+                                                <input type="hidden" name="ReferenceNumber" value="02163844"/>
+                                                <input type="hidden" name="Sector"/>
+                                                <input type="hidden" name="Type" value="CompaniesHouse"/>
+                                                <input type="hidden" name="Name" value="ETEX BUILDING PERFORMANCE LIMITED"/>
+                                                <input type="hidden" name="Address" value="Gordano House Marsh Lane Easton-In-Gordano, Bristol, BS20 0NE"/>
+                                                <button type="submit" class="heading-medium link-button">JOE PERFORMANCE LIMITED</button>
+                                            </form>
+            
+                                            <dl class="inline">
+                                                <dt>Address</dt>
+                                                <dd>Gordano House Marsh Lane Easton-In-Gordano, Bristol, BS20 0NE</dd>
+                                                <dt>Type</dt>
+                                                <dd>Listed on Companies House</dd>
+                                            </dl>
+                                        </article>
+                                    </li>
+
+
+ 
+             
     </main>
             
                 

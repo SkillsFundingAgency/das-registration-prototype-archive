@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -226,53 +227,90 @@
 
 
             <main role="main" id="content">
+    
+                <div class="breadcrumbs">
+                    <ol role="navigation">
+                        <li><a href="/accounts/MWDKDN/teams">Home</a></li>
+                        <li>Your organisations and agreements</li>
+                    </ol>
+                </div>
+            
                 
             
-                <div class="grid-row">
-                    <div class="column-two-thirds">
-                        <h1 class="heading-xlarge">
-                            Check your details
-                        </h1>
-                        <table>
-                            <tr>
-                                <th role="row">Organisation name</th>
-                                <td class="responsive-td">ASSURANCE AEROSPACE (AVIONICS) LTD</td>
-                            </tr>
-                            <tr>
-                                <th role="row">Organisation address</th>
-                                <td class="responsive-td">Avionics House, <br>1234-5678 Avionics Road, <br>Somewhere, <br>SS1 7AD</td>
-                            </tr>
+            
+            
                 
-                                <tr>
-                                    <th role="row">PAYE scheme</th>
-                                    <td class="responsive-td">123/AB45678</td>
-                                </tr>
-                        </table>
-                
-                        <form method="POST">
-                            <input name="__RequestVerificationToken" type="hidden" value="gZQSbbF0iQjAvjqdNjWMnk7J1T4VFS67Cr86GuJqa9D74O9DX69SjY9vBgsYvUyuFcF0JhUkUH3WbaP4K7B3mU9XYY7ZwTkWclxOSzn7FscP8Q7lyBhiYYUD5jBvuYi45XNEiLzW7VGdAMcBtBulTA2" />
-                            <input type="hidden" id="legalEntityName" name="name" value="LYDIA SINIAK  LIMITED"/>
-                            <input type="hidden" id="legalEntityCode" name="code" value="07712135"/>
-                            <input type="hidden" id="legalEntityAddress" name="address" value="Devine House 1299-1301 London Road, Leigh-On-Sea, Essex, SS9 2AD"/>
-                            <input type="hidden" id="legalEntityIncorporationDate" name="incorporated" value="7/20/2011 12:00:00 AM"/>
-                            <input type="hidden" id="legalEntityStatus" name="legalEntityStatus"/>
-                            <input type="hidden" id="publicSectorDataSource" name="publicSectorDataSource"/>
-                            <input type="hidden" id="organisationType" name="organisationType" value="CompaniesHouse"/>
-                            <input type="hidden" id="sector" name="sector"/>
-                            <input type="hidden" id="newSearch" name="newSearch" value="True"/>
-                            <!-- <p class="heading-medium">Is this correct?</p> -->
-                            <br>
-                            <span>
-                                <a class="button" href="orgAddedConfirmation">These details are correct</a>
-                                <!-- <a class="button button-link" href="#">No, search again</a> -->
-                            </span>
-                        </form>
-                
-                    </div>
+            
+            
+            <div class="grid-row header-index">
+                <div class="column-two-thirds">
+                    <h1 class="heading-xlarge">Your organisations and agreements</h1>
                 </div>
-             
-
-                
+                <div class="column-one-third">
+                        <div>
+                            <a href="remainingOrgsToAdd" class="button action-add">Add new organisation</a>
+                        </div>
+                        <!-- <button type="submit" class="button action-add">
+                                Add new organisation
+                        </button> -->
+                    <!-- <form method="POST">
+                        <input class="button action-add" id="addNewOrg" type="submit" value="Add new organisation">
+                    </form> -->
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <p>Add each organisation that will contract with your training providers.</p>
+                    <p>There is no restriction on the number of <a href="https://www.gov.uk/government/publications/employment-allowance-more-detailed-guidance" target="_blank" rel="external">connected organisations</a> you can add.</p>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <details class="transfers-status">
+                        <summary>
+                            <span class="summary">Transfers status: 
+                                <span class="bold">
+                                            Disabled
+                                </span>
+                            </span>
+                        </summary>
+                        <div class="text panel">
+                            <p>You must sign the most up-to-date agreement for all organisations to use transfers functionality.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="column-full">
+                    <table class="responsive">
+                        <thead>
+                        <tr>
+                            <th scope="col">Organisation</th>
+                            <th scope="col">Agreement status</th>
+                            <th scope="col">Action</th>
+                            <th class="no-wrap" scope="col">Agreement ID</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Organisation">ASSURANCE AEROSPACE LTD</td>
+                                <td data-label="Agreement status">
+                                    Signed by Mike Larry
+                                </td>
+                                <td data-label="Action">
+                                        <a href="#" title="View agreement for MINISTRY OF RESTORATION CHARITABLE TRUST">View</a>
+                                </td>
+                                <td data-label="Agreement ID">
+                                        <span>2EPD9X</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+                        <p class="font-xsmall"><a href="#">Remove an organisation from your account</a></p>
+                </div>
+            </div>
+            
             
             </main>
             

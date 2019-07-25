@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -197,9 +198,9 @@
                                     <ul role="menu" class="js-hidden" id="settings-menu">
                                         <li><a href="/service/accounts" role="menuitem" class="sub-menu-item">Your accounts</a></li>
                                             <li><a href="/accounts/84VBNV/rename" role="menuitem" class="sub-menu-item">Rename account</a></li>
-                                        <li><a href="#" class="sub-menu-item">Change your password</a></li>
-                                        <li><a href="#" class="sub-menu-item">Change your email address</a></li>
-                                            <li><a href="#" class="sub-menu-item">Notification settings</a></li>
+                                        <li><a href="https://beta-login.apprenticeships.education.gov.uk/account/changepassword?clientId=easaccprd&amp;returnurl=https%3a%2f%2faccounts.manage-apprenticeships.service.gov.uk%2f%2fservice%2fpassword%2fchange" class="sub-menu-item">Change your password</a></li>
+                                        <li><a href="https://beta-login.apprenticeships.education.gov.uk/account/changeemail?clientId=easaccprd&amp;returnurl=https%3a%2f%2faccounts.manage-apprenticeships.service.gov.uk%2f%2fservice%2femail%2fchange" class="sub-menu-item">Change your email address</a></li>
+                                            <li><a href="/settings/notifications" class="sub-menu-item">Notification settings</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="signin" role="menuitem">Sign out</a></li>
@@ -212,12 +213,12 @@
             <div class="header-organisation" role="navigation">
                 <nav class="header-inner">
                     <ul id="global-nav-links">
-                        <li><a href="/1-1/post-registration/interim-homepage" class="" role="menuitem">Home</a></li>
+                        <li><a href="/1-1/post-registration/interim-homepage.html" class="" role="menuitem">Home</a></li>
                         <li><a href="#" class="" role="menuitem">Finance</a></li>
                             <li><a href="#" role="menuitem">Recruitment</a></li>
                         <li><a href="#" class="" role="menuitem">Apprentices</a></li>
                         <li><a href="#" class="" role="menuitem">Your team</a></li>
-                        <li><a href="#" class="selected" role="menuitem">Your organisations and agreements</a></li>
+                        <li><a href="#" class="" role="menuitem">Your organisations and agreements</a></li>
                         <li><a href="#" class="" role="menuitem">PAYE schemes</a></li>
                     </ul>
                 </nav>
@@ -225,57 +226,94 @@
 
 
 
-            <main role="main" id="content">
-                
+            <main class="govuk-main-wrapper govuk-main-wrapper--l" style="padding-top:5px" id="content">
+                <div class="breadcrumbs">
+                    <ol role="navigation">
+                        <li><a href="interim-homepage">Home</a></li>
+                        <li>PAYE schemes</li>
+                    </ol>
+                </div>
             
-                <div class="grid-row">
+
+                <div class="grid-row header-index">
                     <div class="column-two-thirds">
-                        <h1 class="heading-xlarge">
-                            Check your details
-                        </h1>
-                        <table>
-                            <tr>
-                                <th role="row">Organisation name</th>
-                                <td class="responsive-td">ASSURANCE AEROSPACE (AVIONICS) LTD</td>
-                            </tr>
-                            <tr>
-                                <th role="row">Organisation address</th>
-                                <td class="responsive-td">Avionics House, <br>1234-5678 Avionics Road, <br>Somewhere, <br>SS1 7AD</td>
-                            </tr>
-                
-                                <tr>
-                                    <th role="row">PAYE scheme</th>
-                                    <td class="responsive-td">123/AB45678</td>
-                                </tr>
-                        </table>
-                
-                        <form method="POST">
-                            <input name="__RequestVerificationToken" type="hidden" value="gZQSbbF0iQjAvjqdNjWMnk7J1T4VFS67Cr86GuJqa9D74O9DX69SjY9vBgsYvUyuFcF0JhUkUH3WbaP4K7B3mU9XYY7ZwTkWclxOSzn7FscP8Q7lyBhiYYUD5jBvuYi45XNEiLzW7VGdAMcBtBulTA2" />
-                            <input type="hidden" id="legalEntityName" name="name" value="LYDIA SINIAK  LIMITED"/>
-                            <input type="hidden" id="legalEntityCode" name="code" value="07712135"/>
-                            <input type="hidden" id="legalEntityAddress" name="address" value="Devine House 1299-1301 London Road, Leigh-On-Sea, Essex, SS9 2AD"/>
-                            <input type="hidden" id="legalEntityIncorporationDate" name="incorporated" value="7/20/2011 12:00:00 AM"/>
-                            <input type="hidden" id="legalEntityStatus" name="legalEntityStatus"/>
-                            <input type="hidden" id="publicSectorDataSource" name="publicSectorDataSource"/>
-                            <input type="hidden" id="organisationType" name="organisationType" value="CompaniesHouse"/>
-                            <input type="hidden" id="sector" name="sector"/>
-                            <input type="hidden" id="newSearch" name="newSearch" value="True"/>
-                            <!-- <p class="heading-medium">Is this correct?</p> -->
-                            <br>
-                            <span>
-                                <a class="button" href="orgAddedConfirmation">These details are correct</a>
-                                <!-- <a class="button button-link" href="#">No, search again</a> -->
-                            </span>
-                        </form>
-                
+                        <h1 class="heading-xlarge">PAYE schemes</h1>
+                        <p>You'll need to add all the PAYE schemes you intend to use to pay for apprenticeship training.</p>
+                    </div>
+                    <div class="column-one-third pull-right">
+                            <div>
+                                    <a href="#" class="button action-add">Add new scheme</a>
+                            </div>
                     </div>
                 </div>
-             
-
                 
-            
-            </main>
-            
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Added PAYE schemes</th>
+                                        <th scope="col">English %</th>
+                                        <th scope="col"><span class="vh">Action</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                001/RA00104
+                                                <span class="secondary-text"></span>
+                                            </td>
+                
+                                                <td>100%</td>
+                
+                                            <td class="link-right">
+                                                <a aria-label="Details for PAYE scheme 001/RA00104"
+                                                   title="Details for PAYE scheme 001/RA00104"
+                                                   href="/accounts/MWDKDN/schemes/001_RA00104/details">Details<span class="vh"> for PAYE scheme 001/RA00104</span></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                200/GDS00012
+                                                <span class="secondary-text"></span>
+                                            </td>
+                
+                                                <td>100%</td>
+                
+                                            <td class="link-right">
+                                                <a aria-label="Details for PAYE scheme 200/GDS00012"
+                                                   title="Details for PAYE scheme 200/GDS00012"
+                                                   href="/accounts/MWDKDN/schemes/200_GDS00012/details">Details<span class="vh"> for PAYE scheme 200/GDS00012</span></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                343/AA00032
+                                                <span class="secondary-text"></span>
+                                            </td>
+                
+                                                <td>100%</td>
+                
+                                            <td class="link-right">
+                                                <a aria-label="Details for PAYE scheme 343/AA00032"
+                                                   title="Details for PAYE scheme 343/AA00032"
+                                                   href="/accounts/MWDKDN/schemes/343_AA00032/details">Details<span class="vh"> for PAYE scheme 343/AA00032</span></a>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                <details id="inform-english-percentage">
+                    <summary><span class="summary">What is English percentage?</span></summary>
+                    <div class="panel">
+                        <p>Your English percentage is provided by HMRC based on the data in your payroll submissions. It represents the proportion of your payroll that's paid to your employees that live in England.</p>
+                        <p>If you think there are any issues with your English percentage, check your payroll data to make sure your employees' address information is correct.</p>
+                    </div>
+                </details>    </div>
+                </div>
+                
+                
+                
+                    </main>
                 
 
     <footer class="group js-footer" id="footer" role="contentinfo">
