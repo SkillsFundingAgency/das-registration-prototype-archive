@@ -230,51 +230,42 @@
             
                 <div class="grid-row">
                     <div class="column-two-thirds">
-                        <h1 class="heading-xlarge">
-                            Check your details
-                        </h1>
-                        <table>
-                            <tr>
-                                <th role="row">Organisation name</th>
-                                <td class="responsive-td">ASSURANCE AEROSPACE (AVIONICS) LTD</td>
-                            </tr>
-                            <tr>
-                                <th role="row">Organisation address</th>
-                                <td class="responsive-td">Avionics House, <br>1234-5678 Avionics Road, <br>Somewhere, <br>SS1 7AD</td>
-                            </tr>
-                
-                                <tr>
-                                    <th role="row">PAYE scheme</th>
-                                    <td class="responsive-td">123/AB45678</td>
-                                </tr>
-                        </table>
-                
-                        <form method="POST">
-                            <input name="__RequestVerificationToken" type="hidden" value="gZQSbbF0iQjAvjqdNjWMnk7J1T4VFS67Cr86GuJqa9D74O9DX69SjY9vBgsYvUyuFcF0JhUkUH3WbaP4K7B3mU9XYY7ZwTkWclxOSzn7FscP8Q7lyBhiYYUD5jBvuYi45XNEiLzW7VGdAMcBtBulTA2" />
-                            <input type="hidden" id="legalEntityName" name="name" value="LYDIA SINIAK  LIMITED"/>
-                            <input type="hidden" id="legalEntityCode" name="code" value="07712135"/>
-                            <input type="hidden" id="legalEntityAddress" name="address" value="Devine House 1299-1301 London Road, Leigh-On-Sea, Essex, SS9 2AD"/>
-                            <input type="hidden" id="legalEntityIncorporationDate" name="incorporated" value="7/20/2011 12:00:00 AM"/>
-                            <input type="hidden" id="legalEntityStatus" name="legalEntityStatus"/>
-                            <input type="hidden" id="publicSectorDataSource" name="publicSectorDataSource"/>
-                            <input type="hidden" id="organisationType" name="organisationType" value="CompaniesHouse"/>
-                            <input type="hidden" id="sector" name="sector"/>
-                            <input type="hidden" id="newSearch" name="newSearch" value="True"/>
-                            <!-- <p class="heading-medium">Is this correct?</p> -->
-                            <br>
-                            <span>
-                                <a class="button" href="orgAddedConfirmation">These details are correct</a>
-                                <!-- <a class="button button-link" href="#">No, search again</a> -->
-                            </span>
-                        </form>
-                
-                    </div>
-                </div>
-             
+                        <h1 class="heading-xlarge">Choose an organisation</h1>
+                        <p class="lede">You can add other organisations to your account later.</p>
+                       
+                        <form class="form">
 
-                
-            
-            </main>
+                        <div class="form-group">
+                            <fieldset>
+                              <div class="multiple-choice">
+                                <input id="radio-1" type="radio" name="radio-group" value="Assurance Aerospace (Avionics) Ltd">
+                                <label for="radio-1">Assurance Aerospace (Avionics) Ltd</label>
+                                <p style="color:#6f777b; margin-left: 13px; margin-bottom: 0;">PAYE scheme: 123/AB45678</p>
+                              </div>
+                              <div class="multiple-choice">
+                                <input id="radio-2" type="radio" name="radio-group" value="Assurance Aerospace (Wheels) Ltd">
+                                <label for="radio-2">Assurance Aerospace (Wheels) Ltd</label>
+                                <p style="color:#6f777b; margin-left: 13px; margin-bottom: 0;">PAYE scheme: 123/AB45678</p>
+                              </div>
+                              <div class="multiple-choice">
+                                <input id="radio-2" type="radio" name="radio-group" value="Assurance Aerospace (Wheels) Ltd">
+                                <label for="radio-2">Assurance Aerospace (Engines) Ltd</label>
+                                <p style="color:#6f777b; margin-left: 13px; margin-bottom: 0;">PAYE scheme: 188/CD44984</p>
+                              </div>
+                              <p class="form-block">or</p>
+                              <div class="multiple-choice">
+                                <input id="radio-3" type="radio" name="radio-group" value="My organisation is not listed">
+                                <label for="radio-3">My organisation is not listed</label>
+                              </div>
+                            </fieldset>
+                          </div> <!-- End form-group -->
+
+                            <div><a href="checkDetails" class="button">Continue</a></div> <!-- CTA -->
+                                
+                        </form>
+                    </div> <!-- End of column-two-thirds -->
+                </div> <!-- End of grid-row -->                         
+            </main><!-- End of main -->
             
                 
 
