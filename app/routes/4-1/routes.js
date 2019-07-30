@@ -2,6 +2,15 @@ module.exports = function (router) {
 
     var version = "4-1";
 
+    router.all('/' + version + '/*', function (req, res, next) {
+      
+      // Reset page validation to false by default. Will only be set to true, if applicable, on a POST of a page
+      req.session.validationErrors = {}
+      req.session.validationError = "false"
+
+      next()
+    })
+
     router.post('/' + version + '/registration/gov-funding', function (req, res) {
         // Get the answer from session data
         // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -39,27 +48,53 @@ module.exports = function (router) {
 
       router.post('/' + version + '/registration/agreement-check', function (req, res) {
 
+        let _agreementCheck = req.body.agreementCheck
+
+        if(!_agreementCheck){
+          req.session.validationError = "true"
+          req.session.validationErrors.agreementCheck = {
+              "anchor": "agreementCheck-1",
+              "message": "Select whether you want to review the agreement now or later"
+          }
+        }
       
-        let answer = req.session.data['agreementCheck']
-      
-        if (answer === 'no') {
-          res.redirect('/' + version + '/registration/homepage-signAgreement')
+        if(req.session.validationError == "true") {
+          res.render(version + '/registration/agreement-check', {
+            validationError: req.session.validationError,
+            validationErrors: req.session.validationErrors
+          });
         } else {
-          res.redirect('/' + version + '/registration/agreement')
+          if (_agreementCheck === 'no') {
+            res.redirect('/' + version + '/registration/homepage-signAgreement')
+          } else {
+            res.redirect('/' + version + '/registration/agreement')
+          }
         }
       })
     
       router.post('/' + version + '/registration/agreement', function (req, res) {
-        // Get the answer from session data
-        // The name between the quotes is the same as the 'name' attribute on the input elements
-        // However in JavaScript we can't use hyphens in variable names
+        
+        let _agreementSign = req.body.agreementSign
+
+        if(!_agreementSign){
+          req.session.validationError = "true"
+          req.session.validationErrors.agreementSign = {
+              "anchor": "agreementSign-1",
+              "message": "Select whether you accept the agreement now or will accept it later"
+          }
+        }
       
-        let answer = req.session.data['agreementSign']
-      
-        if (answer === 'yesSign') {
-          res.redirect('/' + version + '/registration/interim-homepage')
+        if(req.session.validationError == "true") {
+          res.render(version + '/registration/agreement', {
+            validationError: req.session.validationError,
+            validationErrors: req.session.validationErrors
+          });
         } else {
-          res.redirect('/' + version + '/registration/homepage-signAgreement')
+          if (_agreementSign === 'yesSign') {
+            res.redirect('/' + version + '/registration/interim-homepage')
+          } else {
+            res.redirect('/' + version + '/registration/homepage-signAgreement')
+          }
         }
       })
 

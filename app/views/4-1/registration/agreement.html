@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Manage apprenticeships
+{% if validationError == "true" %}Error: {% endif %}
+Manage apprenticeships
 {% endblock %}
 
 {% set serviceName = "Manage apprenticeships" %}
@@ -119,6 +120,23 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+        {% if validationError == "true" %}
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    {% for name, item in validationErrors %}
+                    <li>
+                        <a href="#{{item.anchor}}">{{item.message}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
 
       <h1 class="govuk-heading-xl">Agreement between {{_orgName}} and the ESFA</h1>
       
@@ -740,51 +758,42 @@
           </strong>
       </div>
 
-      <form method="post" class="form signing-form">
-        
+      <form method="post" class="form">
 
-          {% from "radios/macro.njk" import govukRadios %}
-          {% from "input/macro.njk" import govukInput %}
-          
-          {% set noText %}
-            {% if _referrer == "home" %}
-                You can accept the agreement later. {{_orgName}} cannot get or reserve funding until it accepts.
-            {% else %}
-                You can continue creating an account and accept the agreement later. {{_orgName}} cannot get or reserve funding until it accepts.
-            {% endif %}
-          {% endset -%}
-
-          {% set _legend %} 
-            Do you accept the agreement on behalf of {{_orgName}}?
-          {% endset -%}
-          {% set _yesText %} 
-            Yes, I have read the agreement and accept it
-          {% endset -%}
-          
-          {{ govukRadios({
-            idPrefix: "agreementSign",
-            name: "agreementSign",
-            fieldset: {
-              legend: {
-                text: _legend,
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            items: [
-              {
-                value: "yesSign",
-                text: _yesText
-              },
-              {
-                value: "noSignLater",
-                text: "I’ll accept it later",
-                hint: {
-                  text: noText
-                }
-              }
-            ]
-          }) }}
+        <!-- RADIOS -->
+        <div class="govuk-form-group {% if validationErrors.agreementSign %}govuk-form-group--error{% endif %}">
+            <fieldset class="govuk-fieldset" >
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    Do you accept the agreement on behalf of {{_orgName}}?
+                </legend>
+                {% if validationErrors.agreementSign %}
+                <span id="agreementSign-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> {{validationErrors.agreementSign.message}}
+                </span>
+                {% endif %}
+                <div class="govuk-radios govuk-radios--inline" id="agreementSign">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="agreementSign-1" name="agreementSign" type="radio" value="yesSign" >
+                        <label class="govuk-label govuk-radios__label" for="agreementSign-1">
+                            Yes, I have read the agreement and accept it
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="agreementSign-2" name="agreementSign" type="radio" value="noSignLater" >
+                        <label class="govuk-label govuk-radios__label" for="agreementSign-2">
+                            I’ll accept it later
+                        </label>
+                        <span class="govuk-hint govuk-radios__hint">
+                            {% if _referrer == "home" %}
+                                You can accept the agreement later. {{_orgName}} cannot get or reserve funding until it accepts.
+                            {% else %}
+                                You can continue creating an account and accept the agreement later. {{_orgName}} cannot get or reserve funding until it accepts.
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
 
           <!-- Call to action button -->
           <button class="govuk-button" >Continue</button>
