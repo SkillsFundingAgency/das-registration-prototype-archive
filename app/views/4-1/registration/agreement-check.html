@@ -27,7 +27,7 @@ Do you want to review the agreement now?
 
         <h1 class="govuk-heading-xl">Do you want to review the employer agreement now?</h1>
 
-        <p class="govuk-body">The agreement is between {{_orgName}} and the Education and Skills Funding Agency (ESFA). {{_orgName}} cannot get or reserve funding until it accepts the agreement.</p>
+        <p class="govuk-body">The agreement is between {{_orgName}} and the Education and Skills Funding Agency (ESFA).</p>
 
         <h2 class="govuk-heading-m">Important features of the agreement</h2>
         <p class="govuk-body">{{_orgName}} must:</p>
@@ -41,11 +41,11 @@ Do you want to review the agreement now?
             <li>suspend payments, recover funds or close {{_orgName}}’s account if it breaks the agreement</li>
             <li>change the terms of the agreement (if this happens, we will ask {{_orgName}} to accept the new terms)</li>
             <li>change any part of the apprenticeship service</li>
-        </ul>
+        </ul><br>
         
-        {{ govukInsetText({
-            text: "You can continue registering without reviewing the agreement."
-        }) }}
+        <!-- {{ govukInsetText({
+            text: "You can continue creating an account without reviewing the agreement. " + _orgName + " cannot get or reserve funding until it accepts the agreement."
+        }) }} -->
 
         <form method="post" class="form">
 
@@ -64,7 +64,10 @@ Do you want to review the agreement now?
                     },
                     {
                         value: "no",
-                        text: "No, I’ll review the agreement later"
+                        text: "No, I’ll review the agreement later",
+                        hint: {
+                            text: "You can continue creating an account and review the agreement later. " + _orgName + " cannot get or reserve funding until it accepts the agreement."
+                        }
                     }
                 ]
             }) }}
