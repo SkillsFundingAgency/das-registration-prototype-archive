@@ -33,9 +33,15 @@ module.exports = function (router) {
     router.post('/' + version + '/provider-led-registration/registration/agreement', function (req, res) {
     
       let answer = req.session.data['agreementSign']
+      let emailJourney = req.session.data['email-journey']
     
       if (answer === 'yesSign') {
-        res.redirect('/1-0/registration/interim-homepage')
+        if (emailJourney == 'true') {
+          req.session.data['email-journey'] = ''
+          res.redirect('/1-0/registration/agreement-full')
+        } else {
+          res.redirect('/1-0/registration/interim-homepage')
+        }
       } else {
         res.redirect('/' + version + '/provider-led-registration/registration/homepage-signAgreement')
       }
@@ -131,6 +137,9 @@ module.exports = function (router) {
         res.redirect('/' + version + '/provider-led-registration/index')
       }
     })
+
+
+    
 
 };
 

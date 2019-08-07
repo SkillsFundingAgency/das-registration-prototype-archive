@@ -31,7 +31,7 @@ module.exports = function (router) {
         }
       })
     
-    
+    // Ways to add your PAYE scheme
       router.post('/' + version + '/registration/ways-to-add-paye', function (req, res) {
       
         let answer = req.session.data['ways-to-add-your-paye']
@@ -61,9 +61,15 @@ module.exports = function (router) {
       router.post('/' + version + '/registration/agreement/v1/agreement', function (req, res) {
       
         let answer = req.session.data['agreementSign']
-      
+        let emailJourney = req.session.data['email-journey']
+        
         if (answer === 'yesSign') {
-          res.redirect('/' + version + '/registration/interim-homepage')
+          if (emailJourney == 'true') {
+            req.session.data['email-journey'] = ''
+            res.redirect('/' + version + '/registration/provider-led/changePermissions')
+          } else {
+            res.redirect('/' + version + '/registration/interim-homepage')
+          }
         } else {
           res.redirect('/' + version + '/registration/homepage-signAgreement')
         }
@@ -142,6 +148,21 @@ module.exports = function (router) {
           res.redirect('/' + version + '/registration/check-your-aorn-details-from-multiorg')
         }
       })
+
+
+// Provider-led Registration
+
+router.post('/' + version + '/registration/provider-led/changePermissions', function (req, res) {
+      
+  let answer = req.session.data['manage-apprenticeship-yes']
+
+  if (answer ==='yesGivePermission') {
+    res.redirect('/' + version + '/registration/provider-led/changePermissionsRecruit')
+  } else {
+    res.redirect('/' + version + '/registration/interim-homepage')
+  }
+})
+
 
  };
 
