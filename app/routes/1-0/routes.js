@@ -152,6 +152,19 @@ module.exports = function (router) {
 
 // Provider-led Registration
 
+router.post('/' + version + '/registration/provider-led/employer-permission', function (req, res) {
+    
+  let answer = req.session.data['permission-training-provider']
+
+  if (answer === 'yesGive') {
+    res.redirect('/' + version + '/registration/provider-led/new-employer-user')
+  } else {
+    res.redirect('/' + version + '/registration/provider-led/index')
+  }
+})
+
+
+
 router.post('/' + version + '/registration/provider-led/changePermissions', function (req, res) {
       
   let answer = req.session.data['manage-apprenticeship-yes']
