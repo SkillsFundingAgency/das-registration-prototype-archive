@@ -66,7 +66,7 @@ module.exports = function (router) {
         if (answer === 'yesSign') {
           if (emailJourney == 'true') {
             req.session.data['email-journey'] = ''
-            res.redirect('/' + version + '/registration/provider-led/changePermissions')
+            res.redirect('/' + version + '/registration/provider-led/provider-permission')
           } else {
             res.redirect('/' + version + '/registration/interim-homepage')
           }
