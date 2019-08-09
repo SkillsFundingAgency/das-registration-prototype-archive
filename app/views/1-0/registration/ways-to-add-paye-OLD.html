@@ -12,56 +12,26 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form method="post" class="form">
-           <h1 class="govuk-heading-xl">
+           <h1 class="govuk-heading-xl" style="margin-bottom: 20px;">
              Ways to add your PAYE scheme
            </h1>
-           <p class="govuk-heading-s">If you know the annual payroll for your organisation is under £3 million, you can use either:</p>
+           <p class="govuk-heading-m">Is your annual payroll for your organisation<br> under £3 million?</p>
+           <h2 class="govuk-heading-s">Yes</h2>
             <ul class="govuk-list govuk-list--bullet">
                <li>Government Gateway login for your PAYE scheme</li>
                <li>accounts office reference number and employer PAYE scheme reference</li>
            </ul>
-           <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
+
+           <h2 class="govuk-heading-s">No</h2>
+           <ul class="govuk-list govuk-list--bullet">
+            <li>Government Gateway login for your PAYE scheme</li>
+          </ul>
+
+          <h2 class="govuk-heading-s">Don't know</h2>
+          <ul class="govuk-list govuk-list--bullet">
+           <li>Government Gateway login for your PAYE scheme</li>
+         </ul>
            <br>
-           <p class="govuk-heading-s">If you know the annual payroll for your organisation is over £3 million, you can use:</p>
-            <ul class="govuk-list govuk-list--bullet">
-               <li>Government Gateway login for your PAYE scheme</li>
-           </ul>
-           <p class="govuk-inset-text">If you’re not sure how much your annual payroll is, choose <br>Government Gateway.</p>
-
-
-           
-           <!-- <h2 class="govuk-heading-m">By continuing you agree to the following:</h2>
-                <div class="govuk-inset-text">
-                    I have the authority to add PAYE schemes to this account that are used by my organisation.
-                </div> -->
-
-<!-- 
-                {% from "radios/macro.njk" import govukRadios %}
-
-                {{ govukRadios({
-                  idPrefix: "ways-to-add-your-paye",
-                  name: "ways-to-add-your-paye",
-                  fieldset: {
-                    legend: {
-                      text: "How do you want to add your PAYE scheme?                 ",
-                      isPageHeading: true,
-                      classes: "govuk-fieldset__legend--s"
-                    }
-                  },
-                  items: [
-                    {
-                      value: "govgateway",
-                      text: "I want to use Government Gateway"
-                    },
-                    {
-                      value: "aorn",
-                      text: "I want to use my accounts office reference number and employer PAYE scheme reference"
-                    }
-     
-                    
-                  ]
-                }) }} -->
-
 
            <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
@@ -78,12 +48,7 @@
                   <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                     I want to use my accounts office reference number and employer PAYE scheme reference
                   </label> </div>
-                <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-                  <div class="govuk-form-group">
-                    <p>If you already have funds associated with your PAYE scheme, choose Government Gateway to keep access to your funds.</p>
-                  </div>
-          
-                </div> -->
+
 
               </div>
             </fieldset>
