@@ -24,8 +24,8 @@
             {% from "panel/macro.njk" import govukPanel %}
 
             {{ govukPanel({
-              titleText: "You've added an employer",
-              html: "Your employer has been sent an email confirmation with instructions on what to do next."
+              titleText: "You've set up the employer account",
+              html: "The employer has been sent an email invitation with instructions on what they need to do next to complete the set-up of the account."
             }) }}
 
         </div>
@@ -49,11 +49,11 @@
     items: [
       {
         value: "england",
-        text: "Add another employer"
+        text: "Set up another account"
       },
       {
         value: "scotland",
-        text: "View employers"
+        text: "View invited employers"
       },
       {
         value: "wales",
