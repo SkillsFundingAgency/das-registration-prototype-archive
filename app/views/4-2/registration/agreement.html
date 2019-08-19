@@ -143,7 +143,7 @@ Manage apprenticeships
       
       <p class="govuk-body">Updated on 1 May 2018.</p>
 
-      <p class="govuk-body" style="margin-bottom: 0">You can choose whether to accept the agreement now or later at the bottom of this page.</p>
+      <p class="govuk-body" style="margin-bottom: 0">You can choose whether to accept the agreement now or review it later at the bottom of this page.</p>
 
   </div>
 </div>
@@ -165,7 +165,7 @@ Manage apprenticeships
 <div class="govuk-grid-row" id="contents">
 
     <div class="govuk-grid-column-one-quarter" >
-        <h2 class="govuk-body govuk-body-s contents-title">Contents</h2>
+        <h2 class="govuk-body govuk-body-s contents-title">Sections of the agreement</h2>
         <ul class="govuk-list contents">
             <li><a class="govuk-link--no-visited-state" href="#background">Background </a></li>
             <li><a class="govuk-link--no-visited-state" href="#agreedterms">Agreed terms</a></li>
@@ -782,13 +782,13 @@ Manage apprenticeships
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="agreementSign-2" name="agreementSign" type="radio" value="noSignLater" >
                         <label class="govuk-label govuk-radios__label" for="agreementSign-2">
-                            I’ll accept it later
+                            Not yet, I’ll review it later
                         </label>
                         <span class="govuk-hint govuk-radios__hint">
                             {% if _referrer == "home" %}
-                                You can accept the agreement later. {{_orgName}} cannot get or reserve funding until it accepts.
+                                You can accept the agreement when {{_orgName}} is ready to get or reserve apprenticeship funding.
                             {% else %}
-                                You can continue creating an account and accept the agreement later. {{_orgName}} cannot get or reserve funding until it accepts.
+                                You can skip the agreement and accept it when {{_orgName}} is ready to get or reserve apprenticeship funding.
                             {% endif %}
                         </span>
                     </div>

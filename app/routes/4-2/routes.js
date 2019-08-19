@@ -54,7 +54,7 @@ module.exports = function (router) {
           req.session.validationError = "true"
           req.session.validationErrors.agreementCheck = {
               "anchor": "agreementCheck-1",
-              "message": "Select whether you want to review the agreement now or later"
+              "message": "Select whether you want to review the employer agreement now or later"
           }
         }
       
@@ -80,7 +80,7 @@ module.exports = function (router) {
           req.session.validationError = "true"
           req.session.validationErrors.agreementSign = {
               "anchor": "agreementSign-1",
-              "message": "Select whether you accept the agreement now or will accept it later"
+              "message": "Select whether you accept the agreement or will review it later"
           }
         }
       

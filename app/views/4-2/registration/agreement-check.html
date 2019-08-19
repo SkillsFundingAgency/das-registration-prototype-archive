@@ -4,7 +4,7 @@
 
 {% block pageTitle %}
 {% if validationError == "true" %}Error: {% endif %}
-Do you want to review the agreement now?
+When do you want to review the employer agreement?
 {% endblock %}
 
 {% block beforeContent %}
@@ -43,27 +43,31 @@ Do you want to review the agreement now?
         </div>
         {% endif %}
 
-        <h1 class="govuk-heading-xl">Do you want to review the employer agreement now?</h1>
+        <h1 class="govuk-heading-xl">When do you want to review the employer agreement?</h1>
 
         <p class="govuk-body">The agreement is between {{_orgName}} and the Education and Skills Funding Agency (ESFA).</p>
 
-        <h2 class="govuk-heading-m">Important features of the agreement</h2>
-        <p class="govuk-body">{{_orgName}} must:</p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>only use the funding in its apprenticeship service account to train and assess apprentices</li>
-            <li>have a contract with its training providers so they can carry out apprenticeship training</li>
-            <li>follow the apprenticeship funding rules</li>
-        </ul>
-        <p class="govuk-body">The ESFA can:</p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>suspend payments, recover funds or close {{_orgName}}’s account if it breaks the agreement</li>
-            <li>change the terms of the agreement (if this happens, we will ask {{_orgName}} to accept the new terms)</li>
-            <li>change any part of the apprenticeship service</li>
-        </ul><br>
-        
-        <!-- {{ govukInsetText({
-            text: "You can continue creating an account without reviewing the agreement. " + _orgName + " cannot get or reserve funding until it accepts the agreement."
-        }) }} -->
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                View a summary of the employer agreement
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+                <h2 class="govuk-heading-s">Key features of the full employer agreement</h2>
+                <p class="govuk-body">{{_orgName}} must:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>only use the funding in its apprenticeship service account to train and assess apprentices</li>
+                    <li>have a contract with its training providers so they can carry out apprenticeship training</li>
+                    <li>follow the apprenticeship funding rules</li>
+                </ul>
+                <p class="govuk-body">The ESFA can:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>suspend payments, recover funds or close {{_orgName}}’s account if it breaks the agreement</li>
+                    <li>change the terms of the agreement - if this happens {{_orgName}} can either accept the new terms or close its account (by giving us 30 days notice)</li>
+                </ul>
+            </div>
+        </details>
 
         <form method="post" class="form">
 
@@ -75,20 +79,20 @@ Do you want to review the agreement now?
                         <span class="govuk-visually-hidden">Error:</span> {{validationErrors.agreementCheck.message}}
                     </span>
                     {% endif %}
-                    <div class="govuk-radios govuk-radios--inline" id="agreementCheck">
+                    <div class="govuk-radios" id="agreementCheck">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="agreementCheck-1" name="agreementCheck" type="radio" value="yes" >
                             <label class="govuk-label govuk-radios__label" for="agreementCheck-1">
-                                Yes, I’ll review the agreement now
+                                Now
                             </label>
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="agreementCheck-2" name="agreementCheck" type="radio" value="no" >
                             <label class="govuk-label govuk-radios__label" for="agreementCheck-2">
-                                No, I’ll review the agreement later
+                                Later, I’ll finish creating an account first
                             </label>
                             <span class="govuk-hint govuk-radios__hint">
-                                You can continue creating an account and review the agreement later. {{_orgName}} cannot get or reserve funding until it accepts the agreement.
+                                You can skip the agreement and review it when {{_orgName}} is ready to get or reserve apprenticeship funding.
                             </span>
                         </div>
                     </div>
