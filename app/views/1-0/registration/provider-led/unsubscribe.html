@@ -25,32 +25,28 @@
             <input class="govuk-input" id="event-name" value="&nbsp; joe.bloggs@yourcompany.co.uk" name="event-name" type="text" aria-describedby="event-name-hint" disabled>
           </div>
           <br>
-        <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                    Please choose what you would like to unsubscribe from:
-                </h1>
-              </legend>
-              <span id="nationality-hint" class="govuk-hint">
-                
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in">
+                Unsubscribe from email communications from this training provider
+              </label>
+              <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                This will not affect the regular communications you receive as a registered user of our digital service
               </span>
-              <div class="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox" value="british" aria-describedby="nationality-1-item-hint">
-                  <label class="govuk-label govuk-checkboxes__label" for="nationality-1">
-                    Unsubscribe from email communications from this training provider
-                  </label> <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                    This will not affect the regular communications you receive as a registered user of our digital service
-                  </span> </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
-                  <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
-                    Unsubscribe from all Apprenticeship Service communications
-                  </label> </div>
-              </div>
-            </fieldset>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+                Unsubscribe from all Apprenticeship Service communications
+              </label>
+              <!-- <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                You’ll have an account if you’ve already proved your identity with either Barclays, CitizenSafe, Digidentity, Experian, Post Office, Royal Mail or SecureIdentity.
+              </span> -->
+            </div>
           </div>
+          <br>
           <br>
         <a href="unsubscribe-confirmation" class="govuk-button">Unsubscribe</a>
     </div>
