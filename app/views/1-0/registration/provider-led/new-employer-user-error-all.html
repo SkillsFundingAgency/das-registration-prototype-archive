@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage apprenticeships
+{% endblock %}
+
+{% set serviceName = "Manage apprenticeships" %}
+{% set backLinkHref = "employer-permission" %}
+
+{% block content %}
+
+<style>
+    .govuk-header__container{
+        border-bottom: 10px solid #fd7742;  
+    }
+</style>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                    <!-- <h2 class="govuk-error-summary__title" id="error-summary-title">
+                      There is a problem
+                    </h2> -->
+                    <div class="govuk-error-summary__body">
+                      <ul class="govuk-list govuk-error-summary__list">
+                        <li>
+                          <a href="#passport-issued-error">Enter details to continue</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+        <h1 class="govuk-heading-xl">
+            Enter the employer details
+        </h1>
+        <p>Enter the details for the employer. Once the account is created, the employer will be able to add other users.</p>
+          <br>
+        <div class="govuk-form-group">
+            <div class="govuk-form-group govuk-form-group--error">
+                 <label class="govuk-label" for="providerRegisterEmail">
+                      Organisation
+                  </label>
+                  <span id="email-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> Enter a organisation name
+                  </span>
+                <input class="govuk-input govuk-input--error" id="providerRegisterEmail" name="providerRegisterEmail" type="providerRegisterEmail">
+            </div>        
+          <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="providerRegisterFirstName">
+                 First name
+              </label>
+              <span id="email-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter first name
+              </span>
+              <input class="govuk-input govuk-input--error" id="providerRegisterFirstName" name="providerRegisterFirstName" type="text">
+          </div>
+          <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="providerRegisterLastName">
+                 Last name
+              </label>
+              <span id="email-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter last name
+              </span>
+              <input class="govuk-input govuk-input--error" id="providerRegisterLastName" name="providerRegisterLastName" type="text">
+          </div>
+          <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="providerRegisterEmail">
+                 Email address
+              </label>
+              <span id="email-hint" class="govuk-hint">
+                We'll send an email to the employer to confirm their identity.
+            </span>
+            <span id="email-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Enter a valid email address to continue
+              </span>
+              <input class="govuk-input govuk-input--error" id="providerRegisterEmail" name="providerRegisterEmail" type="providerRegisterEmail">
+          </div>
+
+        </div>
+        <a href="review-details" class="govuk-button">Continue</a>
+    </div>
+</div>
+
+{% endblock %}
