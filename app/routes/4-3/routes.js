@@ -80,7 +80,7 @@ module.exports = function (router) {
           req.session.validationError = "true"
           req.session.validationErrors.agreementSign = {
               "anchor": "agreementSign-1",
-              "message": "Select whether you accept the agreement or will review it later"
+              "message": "Select whether you accept the agreement or want to finish creating an account first"
           }
         }
       

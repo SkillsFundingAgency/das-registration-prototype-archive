@@ -21,9 +21,6 @@ Manage apprenticeships
         $(window).bind('scroll', function() {
             if($(window).scrollTop() >= $('.contents-column').offset().top + $('.contents-column').outerHeight() + 20) {
                 $('.app-back-to-top').removeClass("app-back-to-top--hidden")
-                // if (($('.back-top-top-in-page').offset().top) <= ($(window).scrollTop() + $(window).height())) {
-                //     $('.app-back-to-top').addClass("app-back-to-top--hidden")
-                // }
             } else {
                 $('.app-back-to-top').addClass("app-back-to-top--hidden")
             }
@@ -184,7 +181,7 @@ Manage apprenticeships
         </div>
         {% endif %}
 
-        <h1 class="govuk-heading-xl">Do you accept the employer agreement for {{_orgName}}?</h1>
+        <h1 class="govuk-heading-xl">Do you accept the employer agreement on behalf of {{_orgName}}?</h1>
 
         <div class="call-to-action">
             <h2 class="govuk-heading-m">Key features of the employer agreement</h2>
@@ -215,19 +212,7 @@ Manage apprenticeships
     </p>
 </div>
 
-
-<!-- <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds" >
-        <h2 class="govuk-heading-m">The full agreement</h2>
-        <p class="govuk-body" >You can choose whether to accept the agreement now or review it later at the bottom of this page.</p>
-    </div>
-    <div class="govuk-grid-column-one-third">
-    </div>
-</div> -->
-
 <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br><br>
-
-
 
 <!-- Full agreement -->
 <div class="govuk-grid-row" id="contents">
@@ -1662,7 +1647,7 @@ Manage apprenticeships
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text govuk-!-font-weight-bold">
               <span class="govuk-warning-text__assistive">Warning</span>
-              The agreement is legally binding. If {{_orgName}} breaks it, we could stop it hiring apprentices and close its account. 
+              The agreement is legally binding. If {{_orgName}} breaches the terms, we could stop it hiring apprentices and close its account.
           </strong>
       </div>
 
@@ -1672,39 +1657,38 @@ Manage apprenticeships
         <div class="govuk-form-group {% if validationErrors.agreementSign %}govuk-form-group--error{% endif %}">
             <fieldset class="govuk-fieldset" >
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    Do you accept the agreement on behalf of {{_orgName}}?
+                    Do you accept the employer agreement on behalf of {{_orgName}}?
                 </legend>
                 {% if validationErrors.agreementSign %}
                 <span id="agreementSign-error" class="govuk-error-message">
                     <span class="govuk-visually-hidden">Error:</span> {{validationErrors.agreementSign.message}}
                 </span>
                 {% endif %}
+                <span class="govuk-hint">
+                    By accepting, you confirm that {{_orgName}} is entering into the agreement with the ESFA and agree to its terms and conditions.
+                </span>
                 <div class="govuk-radios govuk-radios--inline" id="agreementSign">
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="agreementSign-1" name="agreementSign" type="radio" value="yesSign" >
                         <label class="govuk-label govuk-radios__label" for="agreementSign-1">
-                            Yes, I have read the agreement and accept it
+                            Yes, I accept the agreement
                         </label>
                     </div>
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="agreementSign-2" name="agreementSign" type="radio" value="noSignLater" >
                         <label class="govuk-label govuk-radios__label" for="agreementSign-2">
-                            Not yet, I’ll review it later
-                        </label>
-                        <span class="govuk-hint govuk-radios__hint">
                             {% if _referrer == "home" %}
-                                You can accept the agreement when {{_orgName}} is ready to get or reserve apprenticeship funding.
+                                Not yet
                             {% else %}
-                                You can skip the agreement and accept it when {{_orgName}} is ready to get or reserve apprenticeship funding.
+                                Not yet, I’ll finish creating an account first
                             {% endif %}
-                        </span>
+                        </label>
                     </div>
                 </div>
             </fieldset>
         </div>
 
-          <!-- Call to action button -->
-          <button class="govuk-button" >Continue</button>
+        <button class="govuk-button" >Continue</button>
 
       </form>
 
