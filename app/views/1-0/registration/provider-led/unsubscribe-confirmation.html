@@ -16,32 +16,14 @@
           You are now unsubscribed
         </h1>
         <div class="govuk-body" style="color:#000">
-          We can confirm you have now been unsubscribed from our marketing communications and will no longer receive emails from us.
+          You have now been unsubscribed from all communications and will no longer receive emails from this training provider.
         </div>
       </div>
-
-      {% from "radios/macro.njk" import govukRadios %}
-
-      {{ govukRadios({
-        idPrefix: "where-do-you-live",
-        name: "where-do-you-live",
-        fieldset: {
-          legend: {
-            text: "What next?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "wales",
-            text: "Return to the homepage"
-          }
-        ]
-      }) }}
-    
-      <a href="/1-0/registration/interim-homepage" class="govuk-button">Continue</a>
-
+      <br>
+      <h2 class="govuk-heading-m">
+          What happens next
+      </h2>
+          <p class="govuk-body">What we are doing in the background...</p>
     </div>
 </div>
 
