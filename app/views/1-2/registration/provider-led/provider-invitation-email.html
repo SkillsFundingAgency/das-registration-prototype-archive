@@ -1,0 +1,63 @@
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+Your emails
+{% endblock %}
+
+{% block content %}
+<p>
+	Dear Joe Bloggs, 
+</p>
+
+<p>
+	John Barnes at ABC Training Limited has invited you to register for an Apprenticeship Service account. 
+</p>
+
+<p>
+	Registering for an account gives you access to funding to pay for apprenticeship training. 
+</p>
+
+<p>
+	You'll also be able to post apprenticeship vacancies on Find an apprentice. 
+</p>
+
+<!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+<br>
+<h2 class="govuk-heading-m">What you'll need:</h2>
+	<ul class="govuk-list govuk-list--bullet">
+		<li>the Government Gateway login or your accounts office reference number and employer PAYE scheme reference</li>
+		<li>authority to add PAYE schemes to the account for this organisation</li>
+		<li>authority to sign the employer agreement for this organisation</li>
+	</ul>
+	<p style="padding-bottom: 15px;">
+		<a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19 govuk-!-font-weight-bold" href="/1-2/registration/new-user?email-journey=true">Set up your account</a>
+	</p>
+
+
+<!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+
+
+
+
+
+<p>
+	
+</p>
+
+<p>
+	If you'd prefer to no longer get these emails from your training provider, you can <a class="govuk-link govuk-link--no-visited-state" href="/1-2/registration/provider-led/unsubscribe">unsubscribe</a>. 
+</p>
+
+<p>
+	If you didn't agree with your training provider to receive this invitation, you can <a class="govuk-link govuk-link--no-visited-state" href="report-tp" target="blank">let us know</a>. 
+</p>
+
+<p>
+	This message is automated, please don't reply. 
+</p>
+
+<p>
+	Thanks,<br>
+	Apprenticeship Service Team 
+</p>
+{% endblock %}

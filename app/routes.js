@@ -3,6 +3,7 @@ const router = express.Router()
 
 require('./routes/1-0/routes.js')(router);
 require('./routes/1-1/routes.js')(router);
+require('./routes/1-2/routes.js')(router);
 require('./routes/2-0/routes.js')(router);
 require('./routes/3-0/routes.js')(router);
 require('./routes/4-0/routes.js')(router);

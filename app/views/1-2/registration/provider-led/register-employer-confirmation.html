@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage apprenticeships
+{% endblock %}
+
+{% set serviceName = "Manage apprenticeships" %}
+
+{% block content %}
+
+<style>
+    .govuk-header__container{
+        border-bottom: 10px solid #fd7742;  
+    }
+</style>
+
+<div class="govuk-width-container">
+  
+    <main class="govuk-main-wrapper">
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% from "panel/macro.njk" import govukPanel %}
+
+            {{ govukPanel({
+              titleText: "You've set up the employer account",
+              html: "The employer has been sent an email invitation with instructions on what they need to do next to complete the set-up of the account."
+            }) }}
+
+        </div>
+      </div>
+  
+    </main>
+  </div>
+
+  {% from "radios/macro.njk" import govukRadios %}
+
+  {{ govukRadios({
+    idPrefix: "where-do-you-live",
+    name: "where-do-you-live",
+    fieldset: {
+      legend: {
+        text: "What next?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+
+    items: [
+      {
+        value: "england",
+        text: "Set up another account"
+      },
+      {
+        value: "scotland",
+        text: "View invited employers"
+      },
+      {
+        value: "wales",
+        text: "Return to homepage"
+      }
+    ]
+  }) }}
+
+  <a href="provider-invited-employer" class="govuk-button">Continue</a>
+
+
+{% endblock %}
