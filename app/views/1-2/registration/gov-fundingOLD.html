@@ -14,17 +14,24 @@
             <form method="post" class="form">
 
            <h1 class="govuk-heading-xl">
-            Add a PAYE scheme
+             Get apprenticeship funding
            </h1>
-           <p class="govuk-body">We need you to add the PAYE scheme for your organisation.</p>
-           <p>You can do this by using either of the following:</p>
+           <p class="govuk-body">If you're ready to pay for your apprenticeship training, you can do this now by adding the PAYE scheme for your organisation.</p>
+           <p> If you do not need to get apprenticeship funding yet, you can still register an account to:</p>
                 <ul class="govuk-list govuk-list--bullet">
-               <li>the Government Gateway login for your organisation</li>
-               <li>your accounts office reference number for your organisation 
-                <span class="govuk-body govuk-!-font-weight-bold">(you can use this if your annual payroll for your organisation is under £3 million)</span>
-                </li>
+               <li>search and save apprenticeships</li>
+               <li>save your chosen training providers</li>
            </ul>
-           <br>
+           <p class="govuk-body">To get apprenticeship funding now, you can use either of the following:</p>
+          <ul class="govuk-list govuk-list--bullet">
+               <li>the Government Gateway login for your PAYE scheme</li>
+               <li>your accounts office reference number and employer PAYE scheme reference</li>
+           </ul>
+
+           <!-- <p>
+            <a href="https://www.gov.uk/log-in-register-hmrc-online-services/problems-signing-in" target="blank">Can't find your Government Gateway details?</a>
+          </p> -->
+
           <details class="govuk-details" role="group">
             <summary class="govuk-details__summary" role="button" aria-controls="details-content-17643193-f49b-4eeb-9ab9-17631c4c3fab" aria-expanded="false">
               <span class="govuk-details__summary-text">
@@ -57,34 +64,22 @@
              name: "add-your-paye",
              fieldset: {
                legend: {
-                 text: "You can add a PAYE scheme later if you need more time, we can still create your account for you.",
+                 text: "Do you want to add a PAYE scheme to get apprenticeship funding?",
                  isPageHeading: true,
                  classes: "govuk-fieldset__legend--s"
                }
              },
              items: [
                {
-                 value: "govgateway",
-                 text: "use Government Gateway log in"
+                 value: "yes",
+                 text: "Yes, add my PAYE scheme details now"
                },
-               {
-                value: "aorn",
-                text: "use accounts office reference number and employer PAYE scheme reference"
-              },
                {
                  value: "no",
                  text: "No, I'll do this later"
                }
              ]
            }) }}
-
-           <div class="govuk-warning-text">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text">
-              <span class="govuk-warning-text__assistive">Warning</span>
-              Before you continue, you must make sure you have authority to add PAYE schemes to the account for this organisation
-            </strong>
-          </div>
 
            <button class="govuk-button">Continue</button>
 

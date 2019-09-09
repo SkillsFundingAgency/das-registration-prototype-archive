@@ -24,8 +24,11 @@ module.exports = function (router) {
       
         let answer = req.session.data['add-your-paye']
       
-        if (answer === 'yes') {
-          res.redirect('/' + version + '/registration/ways-to-add-paye')
+        if (answer === 'govgateway') {
+          res.redirect('/' + version + '/registration/using-your-gg')
+        }
+        else if(answer === 'aorn') {
+          res.redirect('/' + version + '/registration/pensionsREG')
         } else {
           res.redirect('/' + version + '/registration/homepage-addPAYE')
         }
