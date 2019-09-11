@@ -21,12 +21,16 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-            {% from "panel/macro.njk" import govukPanel %}
-
-            {{ govukPanel({
-              titleText: "You've set up the employer account",
-              html: "The employer has been sent an email invitation with instructions on what they need to do next to complete the set-up of the account."
-            }) }}
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              The employer account is ready for them to complete
+            </h1>
+            <div class="govuk-panel__body">
+              <strong>Joe Bloggs</strong>  has been sent an email invitation with instructions to complete the set-up of the account.
+            </div>
+          </div>
+          <!-- <br>
+          <p class="govuk-body">The employer has been sent an email invitation with instructions to complete the set-up of the account.</p> -->
 
         </div>
       </div>
@@ -50,11 +54,7 @@
     items: [
       {
         value: "england",
-        text: "Set up another account"
-      },
-      {
-        value: "scotland",
-        text: "View invited employers"
+        text: "Invite another employer"
       },
       {
         value: "wales",
