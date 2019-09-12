@@ -12,6 +12,10 @@
     .govuk-header__container{
         border-bottom: 10px solid #fd7742;  
     }
+
+    .govuk-summary-list__key {
+    width: 35%;
+}
 </style>
 
 <div class="govuk-grid-row">
@@ -40,10 +44,24 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Employer name
+                Employer first name
               </dt>
               <dd class="govuk-summary-list__value">
-                Joe Bloggs
+                Joe
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="new-employer-user">
+                  Change<span class="govuk-visually-hidden">name</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Employer last name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Bloggs
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="new-employer-user">
