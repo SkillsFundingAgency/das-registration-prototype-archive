@@ -10,6 +10,7 @@ require('./routes/4-0/routes.js')(router);
 require('./routes/4-1/routes.js')(router);
 require('./routes/4-2/routes.js')(router);
 require('./routes/4-3/routes.js')(router);
+require('./routes/4-4/routes.js')(router);
 require('./routes/5-0/routes.js')(router);
 
 // Employer started
