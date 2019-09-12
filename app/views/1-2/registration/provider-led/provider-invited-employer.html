@@ -173,6 +173,10 @@
     padding-left: 20px;
 }
 
+table.responsive tr th.tw-25 {
+    width: 15%;
+}
+
 </style>
 
 
@@ -249,21 +253,26 @@
             <thead>
                 <tr data-intro="When viewed on a mobile device the table headers are repeated for each row. Each table cell includes a data-label repeating the column header name." data-position="top">
                     <th scope="col" class="tw-25"><span class="no-wrap">Employer organisation</span></th>
-                    <th scope="col" class="tw-25">Employer name</th>
+                    <th scope="col" class="tw-25">Employer first name</th>
+                    <th scope="col" class="tw-25">Employer last name</th>
                     <th scope="col" class="tw-25">Employer email</th>
-                    <th scope="col" class="numeric">Date sent</th>
+                    <th scope="col" class="tw-25" style="text-align: right;">Date sent</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td data-label="Date">
-                        <span class="no-wrap">Design Schmesign</span>
+                        <span class="no-wrap">Assurance Aerospace</span>
                     </td>
                     <td data-label="Description">
-                        Michael Combs
+                        Joe
 
                     </td>
-                    <td class="tw-25" data-label="Amount">michael.combs@designsch.com</td>
+                    <td data-label="Description">
+                         Bloggs
+
+                    </td>
+                    <td class="tw-25" data-label="Amount">joe.bloggs@aaerospace.com</td>
                     <td class="numeric" data-label="Amount">18 Feb 2019</td>
                     <!-- <td class="numeric">
                         <a title="View details for the transaction on 15 Mar 2018" href="/sprint/31/account/finance/levy.html">
@@ -277,9 +286,15 @@
                     </td>
                     <td data-label="Description">
 
-                            George Mitch
+                            George
 
                     </td>
+
+                    <td data-label="Description">
+
+                     Mitch
+
+                </td>
                     <td class="tw-25" data-label="Amount">georgemitch@larrycorp.com</td>
                     <td class="numeric" data-label="Amount">17 Mar 2019</td>
                     <!-- <td class="numeric">
@@ -294,9 +309,15 @@
                     </td>
                     <td data-label="Description">
 
-                            Kerry Miller
+                            Kerry
 
                     </td>
+
+                    <td data-label="Description">
+
+                        Miller
+
+                </td>
                     <td class="tw-25" data-label="Amount">kerrym@mla.co.uk</td>
                     <td class="numeric" data-label="Amount">18 June 2019</td>
                     <!-- <td class="numeric">
@@ -311,7 +332,13 @@
                     </td>
                     <td data-label="Description">
 
-                        Jason Moore
+                        Jason
+
+                    </td>
+
+                    <td data-label="Description">
+
+                        Moore
 
                     </td>
                     <td class="tw-25" data-label="Amount">jason.moore@rod.com</td>
