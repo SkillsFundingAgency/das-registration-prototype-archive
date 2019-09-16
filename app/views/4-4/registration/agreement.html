@@ -15,9 +15,54 @@ Manage apprenticeships
 
 {% set _orgName = data['orgName'] or "ASSURANCE AEROSPACE LTD" %}
 
+{% block pageScripts %}
+<script>
+    $(document).ready(function() {
+        $(window).bind('scroll', function() {
+            if($(window).scrollTop() >= $('.contents-column').offset().top + $('.contents-column').outerHeight() + 20) {
+                $('.app-back-to-top').removeClass("app-back-to-top--hidden")
+            } else {
+                $('.app-back-to-top').addClass("app-back-to-top--hidden")
+            }
+        });
+    });
+</script>
+{% endblock %}
+
 {% block content %}
 
 <style>
+    /* table of contents */
+    .contents {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .contents li {
+        padding-top: 7.5px;
+        line-height: 1.3;
+        margin-bottom: 0;
+    }
+    
+    .contents li a {
+        text-decoration: none;
+    }
+    
+    .contents a:hover,
+    .contents a:focus,
+    .contents a:active {
+        text-decoration: underline
+    }
+    .contents .number {
+        margin-right: 5px;
+    }
+    .contents a {
+        display: table
+    }
+    .contents .number {
+        display: table-cell;
+        min-width: 1.5em;
+        padding-right: 0.3em
+    }
     /* call to action boxes */
     .call-to-action {
       margin: 2em 0;
@@ -28,6 +73,47 @@ Manage apprenticeships
         .call-to-action {
             padding: 1.5em 1em;    
         }
+    }
+    /* back to top link */
+    .app-back-to-top {
+        position: fixed;
+        top: 20px;
+        padding: 14px;
+        z-index: 100;
+        display: block;
+    }
+    .app-back-to-top p {
+        margin-bottom: 0;
+    }
+    @media (max-width: 641px) {
+        .app-back-to-top {
+            bottom: 0;
+            top: inherit;
+            left: 0;
+            background-color: #dee0e2;
+            width: 100%;
+            display: none;
+        }
+        .contents,
+        .contents-title {
+            display: none;
+        }
+    }
+
+    .app-back-to-top p {
+        margin-bottom: 0;
+    }
+
+    .app-back-to-top__icon {
+        display: inline-block;
+        width: .8em;
+        height: 1em;
+        margin-top: 0;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .app-back-to-top--hidden {
+        display: none;
     }
     /* 2 column layout of clauses */
     .clause {
@@ -71,9 +157,6 @@ Manage apprenticeships
         .clause-column-content {
             width: 92%;
         }
-    }
-    .agreement-details {
-        margin-bottom: 10px;
     }
 
 </style>
@@ -119,19 +202,67 @@ Manage apprenticeships
 </div>
 
 
+<div class="app-back-to-top app-back-to-top--hidden" >
+    <p class="govuk-body-s">
+        <a class="govuk-link govuk-link--no-visited-state" href="#sections-title">
+            <svg class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+            </svg>Sections
+        </a>
+    </p>
+</div>
+
 <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"><br><br>
 
 <!-- Full agreement -->
 <div class="govuk-grid-row" id="contents">
+
+    <div class="govuk-grid-column-one-quarter" >
+        <div class="contents-column">
+            <h2 class="govuk-body govuk-body-s contents-title" id="sections-title">Sections of the agreement</h2>
+            <ul class="govuk-list contents">
+                <li><a class="govuk-link--no-visited-state" href="#background">Background </a></li>
+                <li><a class="govuk-link--no-visited-state" href="#agreedterms">Agreed terms</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#1"><span class="number">1.</span>Definitions and Interpretation </a></li>
+                <li><a class="govuk-link--no-visited-state" href="#2"><span class="number">2.</span>Purpose and Use of Funding</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#3"><span class="number">3.</span>Commencement and Duration</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#4"><span class="number">4.</span>Payment of Funding</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#5"><span class="number">5.</span>Employer’s Obligations</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#6"><span class="number">6.</span>Employer Co-Investment</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#7"><span class="number">7.</span>Transfer of Funding</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#8"><span class="number">8.</span>Withholding, Suspension and repayment of Funding</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#9"><span class="number">9.</span>State Aid</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#10"><span class="number">10.</span>Information, Audit and Reporting</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#11"><span class="number">11.</span>Intellectual Property Rights</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#12"><span class="number">12.</span>Confidentiality</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#13"><span class="number">13.</span>Freedom of information</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#14"><span class="number">14.</span>Data protection</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#15"><span class="number">15.</span>Anti-discrimination</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#16"><span class="number">16.</span>Limitation of liability</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#17"><span class="number">17.</span>Warranties</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#18"><span class="number">18.</span>Termination</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#19"><span class="number">19.</span>Force Majeure</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#20"><span class="number">20.</span>Assignment</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#21"><span class="number">21.</span>Variation</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#22"><span class="number">22.</span>Waiver</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#23"><span class="number">23.</span>Notices</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#24"><span class="number">24.</span>Dispute resolution</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#25"><span class="number">25.</span>No partnership or agency</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#26"><span class="number">26.</span>Joint and several liability</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#27"><span class="number">27.</span>Contracts (Rights of Third Parties) Act 1999</a></li>
+                <li><a class="govuk-link--no-visited-state" href="#28"><span class="number">28.</span>Governing law</a></li>
+            </ul>
+        </div>
+    </div>
     
     <div class="govuk-grid-column-three-quarters">
 
       <h2 class="govuk-heading-l">Agreement between {{_orgName}} and the ESFA</h2>
       
-      <p class="govuk-body-lead">For the provision of levy-funded apprenticeship training.</p>
+      <p class="govuk-body-lead">Updated on 1 May 2018.</p>
 
         <!-- Agreement -->
-        <p class="govuk-body">Updated on 1 May 2018.</p>
+        <p class="govuk-body">For the provision of levy-funded apprenticeship training</p>
         <h2 class="govuk-heading-m" id="background">Background</h2>
         <p class="govuk-body">This Agreement sets out the terms for use of the Apprenticeship Service by the Employer and the obligations by which the Employer agrees to be bound.</p>
 
@@ -142,307 +273,256 @@ Manage apprenticeships
 
         <h2 class="govuk-heading-m" id="agreedterms">Agreed terms</h2>
 
-        <details class="govuk-details agreement-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                1. Definitions and Interpretation
-                </span>
-            </summary>
-            <div class="govuk-details__text">
-                <!-- 1 -->
-                <div class="clause">
-                    <div class="clause-sub-row">
-                        <div class="clause-column-fig">
-                            <h2 class="govuk-heading-m" id="1">1.</h2>
-                        </div>
-                        <div class="clause-column-content">
-                            <h2 class="govuk-heading-m">Definitions and Interpretation</h2>
-                        </div>
-                    </div>
-                    <div class="clause-sub-row">
-                        <div class="clause-column-fig">
-                            <h3 class="govuk-body para-number">1.1</h3>
-                        </div>
-                        <div class="clause-column-content">
-                            <p class="govuk-body">In this Agreement the following terms shall have the following meanings:</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprentice: </strong>a person who works under an Apprenticeship Agreement.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprentice Assessment Organisation:</strong> any organisation on the Register of Apprentice Assessment Organisations which is selected by an Employer and contracted by a Training Provider to carry out
-                                End-Point Assessment.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship:</strong> the training and (where applicable) end-point assessment for an employee as part of a job with an accompanying skills development programme.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship Agreement: </strong>(a) an approved English apprenticeship agreement; or (b) an apprenticeship agreement within the meaning given in section 32 of the Apprenticeship, Skills, Children
-                                and Learning Act 2009 as it applies in relation to England by virtue of provision made under section 115(9) of the Deregulation Act 2015. </p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship Levy: </strong>the levy payable by all employers with an annual pay bill of more than £3 million which is used to support the funding of Apprenticeships.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeships Logo: </strong>the logo consisting of the word “Apprenticeships” in plain black type face with a semi-circle of orange brush strokes to the left hand side of the letter A, the Intellectual
-                                Property Rights in which are owned by the Crown.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship Service: </strong>the service provided by the ESFA fund apprenticeship training undertaken by approved training providers using government funds. </p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship Standard: </strong>the apprenticeship standards which employers have designed. This is defined as those standards that have had their assessment plan approved by the Institute for Apprenticeships
-                            and have been published on the Institute For Apprenticeships website alongside their allocated funding band.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Bribery Act: </strong>the Bribery Act 2010 and any subordinate legislation made under that Act from time to time together with any guidance or codes of practice issued by the relevant government department
-                                concerning the legislation.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Change of Control:</strong> has the meaning given in section 1124 of the Corporation Tax Act 2010.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Connected Employer: </strong>any entity (being a distinct legal entity from the Employer) which is connected with the Employer within the meaning of Schedule 1 Parts 1 and 2 of the National Insurance
-                                Contributions Act 2014, and which, not being a contracting party to this Agreement, carries out activities on behalf of the Employer in relation to the Apprenticeship Service or employs an Apprentice whose Training is Funded in whole or
-                                in part from the Employer’s Digital Account.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Employer: </strong>the employer which enters into a contract with a Training Provider to commission Training (a) for its own Apprentices and/or (b) on behalf of a Connected Employer for the Connected
-                                Employer’s Apprentices, to be funded in whole or in part from the Employer’s Digital Account.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Employer Co-Investment:</strong> a financial contribution towards the cost of Training which is payable by the Employer to the Training Provider when there are insufficient funds in the Employer’s Digital
-                                Account. </p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Employer’s Digital Account: </strong>the part of the Apprenticeship Service which shows the amount of Funding available to the Employer or a Connected Employer to spend on Training of Apprentices in
-                                accordance with this Agreement.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">End-Point Assessment:</strong> the independent assessment of the Apprentice’s knowledge, skills and behaviours carried out by an Apprentice Assessment Organisation at the end of the Training to confirm
-                                that the Apprentice has met the requirements of any relevant Approved Apprenticeship Standard.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">ESFA:</strong> the Secretary of State for Education, acting through the Education and Skills Funding Agency, an executive agency of the Department for Education, whose principal address is at Cheylesmore
-                                House, Quinton Road, Coventry, CV1 2WT.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Funding:</strong> the funding paid to the Training Provider on behalf of the Employer towards the cost of Training and End-Point Assessment in accordance with this Agreement.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Funding Rules:</strong> the ESFA’s apprenticeship funding rules, as revised and amended from time to time.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Insolvency Event: </strong>means any of the following circumstances:</p>
-                            <ol class="govuk-list govuk-list--number">
-                                <li type="a">a party suspends or threatens to suspend payment of its debts or is unable to pay its debts as they fall due or is deemed unable to pay its debts within the meaning of any relevant provision of the Insolvency Act 1986;</li>
-                                <li type="a">a party commences negotiations with all or any class of its creditors with a view to rescheduling any of its debts, or makes a proposal for or enters into any compromise or arrangement with any of its creditors (other than for the sole
-                                    purpose of a bona fide reconstruction or amalgamation);</li>
-                                <li type="a">a petition is filed, a notice is given, a resolution is passed, or an order is made, for or in connection with the winding up of the relevant party (other than for the sole purpose of a bona fide reconstruction or amalgamation);</li>
-                                <li type="a">a receiver, administrative receiver or similar officer is appointed over the whole or any part of the relevant party’s business or assets;</li>
-                                <li type="a">an application order is made either for the appointment of an administrator or for an administration order, an administrator is appointed, or notice of intention to appoint an administrator is given;</li>
-                                <li type="a">any event occurs, or proceeding is taken, with respect to the relevant party in any jurisdiction to which it is subject that has an effect equivalent or similar to any of the events mentioned in (a)-(e)(inclusive); or</li>
-                                <li type="a">the relevant party suspends or ceases, or threatens to suspend or cease, carrying on all or a substantial part of its business.</li>
-                            </ol>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Intellectual Property Rights:</strong><strong class="govuk-!-font-weight-bold"></strong> all patents, trademarks, logos (including the Apprenticeships Logo), copyrights and design rights (whether registered
-                                or not) and all applications for any of the foregoing and all rights of confidence and Know-How however arising for their full term and any renewals and extensions.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Know-How:</strong> information, data, know-how or experience whether patentable or not and including but not limited to any technical and commercial information relating to research, design, development,
-                                manufacture, use or sale.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Prohibited Act:</strong> means:</p>
-                            <ol class="govuk-list govuk-list--number">
-                                <li type="a">offering, giving or agreeing to give to any servant of the Crown any gift or consideration of any kind as an inducement or reward for:
-                                    <ol class="govuk-list govuk-list--number">
-                                        <li type="i">doing or not doing (or for having done or not having done) any act in relation to the obtaining or performance of this Agreement or any other contract with the Crown; or</li>
-                                        <li type="i">showing or not showing favour or disfavour to any person in relation to this Agreement or any other contract with the Crown;</li>
-                                    </ol>
-                                </li>
-                                <li type="a">entering into this Agreement or any other contract with the Crown where a commission has been paid or has been agreed to be paid by the Employer or on its behalf, or to its knowledge, unless before the relevant contract is entered into
-                                    particulars of any such commission and of the terms and conditions of any such contract for the payment thereof have been disclosed in writing to the ESFA;</li>
-                                <li type="a">
-                                    committing any offence:
-                                    <ol class="govuk-list govuk-list--number">
-                                        <li type="i">under the Bribery Act;</li>
-                                        <li type="i">under legislation creating offences in respect of fraudulent acts; or</li>
-                                        <li type="i">at common law in respect of fraudulent acts in relation to this Agreement or any other contract with the Crown; or</li>
-                                    </ol>
-                                </li>
-                                <li type="a">defrauding or attempting to defraud or conspiring to defraud the Crown.</li>
-                            </ol>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Receiving Employer:</strong> the Employer which receives transferred funds from a Sending Employer.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Register of Apprentice Assessment Organisations:</strong> the online register of Apprentice Assessment Organisations from which the Employer may select an organisation to carry out End-Point Assessment
-                                of Apprentices.
-                            </p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Register of Apprenticeship Training Providers:</strong> the online register of apprenticeship training providers which lists the organisations approved to deliver Training to Apprentices under this
-                                Agreement.
-                            </p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Sending Employer:</strong> an Employer (being a Levy Paying Employer) which transfers funding from their Employer’s Digital Account into another Employer’s Digital Account.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Technical Funding Guide:</strong> the Education and Skills Funding Agency’s Apprenticeship Technical Funding Guide as revised and amended from time to time. </p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Training:</strong> the delivery of training and on-programme assessment by the Training Provider to one or more Apprentices.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Training Provider:</strong> an organisation registered on the Register of Apprenticeship Training Providers which has a contract with the Employer to provide Training to one or more Apprentices.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Transfer of Funds:</strong> the movement of funds from the Employer’s Digital Account of a Levy Paying Employer to the Employer’s Digital Account of another Employer (whether a Levy Paying Employer
-                                or Non-Levy Paying Employer), to fund a specific apprentice undertaking a specific Apprenticeship Standard.</p>
-                            <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Transferred Funds:</strong> the funds received by a Receiving Employer under a Transfer of Funds.</p>
-                        </div>
-                    </div>
-                    <div class="clause-sub-row">
-                        <div class="clause-column-fig">
-                            <h3 class="govuk-body para-number">1.2</h3>
-                        </div>
-                        <div class="clause-column-content">
-                            <p class="govuk-body" data-point="1.2">Unless the context otherwise requires, words in the singular shall include the plural and in the plural shall include the singular.</p>
-                        </div>
-                    </div>
-                    <div class="clause-sub-row">
-                        <div class="clause-column-fig">
-                            <h3 class="govuk-body para-number">1.3</h3>
-                        </div>
-                        <div class="clause-column-content">
-                            <p class="govuk-body">Unless the context otherwise requires, a reference to one gender shall include a reference to the other genders.</p>
-                        </div>
-                    </div>
-                    <div class="clause-sub-row">
-                        <div class="clause-column-fig">
-                            <h3 class="govuk-body para-number">1.4</h3>
-                        </div>
-                        <div class="clause-column-content">
-                            <p class="govuk-body">A reference to a statute or statutory provision is a reference to it as amended, extended or re-enacted from time to time.</p>
-                        </div>
-                    </div>
-                    <div class="clause-sub-row">
-                        <div class="clause-column-fig">
-                            <h3 class="govuk-body para-number">1.5</h3>
-                        </div>
-                        <div class="clause-column-content">
-                            <p class="govuk-body">A reference to a person or body includes a reference to its successor.</p>
-                        </div>
-                    </div>
-                    <div class="clause-sub-row">
-                        <div class="clause-column-fig">
-                            <h3 class="govuk-body para-number">1.6</h3>
-                        </div>
-                        <div class="clause-column-content">
-                            <p class="govuk-body">Any words following the terms including, include, in particular, for example or any similar expression shall be construed as illustrative and shall not limit the sense of the words, description, definition, phrase or term preceding those terms.</p>
-                        </div>
-                    </div>
+        <!-- 1 -->
+        <div class="clause">
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h2 class="govuk-heading-m" id="1">1.</h2>
+                </div>
+                <div class="clause-column-content">
+                    <h2 class="govuk-heading-m">Definitions and Interpretation</h2>
                 </div>
             </div>
-        </details>
-
-        <details class="govuk-details agreement-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                2. Purpose and Use of Funding
-                </span>
-            </summary>
-            <div class="govuk-details__text">
-                <!-- 2 -->
-                <div class="clause">
-                <div class="clause-sub-row">
-                    <div class="clause-column-fig">
-                        <h2 class="govuk-heading-m" id="2">2.</h2>
-                    </div>
-                    <div class="clause-column-content">
-                        <h2 class="govuk-heading-m" >Purpose and Use of Funding</h2>
-                    </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">1.1</h3>
                 </div>
-                <div class="clause-sub-row">
-                    <div class="clause-column-fig">
-                        <h3 class="govuk-body para-number">2.1</h3>
-                    </div>
-                    <div class="clause-column-content">
-                        <p class="govuk-body">The Employer acknowledges and accepts that the Funding available in the Employer’s Digital Account is to support the Training and End-Point Assessment of Apprentices and shall be paid directly to the Training Provider in accordance with the
-                    Funding Rules. The Employer understands that the Funding may not be used for any other purpose.</p>
-                    </div>
-                </div>
-                <div class="clause-sub-row">
-                    <div class="clause-column-fig">
-                        <h3 class="govuk-body para-number">2.2</h3>
-                    </div>
-                    <div class="clause-column-content">
-                        <p class="govuk-body">Where the Employer receives Transferred Funds it may only use such Transferred Funds to pay for the Training and End-Point Assessment for a new apprenticeship start identified at the time that the Transfer of Funding is agreed in accordance
-                    with the Funding Rules.</p>
-                    </div>
-                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">In this Agreement the following terms shall have the following meanings:</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprentice: </strong>a person who works under an Apprenticeship Agreement.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprentice Assessment Organisation:</strong> any organisation on the Register of Apprentice Assessment Organisations which is selected by an Employer and contracted by a Training Provider to carry out
+                        End-Point Assessment.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship:</strong> the training and (where applicable) end-point assessment for an employee as part of a job with an accompanying skills development programme.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship Agreement: </strong>(a) an approved English apprenticeship agreement; or (b) an apprenticeship agreement within the meaning given in section 32 of the Apprenticeship, Skills, Children
+                        and Learning Act 2009 as it applies in relation to England by virtue of provision made under section 115(9) of the Deregulation Act 2015. </p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship Levy: </strong>the levy payable by all employers with an annual pay bill of more than £3 million which is used to support the funding of Apprenticeships.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeships Logo: </strong>the logo consisting of the word “Apprenticeships” in plain black type face with a semi-circle of orange brush strokes to the left hand side of the letter A, the Intellectual
+                        Property Rights in which are owned by the Crown.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship Service: </strong>the service provided by the ESFA fund apprenticeship training undertaken by approved training providers using government funds. </p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Apprenticeship Standard: </strong>the apprenticeship standards which employers have designed. This is defined as those standards that have had their assessment plan approved by the Institute for Apprenticeships
+                    and have been published on the Institute For Apprenticeships website alongside their allocated funding band.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Bribery Act: </strong>the Bribery Act 2010 and any subordinate legislation made under that Act from time to time together with any guidance or codes of practice issued by the relevant government department
+                        concerning the legislation.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Change of Control:</strong> has the meaning given in section 1124 of the Corporation Tax Act 2010.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Connected Employer: </strong>any entity (being a distinct legal entity from the Employer) which is connected with the Employer within the meaning of Schedule 1 Parts 1 and 2 of the National Insurance
+                        Contributions Act 2014, and which, not being a contracting party to this Agreement, carries out activities on behalf of the Employer in relation to the Apprenticeship Service or employs an Apprentice whose Training is Funded in whole or
+                        in part from the Employer’s Digital Account.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Employer: </strong>the employer which enters into a contract with a Training Provider to commission Training (a) for its own Apprentices and/or (b) on behalf of a Connected Employer for the Connected
+                        Employer’s Apprentices, to be funded in whole or in part from the Employer’s Digital Account.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Employer Co-Investment:</strong> a financial contribution towards the cost of Training which is payable by the Employer to the Training Provider when there are insufficient funds in the Employer’s Digital
+                        Account. </p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Employer’s Digital Account: </strong>the part of the Apprenticeship Service which shows the amount of Funding available to the Employer or a Connected Employer to spend on Training of Apprentices in
+                        accordance with this Agreement.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">End-Point Assessment:</strong> the independent assessment of the Apprentice’s knowledge, skills and behaviours carried out by an Apprentice Assessment Organisation at the end of the Training to confirm
+                        that the Apprentice has met the requirements of any relevant Approved Apprenticeship Standard.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">ESFA:</strong> the Secretary of State for Education, acting through the Education and Skills Funding Agency, an executive agency of the Department for Education, whose principal address is at Cheylesmore
+                        House, Quinton Road, Coventry, CV1 2WT.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Funding:</strong> the funding paid to the Training Provider on behalf of the Employer towards the cost of Training and End-Point Assessment in accordance with this Agreement.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Funding Rules:</strong> the ESFA’s apprenticeship funding rules, as revised and amended from time to time.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Insolvency Event: </strong>means any of the following circumstances:</p>
+                    <ol class="govuk-list govuk-list--number">
+                        <li type="a">a party suspends or threatens to suspend payment of its debts or is unable to pay its debts as they fall due or is deemed unable to pay its debts within the meaning of any relevant provision of the Insolvency Act 1986;</li>
+                        <li type="a">a party commences negotiations with all or any class of its creditors with a view to rescheduling any of its debts, or makes a proposal for or enters into any compromise or arrangement with any of its creditors (other than for the sole
+                            purpose of a bona fide reconstruction or amalgamation);</li>
+                        <li type="a">a petition is filed, a notice is given, a resolution is passed, or an order is made, for or in connection with the winding up of the relevant party (other than for the sole purpose of a bona fide reconstruction or amalgamation);</li>
+                        <li type="a">a receiver, administrative receiver or similar officer is appointed over the whole or any part of the relevant party’s business or assets;</li>
+                        <li type="a">an application order is made either for the appointment of an administrator or for an administration order, an administrator is appointed, or notice of intention to appoint an administrator is given;</li>
+                        <li type="a">any event occurs, or proceeding is taken, with respect to the relevant party in any jurisdiction to which it is subject that has an effect equivalent or similar to any of the events mentioned in (a)-(e)(inclusive); or</li>
+                        <li type="a">the relevant party suspends or ceases, or threatens to suspend or cease, carrying on all or a substantial part of its business.</li>
+                    </ol>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Intellectual Property Rights:</strong><strong class="govuk-!-font-weight-bold"></strong> all patents, trademarks, logos (including the Apprenticeships Logo), copyrights and design rights (whether registered
+                        or not) and all applications for any of the foregoing and all rights of confidence and Know-How however arising for their full term and any renewals and extensions.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Know-How:</strong> information, data, know-how or experience whether patentable or not and including but not limited to any technical and commercial information relating to research, design, development,
+                        manufacture, use or sale.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Prohibited Act:</strong> means:</p>
+                    <ol class="govuk-list govuk-list--number">
+                        <li type="a">offering, giving or agreeing to give to any servant of the Crown any gift or consideration of any kind as an inducement or reward for:
+                            <ol class="govuk-list govuk-list--number">
+                                <li type="i">doing or not doing (or for having done or not having done) any act in relation to the obtaining or performance of this Agreement or any other contract with the Crown; or</li>
+                                <li type="i">showing or not showing favour or disfavour to any person in relation to this Agreement or any other contract with the Crown;</li>
+                            </ol>
+                        </li>
+                        <li type="a">entering into this Agreement or any other contract with the Crown where a commission has been paid or has been agreed to be paid by the Employer or on its behalf, or to its knowledge, unless before the relevant contract is entered into
+                            particulars of any such commission and of the terms and conditions of any such contract for the payment thereof have been disclosed in writing to the ESFA;</li>
+                        <li type="a">
+                            committing any offence:
+                            <ol class="govuk-list govuk-list--number">
+                                <li type="i">under the Bribery Act;</li>
+                                <li type="i">under legislation creating offences in respect of fraudulent acts; or</li>
+                                <li type="i">at common law in respect of fraudulent acts in relation to this Agreement or any other contract with the Crown; or</li>
+                            </ol>
+                        </li>
+                        <li type="a">defrauding or attempting to defraud or conspiring to defraud the Crown.</li>
+                    </ol>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Receiving Employer:</strong> the Employer which receives transferred funds from a Sending Employer.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Register of Apprentice Assessment Organisations:</strong> the online register of Apprentice Assessment Organisations from which the Employer may select an organisation to carry out End-Point Assessment
+                        of Apprentices.
+                    </p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Register of Apprenticeship Training Providers:</strong> the online register of apprenticeship training providers which lists the organisations approved to deliver Training to Apprentices under this
+                        Agreement.
+                    </p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Sending Employer:</strong> an Employer (being a Levy Paying Employer) which transfers funding from their Employer’s Digital Account into another Employer’s Digital Account.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Technical Funding Guide:</strong> the Education and Skills Funding Agency’s Apprenticeship Technical Funding Guide as revised and amended from time to time. </p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Training:</strong> the delivery of training and on-programme assessment by the Training Provider to one or more Apprentices.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Training Provider:</strong> an organisation registered on the Register of Apprenticeship Training Providers which has a contract with the Employer to provide Training to one or more Apprentices.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Transfer of Funds:</strong> the movement of funds from the Employer’s Digital Account of a Levy Paying Employer to the Employer’s Digital Account of another Employer (whether a Levy Paying Employer
+                        or Non-Levy Paying Employer), to fund a specific apprentice undertaking a specific Apprenticeship Standard.</p>
+                    <p class="govuk-body"><strong class="govuk-!-font-weight-bold">Transferred Funds:</strong> the funds received by a Receiving Employer under a Transfer of Funds.</p>
                 </div>
             </div>
-        </details>
-
-        <details class="govuk-details agreement-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                    3. Commencement and Duration
-                    </span>
-                </summary>
-                <div class="govuk-details__text">
-                    
-                    <!-- 3 -->
-                    <div class="clause">
-                            <div class="clause-sub-row">
-                                <div class="clause-column-fig">
-                                    <h2 class="govuk-heading-m" id="3">3.</h2>
-                                </div>
-                                <div class="clause-column-content">
-                                    <h2 class="govuk-heading-m" >Commencement and Duration</h2>
-                                </div>
-                            </div>
-                            <div class="clause-sub-row">
-                                <div class="clause-column-fig">
-                                    <h3 class="govuk-body para-number">3.1</h3>
-                                </div>
-                                <div class="clause-column-content">
-                                    <p class="govuk-body">Except where otherwise specified or as agreed in writing between the parties, the terms of this Agreement shall apply from 1st May 2017 or the date of the Employer's electronic acceptance of these terms and conditions on GOV.UK (whichever is later) and shall continue in force until it is terminated in accordance with clause 18 of this Agreement.</p>
-                                </div>
-                            </div>
-                            <div class="clause-sub-row">
-                                <div class="clause-column-fig">
-                                    <h3 class="govuk-body para-number">3.2</h3>
-                                </div>
-                                <div class="clause-column-content">
-                                    <p class="govuk-body">By electronically accepting these terms and conditions, the Employer confirms it is authorised to use funds in the Employer’s Digital Account and agrees to be legally bound by this Agreement.</p>
-                                </div>
-                            </div>
-                    </div>
-                    
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">1.2</h3>
                 </div>
-            </details>
-
-        <details class="govuk-details agreement-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                    4. Payment of Funding
-                    </span>
-                </summary>
-                <div class="govuk-details__text">
-                    <!-- 4 -->
-                    <div class="clause">
-                        <div class="clause-sub-row">
-                            <div class="clause-column-fig">
-                                <h2 class="govuk-heading-m" id="4">4.</h2>
-                            </div>
-                            <div class="clause-column-content">
-                                <h2 class="govuk-heading-m" >Payment of Funding</h2>
-                            </div>
-                        </div>
-                        <div class="clause-sub-row">
-                            <div class="clause-column-fig">
-                                <h3 class="govuk-body para-number">4.1</h3>
-                            </div>
-                            <div class="clause-column-content">
-                                <p class="govuk-body">Subject to any other provision of this Agreement, the ESFA shall pay the Funding to the Training Provider in accordance with the Technical Funding Guide. </p>
-                            </div>
-                        </div>
-                        <div class="clause-sub-row">
-                            <div class="clause-column-fig">
-                                <h3 class="govuk-body para-number">4.2</h3>
-                            </div>
-                            <div class="clause-column-content">
-                                <p class="govuk-body">The ESFA reserves the right to change or discontinue all or any part of the Apprenticeship Service at any time.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body" data-point="1.2">Unless the context otherwise requires, words in the singular shall include the plural and in the plural shall include the singular.</p>
                 </div>
-            </details>
-
-            <details class="govuk-details agreement-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                    5. Employer’s Obligations
-                    </span>
-                </summary>
-                <div class="govuk-details__text">
-                    <!-- 5 -->
-                    <div class="clause">
-                        <div class="clause-sub-row">
-                            <div class="clause-column-fig">
-                                <h2 class="govuk-heading-m" id="5">5.</h2>
-                            </div>
-                            <div class="clause-column-content">
-                                <h2 class="govuk-heading-m">Employer’s Obligations</h2>
-                            </div>
-                        </div>
-                        <div class="clause-sub-row">
-                            <div class="clause-column-fig">
-                                <h3 class="govuk-body para-number">5.1</h3>
-                            </div>
-                            <div class="clause-column-content">
-                                <p class="govuk-body">In order for the ESFA to pay Funding to a Training Provider on behalf of the Employer, the Employer agrees to:</p>
-                                <ol class="govuk-list govuk-list--number">
-                                    <li type="a">comply (and procure that any Connected Employer carrying out activities in connection with this Agreement complies) at all times with the requirements detailed in the Funding Rules;</li>
-                                    <li type="a">have a contract for services with a Training Provider for the provision of Training to one or more Apprentices; and</li>
-                                    <li type="a">assist and cooperate with the Training Provider to enable them to deliver the Training in compliance with the Funding Rules and, upon request, to supply the Training Provider with any information they may reasonably require in relation
-                                        to any Apprentice or the delivery of any Training.</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">1.3</h3>
                 </div>
-            </details>
-        
+                <div class="clause-column-content">
+                    <p class="govuk-body">Unless the context otherwise requires, a reference to one gender shall include a reference to the other genders.</p>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">1.4</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">A reference to a statute or statutory provision is a reference to it as amended, extended or re-enacted from time to time.</p>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">1.5</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">A reference to a person or body includes a reference to its successor.</p>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">1.6</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">Any words following the terms including, include, in particular, for example or any similar expression shall be construed as illustrative and shall not limit the sense of the words, description, definition, phrase or term preceding those terms.</p>
+                </div>
+            </div>
+        </div>
 
+        <!-- 2 -->
+        <div class="clause">
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h2 class="govuk-heading-m" id="2">2.</h2>
+                </div>
+                <div class="clause-column-content">
+                    <h2 class="govuk-heading-m" >Purpose and Use of Funding</h2>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">2.1</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">The Employer acknowledges and accepts that the Funding available in the Employer’s Digital Account is to support the Training and End-Point Assessment of Apprentices and shall be paid directly to the Training Provider in accordance with the
+                Funding Rules. The Employer understands that the Funding may not be used for any other purpose.</p>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">2.2</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">Where the Employer receives Transferred Funds it may only use such Transferred Funds to pay for the Training and End-Point Assessment for a new apprenticeship start identified at the time that the Transfer of Funding is agreed in accordance
+                with the Funding Rules.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="clause">
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h2 class="govuk-heading-m" id="3">3.</h2>
+                </div>
+                <div class="clause-column-content">
+                    <h2 class="govuk-heading-m" >Commencement and Duration</h2>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">3.1</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">Except where otherwise specified or as agreed in writing between the parties, the terms of this Agreement shall apply from 1st May 2017 or the date of the Employer's electronic acceptance of these terms and conditions on GOV.UK (whichever is later) and shall continue in force until it is terminated in accordance with clause 18 of this Agreement.</p>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">3.2</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">By electronically accepting these terms and conditions, the Employer confirms it is authorised to use funds in the Employer’s Digital Account and agrees to be legally bound by this Agreement.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="clause">
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h2 class="govuk-heading-m" id="4">4.</h2>
+                </div>
+                <div class="clause-column-content">
+                    <h2 class="govuk-heading-m" >Payment of Funding</h2>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">4.1</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">Subject to any other provision of this Agreement, the ESFA shall pay the Funding to the Training Provider in accordance with the Technical Funding Guide. </p>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">4.2</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">The ESFA reserves the right to change or discontinue all or any part of the Apprenticeship Service at any time.</p>
+                </div>
+            </div>
+        </div>
             
-        
+        <!-- 5 -->
+        <div class="clause">
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h2 class="govuk-heading-m" id="5">5.</h2>
+                </div>
+                <div class="clause-column-content">
+                    <h2 class="govuk-heading-m">Employer’s Obligations</h2>
+                </div>
+            </div>
+            <div class="clause-sub-row">
+                <div class="clause-column-fig">
+                    <h3 class="govuk-body para-number">5.1</h3>
+                </div>
+                <div class="clause-column-content">
+                    <p class="govuk-body">In order for the ESFA to pay Funding to a Training Provider on behalf of the Employer, the Employer agrees to:</p>
+                    <ol class="govuk-list govuk-list--number">
+                        <li type="a">comply (and procure that any Connected Employer carrying out activities in connection with this Agreement complies) at all times with the requirements detailed in the Funding Rules;</li>
+                        <li type="a">have a contract for services with a Training Provider for the provision of Training to one or more Apprentices; and</li>
+                        <li type="a">assist and cooperate with the Training Provider to enable them to deliver the Training in compliance with the Funding Rules and, upon request, to supply the Training Provider with any information they may reasonably require in relation
+                            to any Apprentice or the delivery of any Training.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
 
         <!-- 6 -->
         <div class="clause">
@@ -1556,9 +1636,9 @@ Manage apprenticeships
 
 
 <div class="govuk-grid-row">
-  <!-- <div class="govuk-grid-column-one-quarter">
+  <div class="govuk-grid-column-one-quarter">
     &nbsp;
-  </div> -->
+  </div>
   <div class="govuk-grid-column-three-quarters">
 
       <p class="govuk-body" style="margin-bottom: 40px"><a href="/public/downloads/ESFA_Apprenticeship_Agreement_for_Employers_1_May_2018.pdf" class="govuk-link govuk-link--no-visited-state">Download the agreement</a> (PDF, 505KB)</p>
