@@ -85,21 +85,54 @@
             </div>
           </dl>
 
+        <br>
 
-          <!-- <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                View sample email to be sent to the employer
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              Image of email here...
-            </div>
-          </details> -->
+        
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "email",
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Email address"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+        {% endset -%}
+        
+        
+        
+        {{ govukRadios({
+          idPrefix: "how-contacted-conditional",
+          name: "how-contacted",
+          fieldset: {
+            legend: {
+              text: "Send a copy to myself",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "A copy of the invitation email will be sent to you."
+          },
+          items: [
+            {
+              value: "email",
+              text: "Email",
+              conditional: {
+                html: emailHtml
+              }
+            }
+
+          ]
+        }) }}
+
 
           <a href="register-employer-confirmation" class="govuk-button">Invite employer</a>
         <p style="padding-top:20px">
     </div>
 </div>
-
 {% endblock %}

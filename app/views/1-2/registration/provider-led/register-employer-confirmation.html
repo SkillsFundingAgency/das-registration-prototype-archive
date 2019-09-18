@@ -20,6 +20,7 @@
   
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
+          
 
           <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
@@ -31,39 +32,40 @@
           </div>
           <!-- <br>
           <p class="govuk-body">The employer has been sent an email invitation with instructions to complete the set-up of the account.</p> -->
+          <br>
+  <form method="post">
+          <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
+                  <h1 class="govuk-fieldset__heading">
+                    What next?
+                  </h1>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employer-confirmation" name="employer-confirmation" type="radio" value="inviteemployer">
+                    <label class="govuk-label govuk-radios__label" for="employer-confirmation">
+                      Invite another employer
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employer-confirmation-2" name="employer-confirmation-home" type="radio" value="returntohome">
+                    <label class="govuk-label govuk-radios__label" for="employer-confirmation-2">
+                      Return to homepage
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          
+              <button class="govuk-button">Continue</button>
+           
         </div>
       </div>
-  
+   </form>
     </main>
   </div>
-
-  {% from "radios/macro.njk" import govukRadios %}
-
-  {{ govukRadios({
-    idPrefix: "where-do-you-live",
-    name: "where-do-you-live",
-    fieldset: {
-      legend: {
-        text: "What next?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--l"
-      }
-    },
-
-    items: [
-      {
-        value: "england",
-        text: "Invite another employer"
-      },
-      {
-        value: "wales",
-        text: "Return to homepage"
-      }
-    ]
-  }) }}
-
-  <a href="index" class="govuk-button">Continue</a>
 
 
 {% endblock %}

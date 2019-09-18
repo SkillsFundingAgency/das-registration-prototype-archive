@@ -167,7 +167,6 @@ router.post('/' + version + '/registration/provider-led/employer-permission', fu
 })
 
 
-
 router.post('/' + version + '/registration/provider-led/changePermissions', function (req, res) {
       
   let answer = req.session.data['manage-apprenticeship-yes']
@@ -176,6 +175,17 @@ router.post('/' + version + '/registration/provider-led/changePermissions', func
     res.redirect('/' + version + '/registration/provider-led/changePermissionsRecruit')
   } else {
     res.redirect('/' + version + '/registration/interim-homepage')
+  }
+})
+
+router.post('/' + version + '/registration/provider-led/register-employer-confirmation', function (req, res) {
+      
+  let answer = req.session.data['employer-confirmation']
+
+  if (answer ==='inviteemployer') {
+    res.redirect('/' + version + '/registration/provider-led/startAccountSetup')
+  } else {
+    res.redirect('/' + version + '/registration/provider-led')
   }
 })
 
