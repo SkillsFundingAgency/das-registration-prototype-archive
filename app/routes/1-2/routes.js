@@ -178,16 +178,7 @@ router.post('/' + version + '/registration/provider-led/changePermissions', func
   }
 })
 
-router.post('/' + version + '/registration/provider-led/register-employer-confirmation', function (req, res) {
-      
-  let answer = req.session.data['employer-confirmation']
 
-  if (answer ==='inviteemployer') {
-    res.redirect('/' + version + '/registration/provider-led/startAccountSetup')
-  } else {
-    res.redirect('/' + version + '/registration/provider-led')
-  }
-})
 
 
  };
