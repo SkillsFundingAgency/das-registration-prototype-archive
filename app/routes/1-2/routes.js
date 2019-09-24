@@ -178,8 +178,5 @@ router.post('/' + version + '/registration/provider-led/changePermissions', func
   }
 })
 
-
-
-
  };
 
