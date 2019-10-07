@@ -11,31 +11,32 @@ require('./routes/4-1/routes.js')(router);
 require('./routes/4-2/routes.js')(router);
 require('./routes/4-3/routes.js')(router);
 require('./routes/4-4/routes.js')(router);
+require('./routes/4-5/routes.js')(router);
 require('./routes/5-0/routes.js')(router);
 
 // Employer started
-router.get('/directEmployer', function (req, res) {
+router.get('/directEmployer', function(req, res) {
     res.redirect(`/1-0/registration/`)
-    })
+})
 
 
- // Provider started
-router.get('/directProvider', function (req, res) {
+// Provider started
+router.get('/directProvider', function(req, res) {
     res.redirect(`/2-0/provider-led-registration/`)
-    })
+})
 
 
- // Employer finish
-router.get('/employerFinish', function (req, res) {
+// Employer finish
+router.get('/employerFinish', function(req, res) {
     res.redirect(`/2-0/provider-led-registration/registration/provider-invitation-email`)
-    })
+})
 
 
 // Interim homepage
-    router.get('/interimHomepage', function (req, res) {
-        res.redirect(`/1-0/registration/interim-homepage`)
-    })
-    
+router.get('/interimHomepage', function(req, res) {
+    res.redirect(`/1-0/registration/interim-homepage`)
+})
+
 
 
 module.exports = router
