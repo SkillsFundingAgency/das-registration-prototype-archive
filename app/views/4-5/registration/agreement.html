@@ -17,6 +17,7 @@ Manage apprenticeships
 
 {% block pageScripts %}
 <script>
+
     $(document).ready(function() {
         $(window).bind('scroll', function() {
             if($(window).scrollTop() >= $('.contents-column').offset().top + $('.contents-column').outerHeight() + 20) {
@@ -26,6 +27,7 @@ Manage apprenticeships
             }
         });
     });
+
 </script>
 {% endblock %}
 
@@ -183,6 +185,8 @@ Manage apprenticeships
 
         <h1 class="govuk-heading-xl">Do you accept the employer agreement on behalf of {{_orgName}}?</h1>
 
+        <p class="govuk-body">The key features and guidance notes are not part of the employer agreement.</p>
+
         <div class="call-to-action">
             <h2 class="govuk-heading-m">Key features of the employer agreement</h2>
             <p class="govuk-body">{{_orgName}} must:</p>
@@ -193,7 +197,7 @@ Manage apprenticeships
             </ul>
             <p class="govuk-body">The ESFA can:</p>
             <ul class="govuk-list govuk-list--bullet">
-                <li>suspend payments, recover funds or close {{_orgName}}’s account if it breaches the terms of the agreement</li>
+                <li>suspend payments, claim back funding or close {{_orgName}}’s account if it breaches the terms of the agreement</li>
                 <li>change the terms of the agreement - if this happens {{_orgName}} can either accept the new terms or close its account (by giving us 30 days’ notice)</li>
             </ul>
         </div>
@@ -880,7 +884,7 @@ Manage apprenticeships
                 </div>
                 <div class="clause-column-content">
                     <div class="call-to-action">
-                        <p class="govuk-body govuk-!-font-weight-bold">Guidance on Intellectual Property Rights</p>
+                        <p class="govuk-body govuk-!-font-weight-bold">Guidance note on Intellectual Property Rights</p>
                         <p class="govuk-body">This clause only seeks to protect the IP belonging to the ESFA and does not grant us
                             access to the employers IP or any rights over them.</p>
                     </div>
@@ -1176,7 +1180,7 @@ Manage apprenticeships
                 </div>
                 <div class="clause-column-content">
                     <div class="call-to-action">
-                        <p class="govuk-body govuk-!-font-weight-bold">Guidance on limitation of liability</p>
+                        <p class="govuk-body govuk-!-font-weight-bold">Guidance note on limitation of liability</p>
                         <p class="govuk-body">Some employers have asked for their liability under the agreement to be capped.</p>
                         <p class="govuk-body">The ESFA’s responsibility through the service is to direct funds for the
                             apprenticeships to be funded so the employer agreement covers our complete liability to this effect. The
@@ -1252,7 +1256,7 @@ Manage apprenticeships
                 </div>
                 <div class="clause-column-content">
                     <div class="call-to-action">
-                        <p class="govuk-body govuk-!-font-weight-bold">Guidance on warranties</p>
+                        <p class="govuk-body govuk-!-font-weight-bold">Guidance note on warranties</p>
                         <p class="govuk-body">This covers an employer’s responsibility to support the apprenticeship and the apprentice.
                             For example, to provide relevant employment in a safe environment, and with necessary resources to undertake
                             the apprenticeship successfully including time for off the job training.</p>
@@ -1351,7 +1355,7 @@ Manage apprenticeships
                 <div class="clause-column-content">
                     <!-- Termination – clause 18 -->
                     <div class="call-to-action">
-                        <p class="govuk-body govuk-!-font-weight-bold">Guidance on termination</p>
+                        <p class="govuk-body govuk-!-font-weight-bold">Guidance note on termination</p>
                         <p class="govuk-body">Both parties have the right to terminate on 30 days’ notice. However, in practice, if
                             the employer is unhappy and wants to terminate the agreement immediately, they can simply stop applying
                             for any more funding. Some employers have suggested that clause 18.1 should be mutual. The situations
@@ -1436,7 +1440,7 @@ Manage apprenticeships
                 </div>
                 <div class="clause-column-content">
                     <div class="call-to-action">
-                        <p class="govuk-body govuk-!-font-weight-bold">Guidance on variation</p>
+                        <p class="govuk-body govuk-!-font-weight-bold">Guidance note on variation</p>
                         <p class="govuk-body">We have tried to draft the agreement with sufficient flexibility to cover any eventuality. However, we cannot exclude the possibility that we might need to vary the agreement for some reason (perhaps due to a change in the law or policy affecting apprenticeship training). In such circumstances, it would not be practicable for us to negotiate such a change individually with each and every employer. We need to have a unilateral right to vary the agreement if necessary.</p>
             
                         <p class="govuk-body">We are subject to a general public law obligation to act reasonably, and we would not use the variation clause in a way which was inconsistent with that obligation</p>
@@ -1498,7 +1502,7 @@ Manage apprenticeships
                 </div>
                 <div class="clause-column-content">
                     <div class="call-to-action">
-                        <p class="govuk-body govuk-!-font-weight-bold">Guidance on notices</p>
+                        <p class="govuk-body govuk-!-font-weight-bold">Guidance note on notices</p>
                         <p class="govuk-body">Some employers have raised concerns about electronic notifications and emails being blocked or not being received. Any notifications to all users will be through the service and we will obtain verification (by digital acceptance/signature) that they have been received before enforcing any changes. In the event we are serving a notice, for example, termination, or notice of breach etc. to an individual user or group of users, this would be done in writing and sent by post.</p>
                     </div> 
                 </div>
@@ -1647,7 +1651,7 @@ Manage apprenticeships
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text govuk-!-font-weight-bold">
               <span class="govuk-warning-text__assistive">Warning</span>
-              The agreement is legally binding. If {{_orgName}} breaches the terms, we could stop it hiring apprentices and close its account.
+              The agreement is legally binding. If {{_orgName}} breaches the terms, we could stop it hiring apprentices, claim back funding or close its account.
           </strong>
       </div>
 
@@ -1665,7 +1669,7 @@ Manage apprenticeships
                 </span>
                 {% endif %}
                 <span class="govuk-hint">
-                    By accepting, you confirm that {{_orgName}} agrees to the terms and conditions and is entering into an agreement with the ESFA.
+                    By accepting, you confirm that {{_orgName}} agrees to the terms and conditions and is entering into a legally binding agreement with the ESFA.
                 </span>
                 <div class="govuk-radios" id="agreementSign">
                     <div class="govuk-radios__item">
