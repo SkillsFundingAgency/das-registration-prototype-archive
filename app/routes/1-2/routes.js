@@ -21,31 +21,31 @@ module.exports = function (router) {
     })
 
     router.post('/' + version + '/registration/gov-funding', function (req, res) {
-      
+
         let answer = req.session.data['add-your-paye']
-      
+
         if (answer === 'govgateway') {
           res.redirect('/' + version + '/registration/using-your-gg')
         }
         else if(answer === 'aorn') {
-          res.redirect('/' + version + '/registration/pensionsREG')
+          res.redirect('/' + version + '/registration/pensionsReg')
         } else {
           res.redirect('/' + version + '/registration/homepage-addPAYE')
         }
       })
-    
+
     // Ways to add your PAYE scheme
       router.post('/' + version + '/registration/ways-to-add-paye', function (req, res) {
-      
+
         let answer = req.session.data['ways-to-add-your-paye']
-      
+
         if (answer === 'govgateway') {
           res.redirect('/' + version + '/registration/using-your-gg')
         } else {
           res.redirect('/' + version + '/registration/pensionsReg')
         }
       })
-      
+
       // Compliance team - agreement
       router.get('/' + version + '/registration/agreement', function (req, res) {
         res.render(version + '/registration/agreement', {
@@ -60,12 +60,12 @@ module.exports = function (router) {
           res.redirect('/' + version + '/registration/homepage-signAgreement')
         }
       })
-    
+
       router.post('/' + version + '/registration/agreement/v1/agreement', function (req, res) {
-      
+
         let answer = req.session.data['agreementSign']
         let emailJourney = req.session.data['email-journey']
-        
+
         if (answer === 'yesSign') {
           if (emailJourney == 'true') {
             req.session.data['email-journey'] = ''
@@ -78,24 +78,24 @@ module.exports = function (router) {
         }
       })
 
-      
+
       router.post('/' + version + '/registration/gov-gateway', function (req, res) {
-      
+
         let ggid = req.session.data['gatewayLogin']
         let ggpassword = req.session.data['gatewayPassword']
-      
+
         if (ggid ==='abcd123') {
           res.redirect('/' + version + '/registration/multiOrgsGG')
         } else {
           res.redirect('/' + version + '/registration/check-your-details')
         }
       })
-      
+
 
       router.post('/' + version + '/registration/multiOrgsGG', function (req, res) {
-      
+
         let answer = req.session.data['orgNotListed']
-      
+
         if (answer === 'OrgNot') {
           res.redirect('/' + version + '/registration/searchOrg')
         } else {
@@ -130,10 +130,10 @@ module.exports = function (router) {
       })
 
       router.post('/' + version + '/registration/pensionsReg', function (req, res) {
-      
+
         let aornnumber = req.session.data['employerRegisterAORN']
 
-      
+
         if (aornnumber ==='123PA12345678') {
           res.redirect('/' + version + '/registration/multiOrgsAORN')
         } else {
@@ -142,9 +142,9 @@ module.exports = function (router) {
       })
 
       router.post('/' + version + '/registration/multiOrgsAORN', function (req, res) {
-      
+
         let answer = req.session.data['orgNotListed']
-      
+
         if (answer ==='OrgNot') {
           res.redirect('https://www.gov.uk/tell-hmrc-change-address')
         } else {
@@ -156,7 +156,7 @@ module.exports = function (router) {
 // Provider-led Registration
 
 router.post('/' + version + '/registration/provider-led/employer-permission', function (req, res) {
-    
+
   let answer = req.session.data['permission-training-provider']
 
   if (answer === 'yesGive') {
@@ -168,7 +168,7 @@ router.post('/' + version + '/registration/provider-led/employer-permission', fu
 
 
 router.post('/' + version + '/registration/provider-led/changePermissions', function (req, res) {
-      
+
   let answer = req.session.data['manage-apprenticeship-yes']
 
   if (answer ==='yesGivePermission') {
@@ -179,4 +179,3 @@ router.post('/' + version + '/registration/provider-led/changePermissions', func
 })
 
  };
-
