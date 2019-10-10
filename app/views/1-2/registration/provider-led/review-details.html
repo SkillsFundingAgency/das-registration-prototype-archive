@@ -10,7 +10,7 @@
 
 <style>
     .govuk-header__container{
-        border-bottom: 10px solid #fd7742;  
+        border-bottom: 10px solid #fd7742;
     }
 
     .govuk-summary-list__key {
@@ -29,6 +29,8 @@
              Check details
            </h1>
            <p class="govuk-body">Check the details are correct. We will be sending the invitation to complete the set-up of the account to the email address below.</p>
+
+           <p class="govuk-body">Once the employer receives the invitation, they will need to enter some details, then add the PAYE scheme for their organisation and sign the legal agreement.</p>
            <br>
            <dl class="govuk-summary-list">
 
@@ -91,7 +93,7 @@
 
           <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-        
+
         {% set emailHtml %}
         {{ govukInput({
           id: "contact-by-email",
@@ -106,9 +108,9 @@
           }
         }) }}
         {% endset -%}
-        
-        
-        
+
+
+
         {{ govukCheckboxes({
           idPrefix: "how-contacted-conditional",
           name: "how-contacted",
