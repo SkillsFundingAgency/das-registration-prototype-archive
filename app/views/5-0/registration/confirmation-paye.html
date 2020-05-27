@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Manage apprenticeships
+{% endblock %}
+
+{% set serviceName = "Manage apprenticeships" %}
+
+{% set _orgName = data['orgName'] or "ASSURANCE AEROSPACE LTD" %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "panel/macro.njk" import govukPanel %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6" style="background: #6f777b">
+      <h1 class="govuk-panel__title">
+        You’ve added {{_orgName}}’s PAYE details
+      </h1>
+    </div>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p class="govuk-body">
+      You need to accept the employer agreement to:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>get or reserve apprenticeship funding</li>
+      <li>approve apprentice details</li>
+      <li>publish adverts</li>
+    </ul>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "agreement-check"
+    }) }}
+
+    <p>
+      <a href="#">View your account</a>
+    </p>
+
+  </div>
+</div>
+{% endblock %}

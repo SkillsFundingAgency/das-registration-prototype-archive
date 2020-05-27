@@ -45,7 +45,7 @@ module.exports = function (router) {
         let answer = req.session.data['agreementSign']
       
         if (answer === 'yesSign') {
-          res.redirect('/' + version + '/registration/interim-homepage')
+          res.redirect('/' + version + '/registration/confirmation-agreement')
         } else {
           res.redirect('/' + version + '/registration/homepage-signAgreement')
         }
@@ -120,5 +120,21 @@ module.exports = function (router) {
         }
       })
 
+
+      // added by Dan - CI team 2020-05-27
+      router.post('/' + version + '/registration/confirmation', function (req, res) {            
+          res.redirect('/' + version + '/registration/confirmation-account')
+      })
+
+      //agreement
+      router.post('/' + version + '/registration/agreement/v1/agreement', function (req, res) {
+        let answer = req.session.data['agreementSign']
+      
+        if (answer === 'yesSign') {
+          res.redirect('/' + version + '/registration/confirmation-agreement')
+        } else {
+          res.redirect('/' + version + '/registration/homepage-signAgreement')
+        }
+      })
  };
 

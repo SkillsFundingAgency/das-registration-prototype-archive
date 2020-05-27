@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage apprenticeships
+{% endblock %}
+
+{% set serviceName = "Manage apprenticeships" %}
+
+{% set _orgName = data['orgName'] or "ASSURANCE AEROSPACE LTD" %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "panel/macro.njk" import govukPanel %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation" style="background: #6f777b">
+          <h1 class="govuk-panel__title">
+            You’ve created an apprenticeship service account
+          </h1>
+        </div>
+
+        <p class="govuk-body">Use your email address [[entered@email.com]] to sign in.</p>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        <p class="govuk-body">
+          In your account, you can:
+        </p>
+
+        <ul class="govuk-list--bullet govuk-list">
+          <li>create draft adverts</li>
+          <li>add apprentice details</li>
+          <li>view apprenticeships or training providers you’ve saved to your favourites</li>
+        </ul>
+
+        <p class="govuk-body">
+          You still need to add a PAYE scheme for [company name] and accept the employer agreement to:
+        </p>
+
+        <ul class="govuk-list--bullet govuk-list">
+          <li>publish draft adverts</li>
+          <li>approve apprentice details</li>
+          <li>get or reserve apprenticeship funding</li>
+        </ul>
+
+        {{ govukButton({
+          text: "Add PAYE details",
+          href: "ways-to-add-paye"
+        }) }}
+
+        <p class="govuk-body">
+          <a href="homepage-addPAYE" class="govuk-link govuk-link--no-visited-state">View your account</a>
+        </p>
+      </div>
+    </div>
+{% endblock %}

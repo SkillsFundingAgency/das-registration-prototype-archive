@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Manage apprenticeships
+{% endblock %}
+
+{% set serviceName = "Manage apprenticeships" %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+     {{ govukRadios({
+      idPrefix: "changed-name",
+      name: "changed-name",
+      fieldset:
+      {
+        legend:
+        {
+          text: "When do you want to view the employer agreement?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      hint:
+      {
+        text: "The employer agreement is between [COMPANY NAME] and the Education and Skills Funding Agency (ESFA)."
+      },
+      items: [
+      {
+        value: "now",
+        text: "I’ll view it now"
+      },
+      {
+        value: "later",
+        text: "I’ll view it later, after I’ve created an account"
+      }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+
+</div>
+</div>
+
+{% endblock %}
