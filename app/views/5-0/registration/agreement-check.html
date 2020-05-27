@@ -19,8 +19,8 @@ Manage apprenticeships
   <div class="govuk-grid-column-two-thirds">
     <form method="post">
      {{ govukRadios({
-      idPrefix: "changed-name",
-      name: "changed-name",
+      idPrefix: "agreement-check",
+      name: "agreement-check",
       fieldset:
       {
         legend:
@@ -41,7 +41,11 @@ Manage apprenticeships
       },
       {
         value: "later",
-        text: "I’ll view it later, after I’ve created an account"
+        text: "I’ll view it later, after I’ve created an account",
+        hint:
+        {
+          text: "You can skip the agreement and view it when [COMPANY NAME] is ready to get or reserve apprenticeship funding."
+        }
       }
       ]
     }) }}

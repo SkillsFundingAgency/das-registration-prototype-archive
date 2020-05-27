@@ -126,6 +126,17 @@ module.exports = function (router) {
           res.redirect('/' + version + '/registration/confirmation-account')
       })
 
+      //agreement check
+      router.post('/' + version + '/registration/agreement-check', function (req, res) {
+        let answer = req.session.data['agreement-check']
+      
+        if (answer === 'now') {
+          res.redirect('/' + version + '/registration/agreement/v1/agreement')
+        } else {
+          res.redirect('/' + version + '/registration/homepage-signAgreement')
+        }
+      })
+
       //agreement
       router.post('/' + version + '/registration/agreement/v1/agreement', function (req, res) {
         let answer = req.session.data['agreementSign']
