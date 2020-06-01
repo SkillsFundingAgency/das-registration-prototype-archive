@@ -33,9 +33,12 @@ Manage apprenticeships
     To use the other features in your account, you need to add a PAYE scheme and accept the employer agreement.
   </p>
 
+  {% set payeUrl = "https://ma-registration-ci.herokuapp.com/5-1/registration/ways-to-add-paye"|urlencode %}
+  {% set agreementUrl = "https://ma-registration-ci.herokuapp.com/5-1/registration/agreement-check"|urlencode %}
+
   {{ govukButton({
     text: "View your account",
-    href: "homepage-addPAYE"
+    href: "https://ma-employer-account.herokuapp.com/transactional-0-44/account-home?add-paye-now=no&sign-agreement-now=no&paye-redirect="+ payeUrl +"&agreement-redirect="
   }) }}
 
   <p class="govuk-body">
