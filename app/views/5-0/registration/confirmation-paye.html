@@ -37,9 +37,12 @@ Manage apprenticeships
       <li>publish adverts</li>
     </ul>
 
+    {% set payeUrl = "https://ma-registration-ci.herokuapp.com/5-0/registration/ways-to-add-paye"|urlencode %}
+    {% set agreementUrl = "https://ma-registration-ci.herokuapp.com/5-0/registration/agreement-check"|urlencode %}
+
     {{ govukButton({
       text: "View your account",
-      href: "homepage-addPAYE"
+      href: "https://ma-employer-account.herokuapp.com/transactional-0-44/account-home?add-paye-now=yes&sign-agreement-now=no&paye-redirect="+ payeUrl +"&agreement-redirect="+ agreementUrl
     }) }}
 
     <p>

@@ -47,11 +47,15 @@ You’ve accepted the employer agreement
       html: "You still need to <a href='#' class='govuk-link govuk-link--no-visited-state'>review and accept your other agreements</a>."
     })}}
     {% endif %}
-    
+
+    {% set payeUrl = "https://ma-registration-ci.herokuapp.com/5-1/registration/ways-to-add-paye"|urlencode %}
+    {% set agreementUrl = "https://ma-registration-ci.herokuapp.com/5-1/registration/agreement-check"|urlencode %}
+
     {{ govukButton({
       text: "View your account",
-      href: "homepage-addPAYE"
+      href: "https://ma-employer-account.herokuapp.com/transactional-0-44/account-home?add-paye-now=yes&sign-agreement-now=yes&paye-redirect="+ payeUrl +"&agreement-redirect="+ agreementUrl
     }) }}
+    
   </div>
 </div>
 {% endblock %}
